@@ -10,9 +10,9 @@ var data: AchievementData
 @onready var image := %Image as TextureRect
 
 func _ready() -> void:
-	Game.on_achievement.connect(_on_achievement)
+	Achievements.on_achievement.connect(_on_achievement)
 
-func _on_achievement(achievement: Game.Achievement) -> void:
+func _on_achievement(achievement: Achievements.Achievement) -> void:
 	pass
 
 func init(achievement_data: AchievementData) -> void:

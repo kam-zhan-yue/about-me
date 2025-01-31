@@ -1,27 +1,5 @@
 extends Node
 
-enum Achievement {
-	# School Period
-	ENTER_THE_ARENA,
-	ASCENSION,
-	
-	# Game Jam 1
-	GREENPATH,
-	ONE_LAST_DRINK,
-	
-	# Kyoto University Period
-	UPBEET,
-	SLEEPWALKER,
-	
-	# Game Jam 2 - Lightning Round?
-	THE_SHACKLED,
-	BEANS_FOR_GOOD,
-	TIDE,
-	RE_COLLECT,
-	HUNDRED_LITTLE_GUYS,
-	SWIRLY_WHIRLY
-}
-
 # Variables
 var player: Player
 var camera: Camera
@@ -35,7 +13,6 @@ var end_date := Date.new()
 
 # Signals
 signal on_date_changed(date: Date)
-signal on_achievement(achievement: Achievement)
 
 func init(p: Player = null, c: Camera = null, start_date: Date = null) -> void:
 	self.player = p
@@ -97,6 +74,3 @@ func university_sequence() -> void:
 
 func end_sequence() -> void:
 	await player.fade_in()
-
-func activate(achievement: Achievement) -> void:
-	on_achievement.emit(achievement)
