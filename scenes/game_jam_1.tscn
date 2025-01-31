@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://de36fxmjtjgub"]
+[gd_scene load_steps=4 format=3 uid="uid://de36fxmjtjgub"]
 
-[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/gothic.tres" id="1_8t02e"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="1_8t02e"]
+[ext_resource type="Script" path="res://scripts/entities/game_jam_1.gd" id="1_o20wv"]
 [ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_7837g"]
 
-[node name="Select Zone 1" type="Node2D"]
+[node name="Game Jam 1" type="Node2D"]
+script = ExtResource("1_o20wv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(200, 0)
@@ -30,10 +32,10 @@ position = Vector2(0, -8)
 [node name="BlockHolder" type="Node2D" parent="Level"]
 position = Vector2(0, -64)
 
-[node name="QuestionBlock" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
+[node name="OneLastDrink" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
 position = Vector2(-32, 0)
 
-[node name="Fighting" type="RichTextLabel" parent="Level/BlockHolder/QuestionBlock"]
+[node name="Fighting" type="RichTextLabel" parent="Level/BlockHolder/OneLastDrink"]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,10 +55,10 @@ text = "[center]ファイティング[/center]"
 fit_content = true
 scroll_active = false
 
-[node name="QuestionBlock2" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
+[node name="Greenpath" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
 position = Vector2(32, 0)
 
-[node name="Fighting2" type="RichTextLabel" parent="Level/BlockHolder/QuestionBlock2"]
+[node name="Fighting2" type="RichTextLabel" parent="Level/BlockHolder/Greenpath"]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5

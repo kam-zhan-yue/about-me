@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://clhuealtdhvw3"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
-[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/tile_map.tres" id="2_jgjre"]
-[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/gothic.tres" id="3_6hi01"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_jgjre"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="3_6hi01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)

@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
 [ext_resource type="PackedScene" uid="uid://b18uu7jcpkjvt" path="res://scenes/player.tscn" id="2_qvmds"]
-[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/tile_map.tres" id="3_tsnp1"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="3_tsnp1"]
 [ext_resource type="Script" path="res://scripts/time/time_zone.gd" id="5_tu4g5"]
 [ext_resource type="PackedScene" uid="uid://clhuealtdhvw3" path="res://scenes/school.tscn" id="6_8rhnj"]
 [ext_resource type="PackedScene" uid="uid://c2lt0mjhqmmf7" path="res://scenes/ui.tscn" id="6_urop7"]
-[ext_resource type="PackedScene" uid="uid://de36fxmjtjgub" path="res://scenes/select_zone_1.tscn" id="8_4ta8e"]
+[ext_resource type="PackedScene" uid="uid://de36fxmjtjgub" path="res://scenes/game_jam_1.tscn" id="8_4ta8e"]
 
 [node name="Main" type="Node2D"]
 

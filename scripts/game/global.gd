@@ -56,3 +56,6 @@ func from_months(total_months: int) -> Date:
 	if months == 0:
 		months =  1
 	return Date.new(years, months)
+
+func wrap_center(text: String) -> String:
+	return str("[center]", text, "[/center]")

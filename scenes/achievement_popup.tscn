@@ -1,0 +1,165 @@
+[gd_scene load_steps=5 format=3 uid="uid://bve4hr8sl00nf"]
+
+[ext_resource type="Script" path="res://scripts/ui/achievement_popup.gd" id="1_3lcpr"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_aydhq"]
+[ext_resource type="Script" path="res://scripts/ui/navigation_holder.gd" id="3_dvqjr"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_cvex4"]
+
+[node name="AchievementPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lcpr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.133333, 0.184314, 0.588235)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="Unlocked" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Achievement Unlocked![/center]"
+fit_content = true
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "[center]Uptick Software[/center]"
+fit_content = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+ratio = 1.7778
+
+[node name="Video" type="VideoStreamPlayer" parent="MarginContainer/Panel/VBoxContainer/AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+stream = SubResource("VideoStreamTheora_cvex4")
+
+[node name="Image" type="TextureRect" parent="MarginContainer/Panel/VBoxContainer/AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]This is a description of everything yayy[/center]"
+fit_content = true
+
+[node name="ButtonHolder" type="Control" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/ButtonHolder"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/font_size = 36
+text = "OK"
+
+[node name="NavigationHolder" type="Control" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_dvqjr")
+
+[node name="Previous" type="Button" parent="MarginContainer/Panel/NavigationHolder"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -30.5
+offset_right = 70.0
+offset_bottom = 30.5
+grow_vertical = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/font_size = 36
+text = "<"
+
+[node name="Next" type="Button" parent="MarginContainer/Panel/NavigationHolder"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -30.5
+offset_right = -20.0
+offset_bottom = 30.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_aydhq")
+theme_override_font_sizes/font_size = 36
+text = ">"
