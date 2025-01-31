@@ -1,2 +1,2 @@
 class_name Timeline
-extends Node
+extends Node2D

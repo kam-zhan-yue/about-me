@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c2lt0mjhqmmf7"]
+
+[node name="UI" type="CanvasLayer"]
+layer = 100
+
+[node name="GamePopup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DatePopup" type="Control" parent="GamePopup"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GamePopup/DatePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GamePopup/DatePopup/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = " [outline_size=32]2002年8月[/outline_size]"
+fit_content = true
