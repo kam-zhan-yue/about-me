@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh2faluuhadxu"]
+[gd_scene load_steps=3 format=3 uid="uid://dh2faluuhadxu"]
 
 [ext_resource type="PackedScene" uid="uid://cd5owxxw04aq1" path="res://scenes/date_popup.tscn" id="1_sdfug"]
 [ext_resource type="Script" path="res://scripts/ui/game_popup.gd" id="1_vcy8p"]
-[ext_resource type="Script" path="res://scripts/ui/entity_popup.gd" id="3_oubki"]
 
 [node name="GamePopup" type="Control"]
 layout_mode = 3
@@ -18,13 +17,3 @@ script = ExtResource("1_vcy8p")
 [node name="DatePopup" parent="." instance=ExtResource("1_sdfug")]
 unique_name_in_owner = true
 layout_mode = 1
-
-[node name="EntityPopup" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_oubki")

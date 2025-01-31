@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b4jbuskouuqxc"]
+
+[ext_resource type="FontFile" uid="uid://5mmcb74drjqo" path="res://sprites/DotGothic16-Regular.ttf" id="1_3fwlo"]
+
+[resource]
+default_font = ExtResource("1_3fwlo")

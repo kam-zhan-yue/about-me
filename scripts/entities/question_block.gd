@@ -7,7 +7,7 @@ var active := true
 signal hit
 
 func _ready() -> void:
-	sprite.play("idle")
+	sprite.play("default")
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if not active: return
