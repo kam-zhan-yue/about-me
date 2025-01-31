@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=7 format=4 uid="uid://b11r142syunvm"]
 
+[ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_orhbe"]
+[ext_resource type="Script" path="res://scripts/misc/camera.gd" id="1_twskn"]
 [ext_resource type="PackedScene" uid="uid://b18uu7jcpkjvt" path="res://components/player.tscn" id="2_qvmds"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaiss"]
@@ -157,6 +159,17 @@ sources/0 = SubResource("TileSetAtlasSource_eaiss")
 
 [node name="Main" type="Node2D"]
 
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_dfvcw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_top = -300
+limit_bottom = 48
+script = ExtResource("1_twskn")
+
 [node name="Tiles" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
@@ -164,8 +177,5 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_n05oh")
 
 [node name="Player" parent="." instance=ExtResource("2_qvmds")]
+unique_name_in_owner = true
 position = Vector2(7, -8)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-7, 8)
-zoom = Vector2(5, 5)
