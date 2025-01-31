@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd5owxxw04aq1"]
+
+[ext_resource type="Script" path="res://scripts/ui/date_popup.gd" id="1_rdqvy"]
+
+[node name="DatePopup" type="Control"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_rdqvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = " [outline_size=32]2002年8月[/outline_size]"
+fit_content = true

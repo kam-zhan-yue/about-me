@@ -12,7 +12,7 @@ func _ready() -> void:
 		var month := int(split[1])
 		dates.push_back(DateMark.new(Date.new(year, month), child.global_position))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_x := Game.player.position.x
 	if player_x <= dates[-1].pos.x:
 		for i in range(len(dates) - 1):
@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 				update_player_date(dates[i], dates[i + 1])
 
 
-func update_player_date(left: DateMark, right: DateMark):
+func update_player_date(left: DateMark, right: DateMark) -> void:
 	var value = (Game.player.position.x - left.pos.x) / (right.pos.x - left.pos.x)
-	print(left.date.lerp_date(right.date, value))
+	var new_date := left.date.lerp_date(right.date, value)
+	Game.update_date(new_date)

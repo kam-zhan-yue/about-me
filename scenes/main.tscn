@@ -192,7 +192,7 @@ script = ExtResource("5_tu4g5")
 gizmo_extents = 20.0
 
 [node name="2008-01" type="Marker2D" parent="Timeline/Zone 1"]
-position = Vector2(240, 1)
+position = Vector2(431, 1)
 gizmo_extents = 20.0
 
 [node name="UI" parent="." instance=ExtResource("6_urop7")]

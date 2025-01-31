@@ -8,7 +8,7 @@ func _ready() -> void:
 	x_pos = global_position.x
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_x := Game.player.global_position.x
 	if player_x > x_pos:
 		x_pos = player_x
