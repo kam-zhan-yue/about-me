@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cahv2wm6ovcrq"]
+
+[ext_resource type="Script" path="res://scripts/ui/building_popup_item.gd" id="1_ojuih"]
+
+[node name="BuildingPopupItem" type="Control"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojuih")
+
+[node name="EntryLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]This is a fucking test[/center]"
+scroll_active = false
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -399.0
+offset_bottom = -361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]This is a fucking test[/center]"
+scroll_active = false

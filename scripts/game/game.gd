@@ -4,6 +4,7 @@ extends Node
 var player: Player
 var camera: Camera
 var date: Date
+var buildings: Array[Building] = []
 
 # Signals
 signal on_date_changed(date: Date)
@@ -12,6 +13,9 @@ func init(p: Player = null, c: Camera = null, start_date: Date = null) -> void:
 	self.player = p
 	self.camera = c
 	self.date = start_date
+
+func add_building(building: Building):
+	buildings.push_back(building)
 
 func update_date(new_date: Date) -> void:
 	if date.years != new_date.years or date.months != new_date.months:

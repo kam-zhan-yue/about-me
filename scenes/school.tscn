@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://clhuealtdhvw3"]
+
+[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7grvs"]
+
+[node name="School" type="Node2D"]
+script = ExtResource("1_b8lq7")
+
+[node name="Entry" type="Marker2D" parent="."]
+position = Vector2(536, -12)
+
+[node name="Interaction" type="Area2D" parent="Entry"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry/Interaction"]
+shape = SubResource("CircleShape2D_7grvs")
