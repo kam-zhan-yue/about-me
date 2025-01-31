@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgmaykj6emifw"]
+
+[ext_resource type="Script" path="res://scripts/entities/question_block.gd" id="1_gmy4h"]
+[ext_resource type="Texture2D" uid="uid://bfwdmwlinwqyx" path="res://sprites/question_block_sprite.png" id="1_yj8mk"]
+[ext_resource type="Texture2D" uid="uid://bph4k0hccstx3" path="res://sprites/empty_block.png" id="2_o1i2s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xecdy"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruq8i"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdoar"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4udj"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkwya"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otig1"]
+atlas = ExtResource("1_yj8mk")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqtsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o1i2s")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xecdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruq8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdoar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4udj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkwya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otig1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6p1o"]
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdeej"]
+size = Vector2(16, 16)
+
+[node name="QuestionBlock" type="Node2D"]
+script = ExtResource("1_gmy4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fqtsv")
+animation = &"empty"
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_u6p1o")
+debug_color = Color(0.974987, 0, 0.422744, 0.42)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_fdeej")
+
+[connection signal="area_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

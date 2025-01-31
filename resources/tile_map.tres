@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bsckx8dnl1ryn"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bsckx8dnl1ryn"]
 
 [ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_no8sr"]
+[ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_bl2pj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaiss"]
 texture = ExtResource("1_no8sr")
@@ -150,6 +151,10 @@ separation = Vector2i(1, 1)
 11:10/0 = 0
 12:10/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ny4bl"]
+scenes/1/scene = ExtResource("2_bl2pj")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eaiss")
+sources/1 = SubResource("TileSetScenesCollectionSource_ny4bl")
