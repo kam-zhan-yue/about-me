@@ -13,21 +13,13 @@ func _get_months() -> int:
 
 func _months_between(right: Date) -> int:
 	return right._get_months() - self._get_months()
-
-func _add_months(months_to_add: int) -> Date:
-	var m := self.months
-	var y := self.years
-	m += months_to_add
-	var additional_years := int(m / 12)
-	m -= additional_years * 12
-	y += additional_years
-	return Date.new(y, m)
 	
 
 func lerp_date(right: Date, value: float) -> Date:
 	var m = self._months_between(right)
 	var months_to_add = ceil(m * value)
-	var date = self._add_months(months_to_add)
+	var total_months = months_to_add + self._get_months()
+	var date = Global.from_months(total_months)
 	return date
 
 func _to_string() -> String:

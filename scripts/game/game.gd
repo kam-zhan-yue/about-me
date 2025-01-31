@@ -6,6 +6,11 @@ var camera: Camera
 var date: Date
 var buildings: Array[Building] = []
 
+var timer := 0.0
+var time := 0.0
+var start_date := Date.new()
+var end_date := Date.new()
+
 # Signals
 signal on_date_changed(date: Date)
 
@@ -27,3 +32,45 @@ func in_bounds(pos_x: float) -> bool:
 	var camera_width = (camera.get_viewport_rect().size.x / (2 * camera.zoom.x))
 	var left_bound = camera_screen_pos - camera_width
 	return left_bound < pos_x
+
+func _process(delta: float) -> void:
+	if timer < time:
+		var p := timer / time
+		update_date(start_date.lerp_date(end_date, p))
+		timer += delta
+		if timer >= time:
+			end_sequence()
+
+func activate_sequence(id: String) -> void:
+	if id == "SCHOOL":
+		school_sequence()
+	elif id == "KURECHII":
+		kurechii_sequence()
+	elif id == "SCS":
+		scs_sequence()
+	elif id == "UPTICK":
+		uptick_sequence()
+	elif id == "UNIVERSITY":
+		university_sequence()
+
+func school_sequence() -> void:
+	await player.fade_out()
+	start_date = Date.new(2008, 1)
+	end_date = Date.new(2021, 12)
+	timer = 0.0
+	time = 10.0
+
+func kurechii_sequence() -> void:
+	pass
+	
+func scs_sequence() -> void:
+	pass
+
+func uptick_sequence() -> void:
+	pass
+	
+func university_sequence() -> void:
+	pass
+
+func end_sequence() -> void:
+	await player.fade_in()

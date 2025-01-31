@@ -49,3 +49,10 @@ func flip_v(rotation: float) -> bool:
 	var left_rotate = rotation > -PI*1.5 and rotation <-PI*0.5
 	var right_rotate = rotation > PI*0.5 and rotation < PI*1.5
 	return left_rotate or right_rotate
+
+func from_months(total_months: int) -> Date:
+	var years := total_months / 12
+	var months := total_months % 12
+	if months == 0:
+		months =  1
+	return Date.new(years, months)

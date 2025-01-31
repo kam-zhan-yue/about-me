@@ -24,8 +24,6 @@ func _process(_delta: float) -> void:
 	var screen_position := get_screen_center() + difference * Global.zoom
 	var offset_position := Vector2(screen_position.x, screen_position.y + ENTRY_OFFSET_Y * Global.zoom)
 	position = offset_position
-	print(position)
-	#position = Vector2(0.0, 0.0)
 
 func get_screen_center() -> Vector2:
 	var rect := get_viewport_rect().size * 0.5
