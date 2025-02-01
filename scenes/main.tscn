@@ -108,7 +108,7 @@ unique_name_in_owner = true
 position = Vector2(2440, 0)
 
 [node name="Zone 5" type="Node2D" parent="Timeline"]
-position = Vector2(7, 0)
+position = Vector2(5, 0)
 script = ExtResource("5_tu4g5")
 
 [node name="2024-9" type="Marker2D" parent="Timeline/Zone 5"]
