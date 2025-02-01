@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const FADE_TIME = 1.2
 const SPEED = 175.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -300.0
 const PLAYER_WIDTH = 18.0
 
 var interactive = true

@@ -43,6 +43,10 @@ gizmo_extents = 20.0
 position = Vector2(431, 1)
 gizmo_extents = 20.0
 
+[node name="School" parent="Timeline" instance=ExtResource("6_8rhnj")]
+unique_name_in_owner = true
+position = Vector2(520, 0)
+
 [node name="Zone 2" type="Node2D" parent="Timeline"]
 position = Vector2(7, 0)
 script = ExtResource("5_tu4g5")
@@ -55,17 +59,37 @@ gizmo_extents = 20.0
 position = Vector2(795, 1)
 gizmo_extents = 20.0
 
-[node name="School" parent="Timeline" instance=ExtResource("6_8rhnj")]
-unique_name_in_owner = true
-position = Vector2(520, 0)
-
 [node name="Kurechii" parent="Timeline" instance=ExtResource("10_5v5k8")]
 unique_name_in_owner = true
 position = Vector2(840, 0)
 
+[node name="Zone 3" type="Node2D" parent="Timeline"]
+position = Vector2(7, 0)
+script = ExtResource("5_tu4g5")
+
+[node name="2022-1" type="Marker2D" parent="Timeline/Zone 3"]
+position = Vector2(874, 0)
+gizmo_extents = 20.0
+
+[node name="2022-3" type="Marker2D" parent="Timeline/Zone 3"]
+position = Vector2(1126, 1)
+gizmo_extents = 20.0
+
 [node name="Unimelb 1" parent="Timeline" instance=ExtResource("10_gxug4")]
 unique_name_in_owner = true
 position = Vector2(1160, 0)
+
+[node name="Zone 4" type="Node2D" parent="Timeline"]
+position = Vector2(7, 0)
+script = ExtResource("5_tu4g5")
+
+[node name="2023-1" type="Marker2D" parent="Timeline/Zone 4"]
+position = Vector2(1183, 0)
+gizmo_extents = 20.0
+
+[node name="2023-4" type="Marker2D" parent="Timeline/Zone 4"]
+position = Vector2(1727, 1)
+gizmo_extents = 20.0
 
 [node name="Game Jam 1" parent="Timeline" instance=ExtResource("8_4ta8e")]
 unique_name_in_owner = true
@@ -82,6 +106,18 @@ position = Vector2(2120, 0)
 [node name="Unimelb 2" parent="Timeline" instance=ExtResource("10_gxug4")]
 unique_name_in_owner = true
 position = Vector2(2440, 0)
+
+[node name="Zone 5" type="Node2D" parent="Timeline"]
+position = Vector2(7, 0)
+script = ExtResource("5_tu4g5")
+
+[node name="2024-9" type="Marker2D" parent="Timeline/Zone 5"]
+position = Vector2(2474, 0)
+gizmo_extents = 20.0
+
+[node name="2025-1" type="Marker2D" parent="Timeline/Zone 5"]
+position = Vector2(2754, 1)
+gizmo_extents = 20.0
 
 [node name="Game Jam 2" parent="Timeline" instance=ExtResource("8_4ta8e")]
 unique_name_in_owner = true

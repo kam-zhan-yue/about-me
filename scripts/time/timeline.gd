@@ -3,6 +3,9 @@ extends Node2D
 
 @onready var zone_1 := $"Zone 1" as Timezone
 @onready var zone_2 := $"Zone 2" as Timezone
+@onready var zone_3 := $"Zone 3" as Timezone
+@onready var zone_4 := $"Zone 4" as Timezone
+@onready var zone_5 := $"Zone 5" as Timezone
 
 @onready var school := %School as Building
 @onready var kurechii := %Kurechii as Building
@@ -19,7 +22,6 @@ var timeline_dict = {}
 
 func _ready() -> void:
 	zone_1.activated = true
-	zone_2.activated = false
 	school.on_activate.connect(_school)
 	kurechii.on_activate.connect(_kurechii)
 	unimelb_1.on_activate.connect(_unimelb_1)
@@ -70,10 +72,10 @@ func _unimelb_1() -> void:
 	Achievements.activate_event(Achievements.Event.UNIMELB_1)
 
 func _kyodai() -> void:
-	Achievements.complete_event(Achievements.Event.KYODAI)
+	Achievements.activate_event(Achievements.Event.KYODAI)
 
 func _scs() -> void:
-	Achievements.complete_event(Achievements.Event.SCS)
+	Achievements.activate_event(Achievements.Event.SCS)
 
 func _unimelb_2() -> void:
 	Achievements.activate_event(Achievements.Event.UNIMELB_2)
@@ -88,3 +90,9 @@ func _game_jam_2() -> void:
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:
 		zone_2.activated = true
+	elif event == Achievements.Event.KURECHII:
+		zone_3.activated = true
+	elif event == Achievements.Event.UNIMELB_1:
+		zone_4.activated = true
+	elif event == Achievements.Event.UNIMELB_2:
+		zone_5.activated = true

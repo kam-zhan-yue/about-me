@@ -2,7 +2,7 @@ class_name Timezone
 extends Node2D
 
 var dates: Array[DateMark] = []
-var activated = false
+var activated := false
 
 func _ready() -> void:
 	var children = get_children()
