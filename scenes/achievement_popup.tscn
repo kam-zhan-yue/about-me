@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bve4hr8sl00nf"]
+[gd_scene load_steps=6 format=3 uid="uid://bve4hr8sl00nf"]
 
 [ext_resource type="Script" path="res://scripts/ui/achievement_popup.gd" id="1_3lcpr"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_aydhq"]
 [ext_resource type="Script" path="res://scripts/ui/navigation_holder.gd" id="3_dvqjr"]
+[ext_resource type="Texture2D" uid="uid://faimv807rjwj" path="res://media/1_cow.png" id="3_lj8pk"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_cvex4"]
 
@@ -31,10 +32,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -66,7 +67,7 @@ text = "[center]Uptick Software[/center]"
 fit_content = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 ratio = 1.7778
 
@@ -78,6 +79,9 @@ stream = SubResource("VideoStreamTheora_cvex4")
 [node name="Image" type="TextureRect" parent="MarginContainer/Panel/VBoxContainer/AspectRatioContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+texture = ExtResource("3_lj8pk")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
 unique_name_in_owner = true
@@ -99,7 +103,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/ButtonHolder"]
+[node name="OkButton" type="Button" parent="MarginContainer/Panel/ButtonHolder"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -163,3 +168,7 @@ grow_vertical = 2
 theme = ExtResource("2_aydhq")
 theme_override_font_sizes/font_size = 36
 text = ">"
+
+[connection signal="pressed" from="MarginContainer/Panel/ButtonHolder/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/NavigationHolder/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/NavigationHolder/Next" to="." method="_on_next_pressed"]

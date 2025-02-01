@@ -11,5 +11,5 @@ description = "これは私が初めて作ったゲームです。"
 
 [resource]
 script = ExtResource("2_eabf4")
-title = "初のゲーム"
+title = "Sleepwalker"
 pages = Array[ExtResource("1_r546d")]([SubResource("Resource_j0rxt")])

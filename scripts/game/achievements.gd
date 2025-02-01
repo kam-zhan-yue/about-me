@@ -72,9 +72,12 @@ var time := 0.0
 var start_date := Date.new()
 var end_date := Date.new()
 
+func get_achievement_id(achievement: Achievement) -> String:
+	return str(Achievement.keys()[achievement])
+
 func activate(achievement: Achievement) -> void:
-	var data = achievement_dict.get(achievement)
-	on_achievement.emit(data)
+	var data = achievement_data.get(achievement)
+	on_achievement.emit(data as AchievementData)
 
 func _process(delta: float) -> void:
 	if timer < time:
