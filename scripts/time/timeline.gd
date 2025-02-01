@@ -14,7 +14,7 @@ extends Node2D
 @onready var kyodai := %Kyodai as Building
 @onready var scs := %SCS as Building
 @onready var unimelb_2 := %"Unimelb 2" as Building
-@onready var game_jam_2 := %"Game Jam 2" as GameJam1
+@onready var game_jam_2 := %"Game Jam 2" as GameJam2
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 

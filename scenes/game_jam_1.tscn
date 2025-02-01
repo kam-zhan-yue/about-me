@@ -8,21 +8,21 @@
 script = ExtResource("1_o20wv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(250, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -150.0
+offset_top = -127.0
 offset_right = 100.0
-offset_bottom = -126.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8t02e")
 bbcode_enabled = true
-text = "[center]どんなゲームを作る？[/center]"
+text = "[center]どんなゲームを作ろうかな？[/center]"
 fit_content = true
 scroll_active = false
 
@@ -30,12 +30,12 @@ scroll_active = false
 position = Vector2(0, -8)
 
 [node name="BlockHolder" type="Node2D" parent="Level"]
-position = Vector2(0, -64)
+position = Vector2(0, -48)
 
 [node name="OneLastDrink" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
-position = Vector2(-32, 0)
+position = Vector2(-48, 0)
 
-[node name="Fighting" type="RichTextLabel" parent="Level/BlockHolder/OneLastDrink"]
+[node name="Label" type="RichTextLabel" parent="Level/BlockHolder/OneLastDrink"]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,14 +51,14 @@ grow_vertical = 2
 theme = ExtResource("1_8t02e")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]ファイティング[/center]"
+text = "[center]シミュレーションゲーム[/center]"
 fit_content = true
 scroll_active = false
 
-[node name="Greenpath" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
-position = Vector2(32, 0)
+[node name="Upbeet" parent="Level/BlockHolder" instance=ExtResource("2_7837g")]
+position = Vector2(48, 0)
 
-[node name="Fighting2" type="RichTextLabel" parent="Level/BlockHolder/Greenpath"]
+[node name="Label" type="RichTextLabel" parent="Level/BlockHolder/Upbeet"]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5

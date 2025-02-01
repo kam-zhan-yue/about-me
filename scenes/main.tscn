@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=15 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://i4xcs56u5ap7" path="res://scenes/kurechii.tscn" id="10_5v5k8"]
 [ext_resource type="PackedScene" uid="uid://cwsh57ll1ds0h" path="res://scenes/unimelb.tscn" id="10_gxug4"]
 [ext_resource type="PackedScene" uid="uid://d0usswb0j3key" path="res://scenes/kyodai.tscn" id="10_qeyme"]
+[ext_resource type="PackedScene" uid="uid://b1nyfhuflnhtg" path="res://scenes/game_jam_2.tscn" id="12_abch8"]
 [ext_resource type="PackedScene" uid="uid://dwfvmy3vdpnfi" path="res://scenes/scs.tscn" id="13_jfgtj"]
 
 [node name="Main" type="Node2D"]
@@ -119,7 +120,7 @@ gizmo_extents = 20.0
 position = Vector2(2754, 1)
 gizmo_extents = 20.0
 
-[node name="Game Jam 2" parent="Timeline" instance=ExtResource("8_4ta8e")]
+[node name="Game Jam 2" parent="Timeline" instance=ExtResource("12_abch8")]
 unique_name_in_owner = true
 position = Vector2(2760, 0)
 

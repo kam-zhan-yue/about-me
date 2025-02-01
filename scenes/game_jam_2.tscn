@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1nyfhuflnhtg"]
+
+[ext_resource type="Script" path="res://scripts/entities/game_jam_2.gd" id="1_chytc"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_fyi1p"]
+[ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="3_g6thp"]
+
+[node name="Game Jam 2" type="Node2D"]
+script = ExtResource("1_chytc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(250, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -127.0
+offset_right = 100.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+bbcode_enabled = true
+text = "[center]どんなゲームを作ろうかな？[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="FirstRound" type="Node2D" parent="Level"]
+unique_name_in_owner = true
+position = Vector2(0, -48)
+
+[node name="The Shackled" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+position = Vector2(-48, 0)
+
+[node name="Label" type="RichTextLabel" parent="Level/FirstRound/The Shackled"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -26.0
+offset_right = 100.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]怪獣[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Beans for Good" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+
+[node name="Label" type="RichTextLabel" parent="Level/FirstRound/Beans for Good"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -26.0
+offset_right = 99.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]寄付[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="TIDE" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+position = Vector2(48, 0)
+
+[node name="Label" type="RichTextLabel" parent="Level/FirstRound/TIDE"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -26.0
+offset_right = 99.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]タイピング[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="SecondRound" type="Node2D" parent="Level"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -48)
+
+[node name="RECollect" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+position = Vector2(-48, 0)
+
+[node name="Label" type="RichTextLabel" parent="Level/SecondRound/RECollect"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -26.0
+offset_right = 100.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]ストーリー[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Hundred Little Guys" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+
+[node name="Label" type="RichTextLabel" parent="Level/SecondRound/Hundred Little Guys"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -26.0
+offset_right = 99.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]ネズミ[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Swirly Whirly" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+position = Vector2(48, 0)
+
+[node name="Label" type="RichTextLabel" parent="Level/SecondRound/Swirly Whirly"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -26.0
+offset_right = 99.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fyi1p")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]ファイティング[/center]"
+fit_content = true
+scroll_active = false

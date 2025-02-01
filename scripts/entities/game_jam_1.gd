@@ -2,7 +2,7 @@ class_name GameJam1
 extends Node2D
 
 @onready var one_last_drink := $Level/BlockHolder/OneLastDrink as QuestionBlock
-@onready var greenpath := $Level/BlockHolder/Greenpath as QuestionBlock
+@onready var upbeet := $Level/BlockHolder/Upbeet as QuestionBlock
 
 const TOTAL = 2
 var hits := 0
@@ -11,14 +11,14 @@ signal on_complete
 
 func _ready() -> void:
 	one_last_drink.hit.connect(_one_last_drink)
-	greenpath.hit.connect(_greenpath)
+	upbeet.hit.connect(_upbeet)
 	
 func _one_last_drink() -> void:
 	Achievements.activate(Achievements.Achievement.ONE_LAST_DRINK)
 	check_complete()
 
-func _greenpath() -> void:
-	Achievements.activate(Achievements.Achievement.GREENPATH)
+func _upbeet() -> void:
+	Achievements.activate(Achievements.Achievement.UPBEET)
 	check_complete()
 
 func check_complete() -> void:
