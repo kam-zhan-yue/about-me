@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://diid4aineqjj2"]
+
+[ext_resource type="Script" path="res://scripts/ui/end_game_popup.gd" id="1_6ukh3"]
+[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="2_cntqs"]
+
+[node name="EndGamePopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ukh3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+theme = ExtResource("2_cntqs")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center]THANKS  FOR  PLAYING[/center]"
+fit_content = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0

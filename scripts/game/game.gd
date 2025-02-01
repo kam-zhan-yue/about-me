@@ -7,6 +7,7 @@ var date: Date
 
 # Signals
 signal on_date_changed(date: Date)
+signal on_end_game
 
 func init(p: Player = null, c: Camera = null, start_date: Date = null) -> void:
 	self.player = p
@@ -24,3 +25,6 @@ func in_bounds(pos_x: float) -> bool:
 	var left_bound = camera_screen_pos - camera_width
 	var right_bound = camera_screen_pos + camera_width
 	return left_bound < pos_x and pos_x < right_bound
+
+func end_game() -> void:
+	on_end_game.emit()
