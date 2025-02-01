@@ -75,3 +75,17 @@ func fade_out():
 		sprite.modulate.a = 1-t
 		await Global.frame()
 	sprite.modulate.a = 0.0
+
+func flagpole(target: Vector2):
+	sprite.play("jump_fall")
+	interactive = false
+	var time = (target.y - position.y) / Flagpole.FLAG_FALL_SPEED
+	if time < 0:
+		time = 0
+	var next_pos = Vector2(position.x,  target.y)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", next_pos, time)
+	tween.tween_callback(_end_flagpole)
+
+func _end_flagpole():
+	interactive = true

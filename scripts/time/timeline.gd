@@ -15,7 +15,8 @@ extends Node2D
 @onready var scs := %SCS as Building
 @onready var unimelb_2 := %"Unimelb 2" as Building
 @onready var game_jam_2 := %"Game Jam 2" as GameJam2
-@onready var final_point := $FinalPoint as Marker2D
+@onready var final := %Final as Building
+@onready var flagpole_jump := %FlagpoleJump as Marker2D
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -29,6 +30,7 @@ func _ready() -> void:
 	kyodai.on_activate.connect(_kyodai)
 	scs.on_activate.connect(_scs)
 	unimelb_2.on_activate.connect(_unimelb_2)
+	final.on_activate.connect(_final)
 	
 	game_jam_1.on_complete.connect(_game_jam_1)
 	game_jam_2.on_complete.connect(_game_jam_2)
@@ -44,6 +46,7 @@ func _ready() -> void:
 		Achievements.Event.SCS: scs,
 		Achievements.Event.UNIMELB_2: unimelb_2,
 		Achievements.Event.GAME_JAM_2: game_jam_2,
+		Achievements.Event.FLAGPOLE: flagpole_jump,
 	}
 
 	if SETTINGS.start_event != Achievements.Event.NONE:
@@ -51,7 +54,10 @@ func _ready() -> void:
 			if SETTINGS.start_event == event:
 				var location = timeline_dict.get(SETTINGS.start_event)
 				if location:
-					Game.player.global_position.x = location.global_position.x
+					if event == Achievements.Event.FLAGPOLE:
+						Game.player.global_position = location.global_position
+					else:
+						Game.player.global_position.x = location.global_position.x
 				break
 			else:
 				Achievements.complete_event(event)
@@ -59,9 +65,12 @@ func _ready() -> void:
 func get_bound() -> float:
 	for event in timeline_dict:
 		if not Achievements.has_completed(event):
+			# Ignore the flagpole
+			if event == Achievements.Event.FLAGPOLE:
+				continue
 			if timeline_dict.get(event):
 				return timeline_dict[event].global_position.x
-	return final_point.global_position.x
+	return final.global_position.x
 
 func _school() -> void:
 	Achievements.activate_event(Achievements.Event.SCHOOL)
@@ -86,6 +95,10 @@ func _game_jam_1() -> void:
 
 func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
+
+func _final() -> void:
+	Game.player.fade_out()
+	
 
 
 func _on_event_complete(event: Achievements.Event) -> void:

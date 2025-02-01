@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=4 uid="uid://bwg3vgfdykxuq"]
+
+[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_1ml8j"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="3_pgjo1"]
+[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_eu1kk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
+size = Vector2(20, 32)
+
+[node name="Final" type="Node2D"]
+script = ExtResource("1_1ml8j")
+
+[node name="Building" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAAAAP7/AAABAAUAAAAAAP//AAABAAYAAAABAP7/AAACAAQAAAABAP//AAACAAQAAAD///7/AAACAAQAAAD/////AAACAAQAAAD+//7/AAACAAQAAAD+////AAACAAQAAAACAP7/AAACAAQAAAACAP//AAACAAQAAAD+//3/AAAAAAQAAAACAP3/AAAAAAQAAAD///3/AAACAAYAAAAAAP3/AAACAAYAAAABAP3/AAACAAYAAAD///z/AAAAAAUAAAABAPz/AAACAAUAAAAAAPz/AAACAAQAAAD///v/AAAAAAQAAAAAAPv/AAAAAAQAAAABAPv/AAAAAAQAAAA=")
+tile_set = ExtResource("3_pgjo1")
+
+[node name="Entry" type="Marker2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="Interaction" type="Area2D" parent="Entry"]
+position = Vector2(8, -10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry/Interaction"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rakqr")
+debug_color = Color(0.815982, 0.00194121, 0.974692, 0.42)
+
+[node name="EnterLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_eu1kk")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]ENTER[/center]"
+fit_content = true
+
+[connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

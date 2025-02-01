@@ -10,6 +10,7 @@ enum Event {
 	SCS,
 	UNIMELB_2,
 	GAME_JAM_2,
+	FLAGPOLE,
 }
 
 enum Achievement {
@@ -155,42 +156,42 @@ func school_sequence() -> void:
 	start_date = Date.new(2008, 1)
 	end_date = Date.new(2020, 12)
 	timer = 0.0
-	time = 2.0
+	time = 8.0
 
 func kurechii_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2021, 2)
 	end_date = Date.new(2022, 1)
 	timer = 0.0
-	time = 2.0
+	time = 5.0
 	
 func university_sequence_1() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2022, 1)
 	end_date = Date.new(2023, 1)
 	timer = 0.0
-	time = 2.0
+	time = 5.0
 
 func kyodai_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2023, 4)
 	end_date = Date.new(2023, 8)
 	timer = 0.0
-	time = 2.0
+	time = 5.0
 	
 func scs_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2023, 8)
 	end_date = Date.new(2024, 1)
 	timer = 0.0
-	time = 2.0
+	time = 5.0
 	
 func university_sequence_2() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2024, 2)
 	end_date = Date.new(2024, 9)
 	timer = 0.0
-	time = 2.0
+	time = 5.0
 
 func end_sequence() -> void:
 	await Game.player.fade_in()
