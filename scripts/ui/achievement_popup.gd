@@ -33,8 +33,8 @@ func init_page(page_data: PageData) -> void:
 	print("Opening File: ", file)
 	var media = load(file)
 	if page_data.media == PageData.Media.IMAGE:
-		Global.set_inactive(video)
-		Global.set_active(image)
+		#Global.set_inactive(video)
+		#Global.set_active(image)
 		image.texture = media as Texture2D
 	else:
 		Global.set_inactive(image)
