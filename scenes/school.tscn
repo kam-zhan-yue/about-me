@@ -31,7 +31,7 @@ grow_vertical = 2
 theme = ExtResource("3_6hi01")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "[outline_size=8][center]はいる[/center][/outline_size]"
+text = "[outline_size=2][center]はいる[/center][/outline_size]"
 fit_content = true
 
 [node name="TitleLabel" type="RichTextLabel" parent="."]

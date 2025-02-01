@@ -1,19 +1,164 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh2faluuhadxu"]
+[gd_scene load_steps=5 format=3 uid="uid://dh2faluuhadxu"]
 
-[ext_resource type="PackedScene" uid="uid://cd5owxxw04aq1" path="res://scenes/date_popup.tscn" id="1_sdfug"]
 [ext_resource type="Script" path="res://scripts/ui/game_popup.gd" id="1_vcy8p"]
+[ext_resource type="Script" path="res://scripts/ui/date_popup.gd" id="3_7kqck"]
+[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="3_ss62g"]
+[ext_resource type="Script" path="res://scripts/ui/time_popup.gd" id="4_ji6nt"]
 
 [node name="GamePopup" type="Control"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vcy8p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_vcy8p")
 
-[node name="DatePopup" parent="." instance=ExtResource("1_sdfug")]
+[node name="DatePopup" type="Control" parent="HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+script = ExtResource("3_7kqck")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/DatePopup"]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/DatePopup/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+bbcode_enabled = true
+text = "[center]DATE[/center]"
+fit_content = true
+
+[node name="DateLabel" type="RichTextLabel" parent="HBoxContainer/DatePopup/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]2002年8月[/center]"
+fit_content = true
+
+[node name="Coins" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Coins"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/Coins/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+bbcode_enabled = true
+text = "[center]COINS[/center]"
+fit_content = true
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/Coins/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]0[/center]"
+fit_content = true
+
+[node name="World" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/World"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/World/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+bbcode_enabled = true
+text = "[center]WORLD[/center]"
+fit_content = true
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/World/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]1-1[/center]"
+fit_content = true
+
+[node name="TimePopup" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+script = ExtResource("4_ji6nt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TimePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/TimePopup/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+bbcode_enabled = true
+text = "[center]TIME[/center]"
+fit_content = true
+
+[node name="TimeLabel" type="RichTextLabel" parent="HBoxContainer/TimePopup/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]0[/center]"
+fit_content = true
+
+[node name="Lives" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Lives"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/Lives/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+bbcode_enabled = true
+text = "[center]LIVES[/center]"
+fit_content = true
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/Lives/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ss62g")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]3[/center]"
+fit_content = true
