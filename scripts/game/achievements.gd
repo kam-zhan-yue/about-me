@@ -58,31 +58,39 @@ var achievement_data = {
 }
 
 var achievement_dict = {
-	Date.new(2017, 4): Achievement.FIRST_GAME,
-	Date.new(2018, 4): Achievement.ENTER_THE_ARENA,
-	Date.new(2019, 6): Achievement.TEACHING_GAMES,
-	Date.new(2019, 9): Achievement.ASCENSION,
-	Date.new(2020, 9): Achievement.GRADUATION,
+	str(Date.new(2017, 4)): Achievement.FIRST_GAME,
+	str(Date.new(2018, 4)): Achievement.ENTER_THE_ARENA,
+	str(Date.new(2019, 6)): Achievement.TEACHING_GAMES,
+	str(Date.new(2019, 9)): Achievement.ASCENSION,
+	str(Date.new(2020, 9)): Achievement.GRADUATION,
 }
 
 signal on_achievement(data: AchievementData)
 
+var completed = {}
 var timer := 0.0
 var time := 0.0
 var start_date := Date.new()
 var end_date := Date.new()
 
+
 func get_achievement_id(achievement: Achievement) -> String:
 	return str(Achievement.keys()[achievement])
 
 func activate(achievement: Achievement) -> void:
+	if achievement in completed:
+		return
+	completed[achievement] = true
 	var data = achievement_data.get(achievement)
 	on_achievement.emit(data as AchievementData)
 
 func _process(delta: float) -> void:
 	if timer < time:
 		var p := timer / time
-		Global.update_date(start_date.lerp_date(end_date, p))
+		Game.update_date(start_date.lerp_date(end_date, p))
+		
+		if str(Game.date) in achievement_dict:
+			activate(achievement_dict[str(Game.date)])
 		timer += delta
 		if timer >= time:
 			end_sequence()

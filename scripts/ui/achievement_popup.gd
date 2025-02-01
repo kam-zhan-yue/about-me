@@ -27,6 +27,7 @@ func init(achievement_data: AchievementData) -> void:
 	title.text = Global.wrap_center(data.title)
 	page_index = 0
 	init_page(data.pages[0])
+	Game.pause(true)
 
 func init_page(page_data: PageData) -> void:
 	var file = str("res://media/", page_data.filename)
@@ -57,6 +58,7 @@ func check_footer() -> void:
 
 func _on_ok_button_pressed() -> void:
 	Global.set_inactive(self)
+	Game.pause(false)
 
 
 func _on_previous_pressed() -> void:
