@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=4 uid="uid://d0usswb0j3key"]
+
+[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_65s4x"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_1ilhc"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="3_k7fkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
+size = Vector2(20, 32)
+
+[node name="Kyodai" type="Node2D"]
+script = ExtResource("1_65s4x")
+
+[node name="Building" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAD6//3/AAAAAAQAAAD6//7/AAACAAQAAAD6////AAACAAQAAAD7//3/AAAAAAQAAAD7//7/AAACAAQAAAD7////AAACAAQAAAD8//3/AAAAAAQAAAD8//7/AAACAAQAAAD8////AAACAAQAAAD9//r/AAAAAAQAAAD9//v/AAACAAQAAAD9//z/AAACAAQAAAD9//3/AAACAAYAAAD9//7/AAACAAQAAAD9////AAACAAQAAAD+//r/AAAAAAQAAAD+//v/AAACAAQAAAD+//z/AAACAAQAAAD+//3/AAACAAYAAAD+//7/AAACAAQAAAD+////AAACAAQAAAD///r/AAAAAAQAAAD///v/AAABAAUAAAD///z/AAABAAYAAAD///3/AAACAAYAAAD///7/AAACAAQAAAD/////AAACAAQAAAAAAPr/AAAAAAQAAAAAAPv/AAACAAQAAAAAAPz/AAACAAQAAAAAAP3/AAACAAYAAAAAAP7/AAABAAUAAAAAAP//AAABAAYAAAABAPr/AAAAAAQAAAABAPv/AAABAAUAAAABAPz/AAABAAYAAAABAP3/AAACAAYAAAABAP7/AAACAAQAAAABAP//AAACAAQAAAACAPr/AAAAAAQAAAACAPv/AAACAAQAAAACAPz/AAACAAQAAAACAP3/AAACAAYAAAACAP7/AAACAAQAAAACAP//AAACAAQAAAADAPr/AAAAAAQAAAADAPv/AAACAAQAAAADAPz/AAACAAQAAAADAP3/AAACAAYAAAADAP7/AAACAAQAAAADAP//AAACAAQAAAAEAP3/AAAAAAQAAAAEAP7/AAACAAQAAAAEAP//AAACAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAACAAQAAAAFAP//AAACAAQAAAAGAP3/AAAAAAQAAAAGAP7/AAACAAQAAAAGAP//AAACAAQAAAA=")
+tile_set = ExtResource("2_1ilhc")
+
+[node name="EnterLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -49.0
+offset_right = 20.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_k7fkb")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[outline_size=8][center]はいる[/center][/outline_size]"
+fit_content = true
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -122.0
+offset_right = 149.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_k7fkb")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[outline_size=8][center]京都大学[/center][/outline_size]"
+fit_content = true
+
+[node name="Entry" type="Marker2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="Interaction" type="Area2D" parent="Entry"]
+position = Vector2(8, -10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry/Interaction"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rakqr")
+debug_color = Color(0.815982, 0.00194121, 0.974692, 0.42)
+
+[connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

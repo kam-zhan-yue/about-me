@@ -23,7 +23,6 @@ func _on_achievement(achievement: AchievementData) -> void:
 
 func init(achievement_data: AchievementData) -> void:
 	self.data = achievement_data
-	print("Data is ", achievement_data)
 	title.text = Global.wrap_center(data.title)
 	page_index = 0
 	init_page(data.pages[0])

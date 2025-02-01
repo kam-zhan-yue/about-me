@@ -6,7 +6,7 @@ enum Event {
 	KURECHII,
 	UNIMELB_1,
 	GAME_JAM_1,
-	KYOTO_UNI,
+	KYODAI,
 	SCS,
 	UNIMELB_2,
 	GAME_JAM_2,
@@ -113,6 +113,7 @@ func _process(delta: float) -> void:
 
 
 func complete_event(event: Event) -> void:
+	print("Completing Event: ", get_event_id(event))
 	completed_events[event] = true
 
 func activate_event(event: Event) -> void:
@@ -125,7 +126,7 @@ func activate_event(event: Event) -> void:
 		kurechii_sequence()
 	elif event == Event.SCS:
 		scs_sequence()
-	elif event == Event.KYOTO_UNI:
+	elif event == Event.KYODAI:
 		kyodai_sequence()
 	elif event == Event.UNIMELB_1:
 		university_sequence_1()
@@ -136,7 +137,7 @@ func school_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2008, 1)
 	end_date = Date.new(2021, 12)
-	Global.update_date(start_date)
+	Game.update_date(start_date)
 	timer = 0.0
 	time = 8.0
 
@@ -144,7 +145,7 @@ func kurechii_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2008, 1)
 	end_date = Date.new(2021, 12)
-	Global.update_date(start_date)
+	Game.update_date(start_date)
 	timer = 0.0
 	time = 8.0
 	
