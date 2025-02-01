@@ -7,7 +7,7 @@
 script = ExtResource("1_orjs3")
 media = 1
 filename = "15_the_shackled.ogv"
-description = "ブラックホールに囚われた神となって、脱出するために周囲の惑星を食べて大きくなるゲームです。Uniyで2人のチームで3日間で開発した。
+description = "ブラックホールに囚われた神となって、脱出するために周囲の惑星を食べて大きくなるゲームです。Unityで2人のチームで3日間で開発した。
 "
 
 [resource]

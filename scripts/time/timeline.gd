@@ -15,6 +15,7 @@ extends Node2D
 @onready var scs := %SCS as Building
 @onready var unimelb_2 := %"Unimelb 2" as Building
 @onready var game_jam_2 := %"Game Jam 2" as GameJam2
+@onready var final_point := $FinalPoint as Marker2D
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -60,7 +61,7 @@ func get_bound() -> float:
 		if not Achievements.has_completed(event):
 			if timeline_dict.get(event):
 				return timeline_dict[event].global_position.x
-	return 10000
+	return final_point.global_position.x
 
 func _school() -> void:
 	Achievements.activate_event(Achievements.Event.SCHOOL)

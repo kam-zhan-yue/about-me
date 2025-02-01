@@ -31,10 +31,10 @@ func _set_showing_true() -> void:
 	self.showing = true
 
 func hide_popup() -> void:
+	showing = false
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2.ZERO, 0.6).set_trans(Tween.TRANS_EXPO)
 	tween.tween_callback(_hide)
-	showing = false
 
 func _hide() -> void:
 	Global.set_inactive(self)
@@ -53,11 +53,11 @@ func init(achievement_data: AchievementData) -> void:
 	init_page(data.pages[0])
 	
 func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_SPACE) and is_last_page():
+	if Input.is_key_pressed(KEY_SPACE) and is_last_page() and showing:
 		_on_ok_button_pressed()
 	elif Input.is_key_pressed(KEY_LEFT) and has_previous():
 		_on_previous_pressed()
-	elif Input.is_key_pressed(KEY_RIGHT) and has_next():
+	elif (Input.is_key_pressed(KEY_SPACE) or Input.is_key_pressed(KEY_RIGHT)) and has_next():
 		_on_next_pressed()
 
 func init_page(page_data: PageData) -> void:
