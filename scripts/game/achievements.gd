@@ -1,13 +1,14 @@
 extends Node
 
 enum Event {
+	NONE,
 	SCHOOL,
 	KURECHII,
-	MELBOURNE_UNI_1,
+	UNIMELB_1,
 	GAME_JAM_1,
 	KYOTO_UNI,
 	SCS,
-	MELBOURNE_UNI_2,
+	UNIMELB_2,
 	GAME_JAM_2,
 }
 
@@ -122,20 +123,26 @@ func activate_event(event: Event) -> void:
 		scs_sequence()
 	elif event == Event.KYOTO_UNI:
 		kyodai_sequence()
-	elif event == Event.MELBOURNE_UNI_1:
+	elif event == Event.UNIMELB_1:
 		university_sequence_1()
-	elif event == Event.MELBOURNE_UNI_2:
+	elif event == Event.UNIMELB_2:
 		university_sequence_2()
 
 func school_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2008, 1)
 	end_date = Date.new(2021, 12)
+	Global.update_date(start_date)
 	timer = 0.0
-	time = 10.0
+	time = 8.0
 
 func kurechii_sequence() -> void:
-	pass
+	await Game.player.fade_out()
+	start_date = Date.new(2008, 1)
+	end_date = Date.new(2021, 12)
+	Global.update_date(start_date)
+	timer = 0.0
+	time = 8.0
 	
 func scs_sequence() -> void:
 	pass
