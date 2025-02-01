@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var school := %School as Building
 @onready var kurechii := %Kurechii as Building
-@onready var game_jam_1 := %"Game Jam 1" as Node2D
+@onready var game_jam_1 := %"Game Jam 1" as GameJam1
 @onready var unimelb_1 := %"Unimelb 1" as Building
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
@@ -14,6 +14,8 @@ func _ready() -> void:
 	school.on_activate.connect(_school)
 	kurechii.on_activate.connect(_kurechii)
 	unimelb_1.on_activate.connect(_unimelb_1)
+	
+	game_jam_1.on_complete.connect(_game_jam_1)
 	timeline_dict = {
 		Achievements.Event.SCHOOL: school,
 		Achievements.Event.KURECHII: kurechii,
@@ -46,3 +48,6 @@ func _kurechii() -> void:
 	
 func _unimelb_1() -> void:
 	Achievements.activate_event(Achievements.Event.UNIMELB_1)
+
+func _game_jam_1() -> void:
+	Achievements.complete_event(Achievements.Event.GAME_JAM_1)

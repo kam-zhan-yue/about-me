@@ -111,10 +111,14 @@ func _process(delta: float) -> void:
 		if timer >= time:
 			end_sequence()
 
+
+func complete_event(event: Event) -> void:
+	completed_events[event] = true
+
 func activate_event(event: Event) -> void:
 	if event in completed_events:
 		return
-	completed_events[event] = true
+	complete_event(event)
 	if event == Event.SCHOOL:
 		school_sequence()
 	elif event == Event.KURECHII:
