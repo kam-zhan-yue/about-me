@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bve4hr8sl00nf"]
+[gd_scene load_steps=5 format=3 uid="uid://bve4hr8sl00nf"]
 
 [ext_resource type="Script" path="res://scripts/ui/achievement_popup.gd" id="1_3lcpr"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_aydhq"]
-[ext_resource type="Script" path="res://scripts/ui/navigation_holder.gd" id="3_dvqjr"]
 [ext_resource type="Texture2D" uid="uid://faimv807rjwj" path="res://media/1_cow.png" id="3_lj8pk"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_cvex4"]
@@ -94,12 +93,14 @@ text = "[center]This is a description of everything yayy[/center]"
 fit_content = true
 
 [node name="ButtonHolder" type="Control" parent="MarginContainer/Panel"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_top = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -122,19 +123,16 @@ theme = ExtResource("2_aydhq")
 theme_override_font_sizes/font_size = 36
 text = "OK"
 
-[node name="NavigationHolder" type="Control" parent="MarginContainer/Panel"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 100)
+[node name="PreviousHolder" type="Control" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_top = -100.0
 grow_vertical = 0
-script = ExtResource("3_dvqjr")
 
-[node name="Previous" type="Button" parent="MarginContainer/Panel/NavigationHolder"]
+[node name="Previous" type="Button" parent="MarginContainer/Panel/PreviousHolder"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
@@ -150,7 +148,21 @@ theme = ExtResource("2_aydhq")
 theme_override_font_sizes/font_size = 36
 text = "<"
 
-[node name="Next" type="Button" parent="MarginContainer/Panel/NavigationHolder"]
+[node name="NextHolder" type="Control" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -101.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Next" type="Button" parent="MarginContainer/Panel/NextHolder"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
@@ -170,5 +182,5 @@ theme_override_font_sizes/font_size = 36
 text = ">"
 
 [connection signal="pressed" from="MarginContainer/Panel/ButtonHolder/OkButton" to="." method="_on_ok_button_pressed"]
-[connection signal="pressed" from="MarginContainer/Panel/NavigationHolder/Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="MarginContainer/Panel/NavigationHolder/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/PreviousHolder/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/NextHolder/Next" to="." method="_on_next_pressed"]

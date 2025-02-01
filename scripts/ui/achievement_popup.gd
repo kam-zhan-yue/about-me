@@ -5,7 +5,6 @@ var data: AchievementData
 
 @onready var title := %Title as RichTextLabel
 @onready var description := %Description as RichTextLabel
-@onready var navigation_holder := %NavigationHolder as NavigationPopupItem
 @onready var video := %Video as VideoStreamPlayer
 @onready var image := %Image as TextureRect
 @onready var next_button := %Next as Button
