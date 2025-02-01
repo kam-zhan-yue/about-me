@@ -11,5 +11,5 @@ description = "JavaとProcessingというグラフィックスライブラリを
 
 [resource]
 script = ExtResource("1_a6qqt")
-title = "初のゲーム"
+title = "FIRST  GAME"
 pages = Array[ExtResource("1_e662a")]([SubResource("Resource_j0rxt")])
