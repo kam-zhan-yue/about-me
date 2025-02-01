@@ -18,7 +18,7 @@ description = "FSMを使用して、ボスやエネミーの行動パターン�
 [sub_resource type="Resource" id="Resource_cw1ba"]
 script = ExtResource("1_byaxn")
 media = 0
-filename = ""
+filename = "6_postknight_2_ui.jpg"
 description = "UIプログラミングにもたくさん携わった。Unity UIとC＃をしっかり学んだ。"
 
 [resource]

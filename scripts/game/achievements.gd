@@ -23,12 +23,15 @@ enum Achievement {
 	# Kurechii
 	POSTKNIGHT_2,
 	
-	# Game Jam 1
+	# University 1
 	GREENPATH,
+	
+	# Game Jam 1
 	ONE_LAST_DRINK,
+	UPBEET,
 	
 	# Kyoto University Period
-	UPBEET,
+	RUGBY,
 	SLEEPWALKER,
 	
 	# Skeleton Crew Studio
@@ -67,6 +70,7 @@ var achievement_data = {
 	Achievement.RE_COLLECT: preload("res://resources/achievements/17_re_collect.tres"),
 	Achievement.HUNDRED_LITTLE_GUYS: preload("res://resources/achievements/18_hundred_little_guys.tres"),
 	Achievement.SWIRLY_WHIRLY: preload("res://resources/achievements/19_swirly_whirly.tres"),
+	Achievement.RUGBY: preload("res://resources/achievements/rugby.tres")
 }
 
 var achievement_dict = {
@@ -74,7 +78,14 @@ var achievement_dict = {
 	str(Date.new(2018, 4)): Achievement.ENTER_THE_ARENA,
 	str(Date.new(2019, 6)): Achievement.TEACHING_GAMES,
 	str(Date.new(2019, 9)): Achievement.ASCENSION,
-	str(Date.new(2020, 9)): Achievement.GRADUATION,
+	#str(Date.new(2020, 9)): Achievement.GRADUATION,
+	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
+	str(Date.new(2022, 6)): Achievement.GREENPATH,
+	str(Date.new(2023, 5)): Achievement.RUGBY,
+	str(Date.new(2023, 7)): Achievement.SLEEPWALKER,
+	str(Date.new(2023, 11)): Achievement.DEATH_GAME_HOTEL,
+	str(Date.new(2024, 3)): Achievement.GAME_MAKERS_CLUB,
+	str(Date.new(2024, 8)): Achievement.UPTICK,
 }
 
 signal on_achievement(data: AchievementData)

@@ -42,6 +42,7 @@ func init_page(page_data: PageData) -> void:
 		Global.set_active(video)
 		video.stream = media as VideoStream
 		video.loop = true
+		video.volume = 0
 		video.play()
 	description.text = Global.wrap_center(page_data.description)
 	check_footer()

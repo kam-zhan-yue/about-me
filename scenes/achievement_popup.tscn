@@ -45,6 +45,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 70.0
 grow_horizontal = 2
+alignment = 1
 
 [node name="Unlocked" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)

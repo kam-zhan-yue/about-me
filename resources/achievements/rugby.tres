@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://cadoflo5q0fjf"]
+
+[ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_qr6sf"]
+[ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_xupht"]
+
+[sub_resource type="Resource" id="Resource_j0rxt"]
+script = ExtResource("1_qr6sf")
+media = 0
+filename = "rugby.jpg"
+description = "初心者としてラグビー部に入った。1年間練習して、初トライもできた。"
+
+[resource]
+script = ExtResource("2_xupht")
+title = "京都大学ラグビー部"
+pages = Array[ExtResource("1_qr6sf")]([SubResource("Resource_j0rxt")])
