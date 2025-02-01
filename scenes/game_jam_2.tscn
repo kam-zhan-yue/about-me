@@ -34,6 +34,7 @@ unique_name_in_owner = true
 position = Vector2(0, -48)
 
 [node name="The Shackled" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 position = Vector2(-48, 0)
 
 [node name="Label" type="RichTextLabel" parent="Level/FirstRound/The Shackled"]
@@ -57,6 +58,7 @@ fit_content = true
 scroll_active = false
 
 [node name="Beans for Good" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 
 [node name="Label" type="RichTextLabel" parent="Level/FirstRound/Beans for Good"]
 custom_minimum_size = Vector2(200, 0)
@@ -79,6 +81,7 @@ fit_content = true
 scroll_active = false
 
 [node name="TIDE" parent="Level/FirstRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 position = Vector2(48, 0)
 
 [node name="Label" type="RichTextLabel" parent="Level/FirstRound/TIDE"]
@@ -107,6 +110,7 @@ visible = false
 position = Vector2(0, -48)
 
 [node name="RECollect" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 position = Vector2(-48, 0)
 
 [node name="Label" type="RichTextLabel" parent="Level/SecondRound/RECollect"]
@@ -130,6 +134,7 @@ fit_content = true
 scroll_active = false
 
 [node name="Hundred Little Guys" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 
 [node name="Label" type="RichTextLabel" parent="Level/SecondRound/Hundred Little Guys"]
 custom_minimum_size = Vector2(200, 0)
@@ -152,6 +157,7 @@ fit_content = true
 scroll_active = false
 
 [node name="Swirly Whirly" parent="Level/SecondRound" instance=ExtResource("3_g6thp")]
+unique_name_in_owner = true
 position = Vector2(48, 0)
 
 [node name="Label" type="RichTextLabel" parent="Level/SecondRound/Swirly Whirly"]
