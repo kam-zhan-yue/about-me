@@ -2,6 +2,7 @@ class_name Timezone
 extends Node2D
 
 var dates: Array[DateMark] = []
+var activated = false
 
 func _ready() -> void:
 	var children = get_children()
@@ -13,6 +14,7 @@ func _ready() -> void:
 		dates.push_back(DateMark.new(Date.new(year, month), child.global_position))
 
 func _process(_delta: float) -> void:
+	if not activated: return
 	var player_x := Game.player.position.x
 	if player_x <= dates[-1].pos.x:
 		for i in range(len(dates) - 1):

@@ -47,12 +47,12 @@ gizmo_extents = 20.0
 position = Vector2(7, 0)
 script = ExtResource("5_tu4g5")
 
-[node name="2008-02" type="Marker2D" parent="Timeline/Zone 2"]
-position = Vector2(587, 0)
+[node name="2020-12" type="Marker2D" parent="Timeline/Zone 2"]
+position = Vector2(573, 0)
 gizmo_extents = 20.0
 
-[node name="2012-01" type="Marker2D" parent="Timeline/Zone 2"]
-position = Vector2(915, 1)
+[node name="2021-2" type="Marker2D" parent="Timeline/Zone 2"]
+position = Vector2(795, 1)
 gizmo_extents = 20.0
 
 [node name="School" parent="Timeline" instance=ExtResource("6_8rhnj")]

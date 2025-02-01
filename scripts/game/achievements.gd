@@ -78,6 +78,7 @@ var achievement_dict = {
 }
 
 signal on_achievement(data: AchievementData)
+signal on_event_completed(event: Event)
 
 var completed = {}
 var completed_events = {}
@@ -85,7 +86,7 @@ var timer := 0.0
 var time := 0.0
 var start_date := Date.new()
 var end_date := Date.new()
-
+var current_event := Event.NONE
 
 func get_achievement_id(achievement: Achievement) -> String:
 	return str(Achievement.keys()[achievement])
@@ -109,17 +110,20 @@ func _process(delta: float) -> void:
 			activate(achievement_dict[str(Game.date)])
 		timer += delta
 		if timer >= time:
+			complete_event(current_event)
 			end_sequence()
 
 
 func complete_event(event: Event) -> void:
 	print("Completing Event: ", get_event_id(event))
 	completed_events[event] = true
+	on_event_completed.emit(event)
 
 func activate_event(event: Event) -> void:
 	if event in completed_events:
 		return
-	complete_event(event)
+	print("Activating: ", get_event_id(event))
+	current_event = event
 	if event == Event.SCHOOL:
 		school_sequence()
 	elif event == Event.KURECHII:
@@ -136,27 +140,33 @@ func activate_event(event: Event) -> void:
 func school_sequence() -> void:
 	await Game.player.fade_out()
 	start_date = Date.new(2008, 1)
-	end_date = Date.new(2021, 12)
+	end_date = Date.new(2020, 12)
 	Game.update_date(start_date)
 	timer = 0.0
-	time = 8.0
+	time = 2.0
 
 func kurechii_sequence() -> void:
 	await Game.player.fade_out()
-	start_date = Date.new(2008, 1)
-	end_date = Date.new(2021, 12)
+	start_date = Date.new(2021, 2)
+	end_date = Date.new(2022, 1)
 	Game.update_date(start_date)
 	timer = 0.0
 	time = 8.0
 	
+func university_sequence_1() -> void:
+	await Game.player.fade_out()
+	start_date = Date.new(2022, 1)
+	end_date = Date.new(2023, 1)
+	Game.update_date(start_date)
+	timer = 0.0
+	time = 8.0
+
 func scs_sequence() -> void:
 	pass
 
 func kyodai_sequence() -> void:
 	pass
 	
-func university_sequence_1() -> void:
-	pass
 	
 func university_sequence_2() -> void:
 	pass

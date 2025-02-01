@@ -1,6 +1,9 @@
 class_name Timeline
 extends Node2D
 
+@onready var zone_1 := $"Zone 1" as Timezone
+@onready var zone_2 := $"Zone 2" as Timezone
+
 @onready var school := %School as Building
 @onready var kurechii := %Kurechii as Building
 @onready var unimelb_1 := %"Unimelb 1" as Building
@@ -15,6 +18,8 @@ const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 var timeline_dict = {}
 
 func _ready() -> void:
+	zone_1.activated = true
+	zone_2.activated = false
 	school.on_activate.connect(_school)
 	kurechii.on_activate.connect(_kurechii)
 	unimelb_1.on_activate.connect(_unimelb_1)
@@ -24,6 +29,9 @@ func _ready() -> void:
 	
 	game_jam_1.on_complete.connect(_game_jam_1)
 	game_jam_2.on_complete.connect(_game_jam_2)
+	
+	Achievements.on_event_completed.connect(_on_event_complete)
+	
 	timeline_dict = {
 		Achievements.Event.SCHOOL: school,
 		Achievements.Event.KURECHII: kurechii,
@@ -75,3 +83,8 @@ func _game_jam_1() -> void:
 
 func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
+
+
+func _on_event_complete(event: Achievements.Event) -> void:
+	if event == Achievements.Event.SCHOOL:
+		zone_2.activated = true

@@ -149,7 +149,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nlggi"]
 radius = 7.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0l25"]
 size = Vector2(7, 3)
@@ -159,7 +159,7 @@ script = ExtResource("1_fsbbb")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r33do")
-animation = &"jump_start"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_nlggi")
