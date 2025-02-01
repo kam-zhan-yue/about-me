@@ -97,7 +97,6 @@ func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
 
 func _final() -> void:
-	Game.player.fade_out()
 	Game.end_game()
 
 

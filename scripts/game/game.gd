@@ -27,4 +27,5 @@ func in_bounds(pos_x: float) -> bool:
 	return left_bound < pos_x and pos_x < right_bound
 
 func end_game() -> void:
+	player.fade_out()
 	on_end_game.emit()

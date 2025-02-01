@@ -68,7 +68,7 @@ grow_vertical = 2
 theme = ExtResource("4_jq860")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "[center]Australian International School Malaysia[/center]"
+text = "[center]Australian  International  School  Malaysia[/center]"
 fit_content = true
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
