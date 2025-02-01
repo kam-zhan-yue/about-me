@@ -7,9 +7,9 @@
 script = ExtResource("1_e662a")
 media = 0
 filename = "1_cow.png"
-description = "This is the first image"
+description = "これは私が初めて作ったゲームです。"
 
 [resource]
 script = ExtResource("1_a6qqt")
-title = ""
+title = "初のゲーム"
 pages = Array[ExtResource("1_e662a")]([SubResource("Resource_j0rxt")])

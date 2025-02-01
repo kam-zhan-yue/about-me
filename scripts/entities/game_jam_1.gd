@@ -8,8 +8,8 @@ func _ready() -> void:
 	greenpath.hit.connect(_greenpath)
 	
 func _one_last_drink() -> void:
-	Global.activate("ONE_LAST_DRINK")
+	Achievements.activate(Achievements.Achievement.ONE_LAST_DRINK)
 
 
 func _greenpath() -> void:
-	pass
+	Achievements.activate(Achievements.Achievement.GREENPATH)

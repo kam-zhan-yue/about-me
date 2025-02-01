@@ -18,13 +18,13 @@ func _input(event: InputEvent) -> void:
 	if not played and interactive and Input.is_key_pressed(KEY_SPACE):
 		played = true
 		Global.set_inactive(enter_label)
-		Game.activate_sequence("SCHOOL")
+		Achievements.activate_sequence("SCHOOL")
 
-func _on_interaction_area_entered(area: Area2D) -> void:
+func _on_interaction_area_entered(_area: Area2D) -> void:
 	Global.set_active(enter_label)
 	interactive = true
 
 
-func _on_interaction_area_exited(area: Area2D) -> void:
+func _on_interaction_area_exited(_area: Area2D) -> void:
 	Global.set_inactive(enter_label)
 	interactive = false
