@@ -90,10 +90,16 @@ func _game_jam_2() -> void:
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:
+		school.raise_flag()
 		zone_2.activated = true
 	elif event == Achievements.Event.KURECHII:
+		kurechii.raise_flag()
 		zone_3.activated = true
 	elif event == Achievements.Event.UNIMELB_1:
+		unimelb_1.raise_flag()
 		zone_4.activated = true
+	elif event == Achievements.Event.SCS:
+		scs.raise_flag()
 	elif event == Achievements.Event.UNIMELB_2:
+		unimelb_2.raise_flag()
 		zone_5.activated = true

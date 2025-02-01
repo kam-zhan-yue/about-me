@@ -3,7 +3,7 @@ extends CharacterBody2D
  
 @onready var sprite := $Sprite as AnimatedSprite2D
 
-const FADE_TIME = 1.2
+const FADE_TIME = 1.0
 const SPEED = 175.0
 const JUMP_VELOCITY = -350.0
 const PLAYER_WIDTH = 18.0

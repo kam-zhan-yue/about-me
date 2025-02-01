@@ -1,23 +1,19 @@
-[gd_scene load_steps=6 format=4 uid="uid://mw3x1lbufg6o"]
+[gd_scene load_steps=5 format=4 uid="uid://dl3auj8fgnutr"]
 
-[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_fd5ye"]
-[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_ijrp8"]
-[ext_resource type="PackedScene" uid="uid://crok82tbrgj37" path="res://scenes/flag.tscn" id="4_312yf"]
-[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_lneo3"]
+[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_jgjre"]
+[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_jq860"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
 
-[node name="Kurechii" type="Node2D"]
-script = ExtResource("1_fd5ye")
-
-[node name="Flag" parent="." instance=ExtResource("4_312yf")]
-unique_name_in_owner = true
+[node name="School" type="Node2D"]
+script = ExtResource("1_b8lq7")
 
 [node name="Building" type="TileMapLayer" parent="."]
 position = Vector2(-8, 0)
 tile_map_data = PackedByteArray("AAD6//3/AAAAAAQAAAD6//7/AAACAAQAAAD6////AAACAAQAAAD7//3/AAAAAAQAAAD7//7/AAACAAQAAAD7////AAACAAQAAAD8//3/AAAAAAQAAAD8//7/AAACAAQAAAD8////AAACAAQAAAD9//r/AAAAAAQAAAD9//v/AAACAAQAAAD9//z/AAACAAQAAAD9//3/AAACAAYAAAD9//7/AAACAAQAAAD9////AAACAAQAAAD+//r/AAAAAAQAAAD+//v/AAACAAQAAAD+//z/AAACAAQAAAD+//3/AAACAAYAAAD+//7/AAACAAQAAAD+////AAACAAQAAAD///r/AAAAAAQAAAD///v/AAABAAUAAAD///z/AAABAAYAAAD///3/AAACAAYAAAD///7/AAACAAQAAAD/////AAACAAQAAAAAAPr/AAAAAAQAAAAAAPv/AAACAAQAAAAAAPz/AAACAAQAAAAAAP3/AAACAAYAAAAAAP7/AAABAAUAAAAAAP//AAABAAYAAAABAPr/AAAAAAQAAAABAPv/AAABAAUAAAABAPz/AAABAAYAAAABAP3/AAACAAYAAAABAP7/AAACAAQAAAABAP//AAACAAQAAAACAPr/AAAAAAQAAAACAPv/AAACAAQAAAACAPz/AAACAAQAAAACAP3/AAACAAYAAAACAP7/AAACAAQAAAACAP//AAACAAQAAAADAPr/AAAAAAQAAAADAPv/AAACAAQAAAADAPz/AAACAAQAAAADAP3/AAACAAYAAAADAP7/AAACAAQAAAADAP//AAACAAQAAAAEAP3/AAAAAAQAAAAEAP7/AAACAAQAAAAEAP//AAACAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAACAAQAAAAFAP//AAACAAQAAAAGAP3/AAAAAAQAAAAGAP7/AAACAAQAAAAGAP//AAACAAQAAAA=")
-tile_set = ExtResource("2_ijrp8")
+tile_set = ExtResource("2_jgjre")
 
 [node name="Entry" type="Marker2D" parent="."]
 position = Vector2(-8, 0)
@@ -45,7 +41,7 @@ offset_right = 20.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_lneo3")
+theme = ExtResource("4_jq860")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]ENTER[/center]"
@@ -65,10 +61,10 @@ offset_right = 150.0
 offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_lneo3")
+theme = ExtResource("4_jq860")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "[center]Kurechii[/center]"
+text = "[center]BUILDING  NAME[/center]"
 fit_content = true
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]

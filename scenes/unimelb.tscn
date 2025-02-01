@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=4 uid="uid://cwsh57ll1ds0h"]
+[gd_scene load_steps=6 format=4 uid="uid://cwsh57ll1ds0h"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_df4vo"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_v26u2"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="3_oixvw"]
+[ext_resource type="PackedScene" uid="uid://crok82tbrgj37" path="res://scenes/flag.tscn" id="4_33u6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
 
 [node name="UniMelb" type="Node2D"]
 script = ExtResource("1_df4vo")
+
+[node name="Flag" parent="." instance=ExtResource("4_33u6h")]
+unique_name_in_owner = true
 
 [node name="Building" type="TileMapLayer" parent="."]
 position = Vector2(-8, 0)
