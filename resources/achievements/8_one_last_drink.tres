@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_yiwyi")
-media = 0
-filename = "1_cow.png"
+media = 1
+filename = "8_one_last_drink.ogv"
 description = "これは私が初めて作ったゲームです。"
 
 [resource]

@@ -30,15 +30,19 @@ func init(achievement_data: AchievementData) -> void:
 
 func init_page(page_data: PageData) -> void:
 	var file = str("res://media/", page_data.filename)
-	print("Opening File: ", file)
 	var media = load(file)
 	if page_data.media == PageData.Media.IMAGE:
-		#Global.set_inactive(video)
-		#Global.set_active(image)
+		print("Opening Image: ", file)
+		Global.set_inactive(video)
+		Global.set_active(image)
 		image.texture = media as Texture2D
 	else:
+		print("Opening Video: ", file)
 		Global.set_inactive(image)
 		Global.set_active(video)
+		video.stream = media as VideoStream
+		video.loop = true
+		video.play()
 	description.text = Global.wrap_center(page_data.description)
 	check_footer()
 
