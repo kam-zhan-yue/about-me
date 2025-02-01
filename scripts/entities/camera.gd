@@ -1,6 +1,8 @@
 class_name Camera
 extends Camera2D
 
+@onready var timeline := %Timeline as Timeline
+
 var player: Player
 var x_pos: float = 0
 
@@ -10,7 +12,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var player_x := Game.player.global_position.x
-	if player_x > x_pos:
-		x_pos = player_x
-		self.global_position.x = x_pos
-		
+	var timeline_bound = timeline.get_bound()
+	if self.global_position.x >= timeline_bound:
+		self.global_position.x = timeline_bound
+	elif player_x > self.global_position.x:
+		self.global_position.x = player_x

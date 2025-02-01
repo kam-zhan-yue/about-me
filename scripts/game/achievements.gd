@@ -1,5 +1,16 @@
 extends Node
 
+enum Event {
+	SCHOOL,
+	KURECHII,
+	MELBOURNE_UNI_1,
+	GAME_JAM_1,
+	KYOTO_UNI,
+	SCS,
+	MELBOURNE_UNI_2,
+	GAME_JAM_2,
+}
+
 enum Achievement {
 	# School Period
 	FIRST_GAME,
@@ -68,6 +79,7 @@ var achievement_dict = {
 signal on_achievement(data: AchievementData)
 
 var completed = {}
+var completed_events = {}
 var timer := 0.0
 var time := 0.0
 var start_date := Date.new()
@@ -76,6 +88,9 @@ var end_date := Date.new()
 
 func get_achievement_id(achievement: Achievement) -> String:
 	return str(Achievement.keys()[achievement])
+	
+func get_event_id(event: Event) -> String:
+	return str(Event.keys()[event])
 
 func activate(achievement: Achievement) -> void:
 	if achievement in completed:
@@ -95,17 +110,22 @@ func _process(delta: float) -> void:
 		if timer >= time:
 			end_sequence()
 
-func activate_sequence(id: String) -> void:
-	if id == "SCHOOL":
+func activate_event(event: Event) -> void:
+	if event in completed_events:
+		return
+	completed_events[event] = true
+	if event == Event.SCHOOL:
 		school_sequence()
-	elif id == "KURECHII":
+	elif event == Event.KURECHII:
 		kurechii_sequence()
-	elif id == "SCS":
+	elif event == Event.SCS:
 		scs_sequence()
-	elif id == "UPTICK":
-		uptick_sequence()
-	elif id == "UNIVERSITY":
-		university_sequence()
+	elif event == Event.KYOTO_UNI:
+		kyodai_sequence()
+	elif event == Event.MELBOURNE_UNI_1:
+		university_sequence_1()
+	elif event == Event.MELBOURNE_UNI_2:
+		university_sequence_2()
 
 func school_sequence() -> void:
 	await Game.player.fade_out()
@@ -120,11 +140,17 @@ func kurechii_sequence() -> void:
 func scs_sequence() -> void:
 	pass
 
-func uptick_sequence() -> void:
+func kyodai_sequence() -> void:
 	pass
 	
-func university_sequence() -> void:
+func university_sequence_1() -> void:
+	pass
+	
+func university_sequence_2() -> void:
 	pass
 
 func end_sequence() -> void:
 	await Game.player.fade_in()
+
+func has_completed(event: Event) -> bool:
+	return event in completed_events

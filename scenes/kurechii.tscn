@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=4 uid="uid://clhuealtdhvw3"]
+[gd_scene load_steps=5 format=4 uid="uid://i4xcs56u5ap7"]
 
-[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
-[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_jgjre"]
-[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="3_6hi01"]
+[ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_fd5ye"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_ijrp8"]
+[ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="3_67h6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
 
-[node name="School" type="Node2D"]
-script = ExtResource("1_b8lq7")
+[node name="Kurechii" type="Node2D"]
+script = ExtResource("1_fd5ye")
 
 [node name="Building" type="TileMapLayer" parent="."]
 position = Vector2(-8, 0)
 tile_map_data = PackedByteArray("AAD6//3/AAAAAAQAAAD6//7/AAACAAQAAAD6////AAACAAQAAAD7//3/AAAAAAQAAAD7//7/AAACAAQAAAD7////AAACAAQAAAD8//3/AAAAAAQAAAD8//7/AAACAAQAAAD8////AAACAAQAAAD9//r/AAAAAAQAAAD9//v/AAACAAQAAAD9//z/AAACAAQAAAD9//3/AAACAAYAAAD9//7/AAACAAQAAAD9////AAACAAQAAAD+//r/AAAAAAQAAAD+//v/AAACAAQAAAD+//z/AAACAAQAAAD+//3/AAACAAYAAAD+//7/AAACAAQAAAD+////AAACAAQAAAD///r/AAAAAAQAAAD///v/AAABAAUAAAD///z/AAABAAYAAAD///3/AAACAAYAAAD///7/AAACAAQAAAD/////AAACAAQAAAAAAPr/AAAAAAQAAAAAAPv/AAACAAQAAAAAAPz/AAACAAQAAAAAAP3/AAACAAYAAAAAAP7/AAABAAUAAAAAAP//AAABAAYAAAABAPr/AAAAAAQAAAABAPv/AAABAAUAAAABAPz/AAABAAYAAAABAP3/AAACAAYAAAABAP7/AAACAAQAAAABAP//AAACAAQAAAACAPr/AAAAAAQAAAACAPv/AAACAAQAAAACAPz/AAACAAQAAAACAP3/AAACAAYAAAACAP7/AAACAAQAAAACAP//AAACAAQAAAADAPr/AAAAAAQAAAADAPv/AAACAAQAAAADAPz/AAACAAQAAAADAP3/AAACAAYAAAADAP7/AAACAAQAAAADAP//AAACAAQAAAAEAP3/AAAAAAQAAAAEAP7/AAACAAQAAAAEAP//AAACAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAACAAQAAAAFAP//AAACAAQAAAAGAP3/AAAAAAQAAAAGAP7/AAACAAQAAAAGAP//AAACAAQAAAA=")
-tile_set = ExtResource("2_jgjre")
+tile_set = ExtResource("2_ijrp8")
 
 [node name="EnterLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
@@ -28,7 +28,7 @@ offset_right = 20.0
 offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_6hi01")
+theme = ExtResource("3_67h6b")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[outline_size=8][center]はいる[/center][/outline_size]"
@@ -42,16 +42,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.0
+offset_left = -151.0
 offset_top = -122.0
-offset_right = 139.0
+offset_right = 149.0
 offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_6hi01")
+theme = ExtResource("3_67h6b")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "[outline_size=8][center]Australian International School Malaysia[/center][/outline_size]"
+text = "[outline_size=8][center]Kurechii[/center][/outline_size]"
 fit_content = true
 
 [node name="Entry" type="Marker2D" parent="."]

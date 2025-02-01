@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=12 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
 [ext_resource type="PackedScene" uid="uid://b18uu7jcpkjvt" path="res://scenes/player.tscn" id="2_qvmds"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="3_tsnp1"]
+[ext_resource type="Script" path="res://scripts/time/timeline.gd" id="5_4d7n8"]
 [ext_resource type="Script" path="res://scripts/time/time_zone.gd" id="5_tu4g5"]
 [ext_resource type="PackedScene" uid="uid://clhuealtdhvw3" path="res://scenes/school.tscn" id="6_8rhnj"]
 [ext_resource type="PackedScene" uid="uid://c2lt0mjhqmmf7" path="res://scenes/ui.tscn" id="6_urop7"]
 [ext_resource type="PackedScene" uid="uid://de36fxmjtjgub" path="res://scenes/game_jam_1.tscn" id="8_4ta8e"]
+[ext_resource type="PackedScene" uid="uid://i4xcs56u5ap7" path="res://scenes/kurechii.tscn" id="10_5v5k8"]
+[ext_resource type="PackedScene" uid="uid://cwsh57ll1ds0h" path="res://scenes/unimelb.tscn" id="10_gxug4"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,14 +20,6 @@ unique_name_in_owner = true
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("1_dfvcw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-unique_name_in_owner = true
-zoom = Vector2(5, 5)
-limit_left = 0
-limit_top = -300
-limit_bottom = 48
-script = ExtResource("1_twskn")
-
 [node name="Tiles" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
@@ -32,6 +27,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = ExtResource("3_tsnp1")
 
 [node name="Timeline" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_4d7n8")
 
 [node name="Zone 1" type="Node2D" parent="Timeline"]
 position = Vector2(7, 0)
@@ -58,11 +55,28 @@ gizmo_extents = 20.0
 
 [node name="School" parent="Timeline" instance=ExtResource("6_8rhnj")]
 unique_name_in_owner = true
-position = Vector2(480, 0)
+position = Vector2(488, 0)
 
-[node name="Select Zone 1" parent="Timeline" instance=ExtResource("8_4ta8e")]
-position = Vector2(88, 0)
-
-[node name="Player" parent="Timeline" instance=ExtResource("2_qvmds")]
+[node name="Kurechii" parent="Timeline" instance=ExtResource("10_5v5k8")]
 unique_name_in_owner = true
-position = Vector2(162, -9)
+position = Vector2(827, 0)
+
+[node name="Game Jam 1" parent="Timeline" instance=ExtResource("8_4ta8e")]
+unique_name_in_owner = true
+position = Vector2(1431, 0)
+
+[node name="Unimelb 1" parent="Timeline" instance=ExtResource("10_gxug4")]
+unique_name_in_owner = true
+position = Vector2(1134, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_qvmds")]
+unique_name_in_owner = true
+position = Vector2(10, -9)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_top = -300
+limit_bottom = 48
+script = ExtResource("1_twskn")
