@@ -24,6 +24,3 @@ func in_bounds(pos_x: float) -> bool:
 	var left_bound = camera_screen_pos - camera_width
 	var right_bound = camera_screen_pos + camera_width
 	return left_bound < pos_x and pos_x < right_bound
-
-func pause(value: bool) -> void:
-	Engine.time_scale = 0.0 if value else 1.0

@@ -10,6 +10,7 @@ const PLAYER_WIDTH = 18.0
 
 var interactive = true
 var facing_right = true
+var active = true
 
 func _ready() -> void:
 	sprite.play("idle")
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if not interactive:
+	if not interactive or not active:
 		return
 
 	# Handle jump.

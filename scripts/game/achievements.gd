@@ -91,6 +91,7 @@ var achievement_dict = {
 signal on_achievement(data: AchievementData)
 signal on_event_completed(event: Event)
 
+var active := true
 var completed = {}
 var completed_events = {}
 var timer := 0.0
@@ -113,6 +114,7 @@ func activate(achievement: Achievement) -> void:
 	on_achievement.emit(data as AchievementData)
 
 func _process(delta: float) -> void:
+	if not active: return
 	if timer < time:
 		var p := timer / time
 		Game.update_date(start_date.lerp_date(end_date, p))

@@ -7,7 +7,7 @@
 script = ExtResource("1_e662a")
 media = 0
 filename = "1_cow.png"
-description = "JavaとProcessingというグラフィックスライブラリを使用して簡単なゲームを作った。小学生が遊んでくれて、嬉しい感情を込めてくれたことは一生忘れられない。そこからプログラミングの冒険が始まった。"
+description = "JavaとProcessingというグラフィックスライブラリを使用して簡単なゲームを作った。"
 
 [resource]
 script = ExtResource("1_a6qqt")

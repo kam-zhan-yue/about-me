@@ -11,22 +11,54 @@ var data: AchievementData
 @onready var previous_button := %Previous as Button
 @onready var ok_button := %OkButton as Button
 
+var showing := false
 var page_index := 0
 
 func _ready() -> void:
+	video.volume = 0
 	Achievements.on_achievement.connect(_on_achievement)
 	Global.set_inactive(self)
+
+func show_popup() -> void:
+	Achievements.active = false
+	Game.player.active = false
+	self.scale = Vector2.ZERO
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.6).set_trans(Tween.TRANS_EXPO)
+	tween.tween_callback(_set_showing_true)
+
+func _set_showing_true() -> void:
+	self.showing = true
+
+func hide_popup() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.6).set_trans(Tween.TRANS_EXPO)
+	tween.tween_callback(_hide)
+	showing = false
+
+func _hide() -> void:
+	Global.set_inactive(self)
+	Game.player.active = true
+	Achievements.active = true
 
 func _on_achievement(achievement: AchievementData) -> void:
 	init(achievement)
 	Global.set_active(self)
 
 func init(achievement_data: AchievementData) -> void:
+	show_popup()
 	self.data = achievement_data
 	title.text = Global.wrap_center(data.title)
 	page_index = 0
 	init_page(data.pages[0])
-	Game.pause(true)
+	
+func _input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_SPACE) and is_last_page():
+		_on_ok_button_pressed()
+	elif Input.is_key_pressed(KEY_LEFT) and has_previous():
+		_on_previous_pressed()
+	elif Input.is_key_pressed(KEY_RIGHT) and has_next():
+		_on_next_pressed()
 
 func init_page(page_data: PageData) -> void:
 	var file = str("res://media/", page_data.filename)
@@ -48,17 +80,21 @@ func init_page(page_data: PageData) -> void:
 	check_footer()
 
 func check_footer() -> void:
-	var has_previous := page_index > 0 and len(data.pages) > 1
-	var has_next := page_index < len(data.pages) - 1
-	var last_page := page_index == len(data.pages) - 1
-	Global.active(previous_button, has_previous)
-	Global.active(next_button, has_next)
-	Global.active(ok_button, last_page)
+	Global.active(previous_button, has_previous())
+	Global.active(next_button, has_next())
+	Global.active(ok_button, is_last_page())
 
+func has_previous() -> bool:
+	return page_index > 0 and len(data.pages) > 1
+
+func has_next() -> bool:
+	return page_index < len(data.pages) - 1
+
+func is_last_page() -> bool:
+	return page_index == len(data.pages) - 1
 
 func _on_ok_button_pressed() -> void:
-	Global.set_inactive(self)
-	Game.pause(false)
+	hide_popup()
 
 
 func _on_previous_pressed() -> void:
