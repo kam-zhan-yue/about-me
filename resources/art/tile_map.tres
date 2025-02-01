@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bsckx8dnl1ryn"]
 
-[ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_no8sr"]
-[ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_bl2pj"]
+[ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_iyj68"]
+[ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_kiaul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaiss"]
-texture = ExtResource("1_no8sr")
+texture = ExtResource("1_iyj68")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -34,7 +34,9 @@ separation = Vector2i(1, 1)
 11:1/0 = 0
 12:1/0 = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -47,7 +49,9 @@ separation = Vector2i(1, 1)
 11:2/0 = 0
 12:2/0 = 0
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75, -8, -5.75, 8, 8, 8, 8, -8)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.0625, -8, 5.96875, 8, -8, 8, -8, -8)
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
@@ -152,7 +156,7 @@ separation = Vector2i(1, 1)
 12:10/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ny4bl"]
-scenes/1/scene = ExtResource("2_bl2pj")
+scenes/1/scene = ExtResource("2_kiaul")
 
 [resource]
 physics_layer_0/collision_layer = 1
