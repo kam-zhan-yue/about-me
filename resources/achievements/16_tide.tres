@@ -1,15 +1,29 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://bl7cio00nn7rf"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://bl7cio00nn7rf"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_btv0d"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_oih2g"]
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_btv0d")
-media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+media = 1
+filename = "16_tide.ogv"
+description = "GMTK Game Jam ２０２４のために、3人のチームで4日間で制作した。唯一のプログラマーを担当した。新しいゲームエンジンを学ぶために、Godotを使用した。
+"
+
+[sub_resource type="Resource" id="Resource_jt768"]
+script = ExtResource("1_btv0d")
+media = 1
+filename = "16_tide_boids.ogv"
+description = "プレイヤーが深海から、空と宇宙に上昇しながら、動物と宇宙人とぶつかる前に文字を入力する。自然に動くために、ボイドのアルゴリズムを使用した。
+"
+
+[sub_resource type="Resource" id="Resource_8ug42"]
+script = ExtResource("1_btv0d")
+media = 1
+filename = "16_tide_timeline.ogv"
+description = "デバッグしやすくするために、決められたリズムで進むタイムラインを開発した。ゲームのあらゆる時点から開始することができた。"
 
 [resource]
 script = ExtResource("2_oih2g")
 title = "TIDE"
-pages = Array[ExtResource("1_btv0d")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_btv0d")]([SubResource("Resource_j0rxt"), SubResource("Resource_jt768"), SubResource("Resource_8ug42")])

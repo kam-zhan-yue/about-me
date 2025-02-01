@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://co0ujpq7n4a1c"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://co0ujpq7n4a1c"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_ds88x"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_oauxq"]
@@ -6,10 +6,23 @@
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_ds88x")
 media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+filename = "12_game_makers_club_booth.jpg"
+description = "友達とメルボルン大学で初めてゲーム開発部を作った。最初は20人いた。現在350人以上が所属している。"
+
+[sub_resource type="Resource" id="Resource_qlvsc"]
+script = ExtResource("1_ds88x")
+media = 0
+filename = "12_game_makers_club.jpg"
+description = "部長として8人のチームと毎週ゲームジャム、ワークショップ、ミートアップを行っている。
+"
+
+[sub_resource type="Resource" id="Resource_vqjre"]
+script = ExtResource("1_ds88x")
+media = 0
+filename = "12_game_makers_club_divisions.jpeg"
+description = "一つの部分として３つの開発チームがある。合わせて40人いる。３つのチームの管理を担当している。"
 
 [resource]
 script = ExtResource("2_oauxq")
 title = "Game Makers' Club"
-pages = Array[ExtResource("1_ds88x")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_ds88x")]([SubResource("Resource_j0rxt"), SubResource("Resource_qlvsc"), SubResource("Resource_vqjre")])

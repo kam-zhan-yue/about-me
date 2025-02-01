@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_5n67g")
-media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+media = 1
+filename = "18_hundred_guys.ogv"
+description = "2日間で自分で作ったGodotのゲームです。プレイヤーはネズミの群れとなって、チーズを食べるゲームです。ネズミはカスタムのボイドアルゴリズムを使っている。"
 
 [resource]
 script = ExtResource("2_q3jnj")

@@ -7,7 +7,7 @@
 script = ExtResource("1_yiwyi")
 media = 1
 filename = "8_one_last_drink.ogv"
-description = "これは私が初めて作ったゲームです。"
+description = "大学のハッカソンで優勝したUnityのゲームです。プレイヤーはバーテンダーとして、変な客の話を聞いて、雰囲気に合ったドリンクを作る。リードプログラマーを担当して、2日間で3人のチームで作った。"
 
 [resource]
 script = ExtResource("2_3vcyb")

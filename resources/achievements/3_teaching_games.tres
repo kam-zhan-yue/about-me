@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://bg5ck3rfkfk6k"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://bg5ck3rfkfk6k"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_kc5co"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_q5gd7"]
@@ -6,10 +6,16 @@
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_kc5co")
 media = 0
-filename = ""
-description = "これは私が初めて作ったゲームです。"
+filename = "3_teaching_games_1.png"
+description = "チン族難民のための学校でプログラミング授業を教えた。"
+
+[sub_resource type="Resource" id="Resource_m8g42"]
+script = ExtResource("1_kc5co")
+media = 0
+filename = "3_teaching_games_2.png"
+description = "各自にゲームを作る課題を出して、最後の授業でみんなで遊んだ。"
 
 [resource]
 script = ExtResource("2_q5gd7")
 title = "Teaching Games"
-pages = Array[ExtResource("1_kc5co")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_kc5co")]([SubResource("Resource_j0rxt"), SubResource("Resource_m8g42")])

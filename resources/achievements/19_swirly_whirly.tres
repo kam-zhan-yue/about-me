@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_b8qty")
-media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+media = 1
+filename = "19_swirly_whirly.ogv"
+description = "RustとBevyエンジンを使用して、3日間で開発した。2人のプレイヤーがエネルギーを選択し、選んだエネルギーの種類によって特別なじゃんけんぽんのゲームが楽しめる。"
 
 [resource]
 script = ExtResource("2_q5u6d")

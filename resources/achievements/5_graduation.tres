@@ -7,7 +7,7 @@
 script = ExtResource("1_22pgx")
 media = 0
 filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+description = "オーストラリアの全国試験で国内最高得点を獲得した。"
 
 [resource]
 script = ExtResource("2_psl23")

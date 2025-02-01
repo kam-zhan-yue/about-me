@@ -1,15 +1,40 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://b6jt66gxuj5vq"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=8 format=3 uid="uid://b6jt66gxuj5vq"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_bm3oc"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_0jrtw"]
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_bm3oc")
+media = 1
+filename = "17_re_collect.ogv"
+description = "メルボルン大学のサイエンス博物館のためにWEBゲームを開発した。6人のチームで唯一のプログラマーを担当した。3ヶ月間で完成させた。"
+
+[sub_resource type="Resource" id="Resource_0ckee"]
+script = ExtResource("1_bm3oc")
 media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+filename = "17_re_collect.png"
+description = "Inkyのナラティブエンジンを使用して、他のメンバーはストーリーの流れを記入して、JSONファイルにエクスポートした。ゲームでReactとTypescriptを使用して、活かした。
+"
+
+[sub_resource type="Resource" id="Resource_43ufa"]
+script = ExtResource("1_bm3oc")
+media = 1
+filename = "17_re_collect_keycode.ogv"
+description = "博物館であるコードを見つけて、惑星へ行くことができる。"
+
+[sub_resource type="Resource" id="Resource_kun52"]
+script = ExtResource("1_bm3oc")
+media = 0
+filename = "17_re_collect_inventory.png"
+description = "インベントリでアイテムを集めて、ストーリーで使える。"
+
+[sub_resource type="Resource" id="Resource_ai6of"]
+script = ExtResource("1_bm3oc")
+media = 0
+filename = "17_re_collect_leaderboard.png"
+description = "Firebaseを使用して、リアルタイムのリーダーボードを開発した。"
 
 [resource]
 script = ExtResource("2_0jrtw")
 title = "RE:Collect"
-pages = Array[ExtResource("1_bm3oc")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_bm3oc")]([SubResource("Resource_j0rxt"), SubResource("Resource_0ckee"), SubResource("Resource_43ufa"), SubResource("Resource_kun52"), SubResource("Resource_ai6of")])

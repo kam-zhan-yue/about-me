@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=4 format=3 uid="uid://dcxe6wb0jkf6m"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://dcxe6wb0jkf6m"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_ddbm2"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_k64cy"]
@@ -6,10 +6,16 @@
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_ddbm2")
 media = 0
-filename = "1_cow.png"
-description = "これは私が初めて作ったゲームです。"
+filename = "10_upbeet.ogv"
+description = "Global Game Jam ２０２４のためにUnityで制作した。野菜のリズムゲームです。野菜が死んだら、そのレーンも死ぬ。2日間で3人のチームで開発した。"
+
+[sub_resource type="Resource" id="Resource_u5xl4"]
+script = ExtResource("1_ddbm2")
+media = 1
+filename = "10_upbeet_beatmap.ogv"
+description = "ビートマップを効率的にテストするために、カスタムエディターを開発して、ゲームをスタートしなくても作れるようにした。"
 
 [resource]
 script = ExtResource("2_k64cy")
 title = "Upbeet"
-pages = Array[ExtResource("1_ddbm2")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_ddbm2")]([SubResource("Resource_j0rxt"), SubResource("Resource_u5xl4")])
