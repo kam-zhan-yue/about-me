@@ -40,8 +40,8 @@ func _ready() -> void:
 	timeline_dict = {
 		Achievements.Event.SCHOOL: school,
 		Achievements.Event.KURECHII: kurechii,
-		Achievements.Event.GAME_JAM_1: game_jam_1,
 		Achievements.Event.UNIMELB_1: unimelb_1,
+		Achievements.Event.GAME_JAM_1: game_jam_1,
 		Achievements.Event.KYODAI: kyodai,
 		Achievements.Event.SCS: scs,
 		Achievements.Event.UNIMELB_2: unimelb_2,

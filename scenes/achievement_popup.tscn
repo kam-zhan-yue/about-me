@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bve4hr8sl00nf"]
+[gd_scene load_steps=8 format=3 uid="uid://bve4hr8sl00nf"]
 
 [ext_resource type="Script" path="res://scripts/ui/achievement_popup.gd" id="1_3lcpr"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_aydhq"]
 [ext_resource type="VideoStream" path="res://media/2_enter_the_arena.ogv" id="3_emsjm"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="3_jjelc"]
 [ext_resource type="Texture2D" uid="uid://doud531odq0l8" path="res://media/6_postknight_2_ui.jpg" id="4_ssku3"]
-[ext_resource type="Theme" uid="uid://bdeewgbl0sc4d" path="res://resources/art/text.tres" id="4_vdn27"]
+[ext_resource type="FontFile" uid="uid://c77etr4s0pe73" path="res://sprites/NotoSansJP-VariableFont_wght.ttf" id="6_xnjpv"]
+
+[sub_resource type="Theme" id="Theme_evpk4"]
+default_font = ExtResource("6_xnjpv")
 
 [node name="AchievementPopup" type="Control"]
 layout_mode = 3
@@ -96,7 +99,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme = ExtResource("4_vdn27")
+theme = SubResource("Theme_evpk4")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]This is a description of everything yayy[/center]"
