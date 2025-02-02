@@ -7,7 +7,7 @@
 script = ExtResource("1_ddbm2")
 media = 1
 filename = "10_upbeet.ogv"
-description = "Global Game Jam 2024のためにUnityで制作した。野菜のリズムゲームです。野菜が死んだら、そのレーンも死ぬ。2日間で3人のチームで開発した。"
+description = "Global Game Jam 2024 のためにUnityで制作した。野菜のリズムゲームです。野菜が死んだら、そのレーンも死ぬ。2日間で3人のチームで開発した。"
 
 [sub_resource type="Resource" id="Resource_u5xl4"]
 script = ExtResource("1_ddbm2")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://5rhkttqd6j15"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://5rhkttqd6j15"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_r546d"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_eabf4"]
@@ -16,13 +16,7 @@ media = 1
 filename = "9_sleepwalker_dialogue.ogv"
 description = "カスタムツールを作って、自分のダイアログシステムを開発した。"
 
-[sub_resource type="Resource" id="Resource_75jyh"]
-script = ExtResource("1_r546d")
-media = 1
-filename = "9_sleepwalker_tutorial.ogv"
-description = "最初に簡単なチュートリアルを作った。"
-
 [resource]
 script = ExtResource("2_eabf4")
 title = "Sleepwalker"
-pages = Array[ExtResource("1_r546d")]([SubResource("Resource_j0rxt"), SubResource("Resource_p4ehp"), SubResource("Resource_75jyh")])
+pages = Array[ExtResource("1_r546d")]([SubResource("Resource_j0rxt"), SubResource("Resource_p4ehp")])
