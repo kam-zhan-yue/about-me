@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 		_on_ok_button_pressed()
 	elif Input.is_key_pressed(KEY_LEFT) and has_previous():
 		_on_previous_pressed()
-	elif (Input.is_key_pressed(KEY_SPACE) or Input.is_key_pressed(KEY_RIGHT)) and has_next():
+	elif Input.is_key_pressed(KEY_RIGHT) and has_next():
 		_on_next_pressed()
 
 func init_page(page_data: PageData) -> void:

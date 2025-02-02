@@ -160,5 +160,5 @@ layout_mode = 2
 theme = ExtResource("3_ss62g")
 theme_override_font_sizes/normal_font_size = 56
 bbcode_enabled = true
-text = "[center]3[/center]"
+text = "[center]1[/center]"
 fit_content = true
