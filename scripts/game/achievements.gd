@@ -79,7 +79,7 @@ var achievement_dict = {
 	str(Date.new(2018, 4)): Achievement.ENTER_THE_ARENA,
 	str(Date.new(2019, 6)): Achievement.TEACHING_GAMES,
 	str(Date.new(2019, 9)): Achievement.ASCENSION,
-	#str(Date.new(2020, 9)): Achievement.GRADUATION,
+	str(Date.new(2020, 11)): Achievement.GRADUATION,
 	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
 	str(Date.new(2022, 6)): Achievement.GREENPATH,
 	str(Date.new(2023, 5)): Achievement.RUGBY,
