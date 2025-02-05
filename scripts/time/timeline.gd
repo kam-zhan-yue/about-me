@@ -112,6 +112,8 @@ func _on_event_complete(event: Achievements.Event) -> void:
 		zone_4.activated = true
 	elif event == Achievements.Event.SCS:
 		scs.raise_flag()
+	elif event == Achievements.Event.KYODAI:
+		kyodai.raise_flag()
 	elif event == Achievements.Event.UNIMELB_2:
 		unimelb_2.raise_flag()
 		zone_5.activated = true
