@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2lt0mjhqmmf7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2lt0mjhqmmf7"]
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_5nuf2"]
 [ext_resource type="PackedScene" uid="uid://dh2faluuhadxu" path="res://scenes/game_popup.tscn" id="2_lnoa6"]
 [ext_resource type="PackedScene" uid="uid://bve4hr8sl00nf" path="res://scenes/achievement_popup.tscn" id="3_0e8c6"]
 [ext_resource type="PackedScene" uid="uid://diid4aineqjj2" path="res://scenes/end_game_popup.tscn" id="4_4o3oj"]
+[ext_resource type="PackedScene" uid="uid://cekpou78xsj7f" path="res://scenes/date_popup.tscn" id="5_7kqpy"]
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_5nuf2")
 
 [node name="GamePopup" parent="." instance=ExtResource("2_lnoa6")]
+unique_name_in_owner = true
+
+[node name="DatePopup" parent="." instance=ExtResource("5_7kqpy")]
 unique_name_in_owner = true
 
 [node name="AchievementPopup" parent="." instance=ExtResource("3_0e8c6")]

@@ -90,7 +90,10 @@ var achievement_dict = {
 }
 
 signal on_achievement(data: AchievementData)
+signal on_event_started(event: Event)
 signal on_event_completed(event: Event)
+signal on_countdown_started
+signal on_countdown_completed
 
 var active := true
 var completed = {}
@@ -137,6 +140,7 @@ func activate_event(event: Event) -> void:
 	if event in completed_events:
 		return
 	print("Activating: ", get_event_id(event))
+	on_event_started.emit(event)
 	current_event = event
 	if event == Event.SCHOOL:
 		school_sequence()
@@ -152,48 +156,46 @@ func activate_event(event: Event) -> void:
 		university_sequence_2()
 
 func school_sequence() -> void:
-	await Game.player.fade_out()
-	start_date = Date.new(2008, 1)
-	end_date = Date.new(2020, 12)
-	timer = 0.0
-	time = 6.0
+	var start = Date.new(2008, 1)
+	var end = Date.new(2020, 12)
+	start_countdown(start, end, 6.0)
 
 func kurechii_sequence() -> void:
-	await Game.player.fade_out()
-	start_date = Date.new(2021, 2)
-	end_date = Date.new(2022, 1)
-	timer = 0.0
-	time = 3.0
+	var start = Date.new(2021, 2)
+	var end = Date.new(2022, 1)
+	start_countdown(start, end, 3.0)
 	
 func university_sequence_1() -> void:
-	await Game.player.fade_out()
-	start_date = Date.new(2022, 1)
-	end_date = Date.new(2023, 1)
-	timer = 0.0
-	time = 3.0
+	var start = Date.new(2022, 1)
+	var end = Date.new(2023, 1)
+	start_countdown(start, end, 3.0)
 
 func kyodai_sequence() -> void:
-	await Game.player.fade_out()
-	start_date = Date.new(2023, 4)
-	end_date = Date.new(2023, 8)
-	timer = 0.0
-	time = 3.0
+	var start = Date.new(2023, 4)
+	var end = Date.new(2023, 8)
+	start_countdown(start, end, 3.0)
 	
 func scs_sequence() -> void:
-	await Game.player.fade_out()
-	start_date = Date.new(2023, 8)
-	end_date = Date.new(2024, 1)
-	timer = 0.0
-	time = 3.0
+	var start = Date.new(2023, 8)
+	var end = Date.new(2024, 1)
+	start_countdown(start, end, 3.0)
 	
 func university_sequence_2() -> void:
+	var start = Date.new(2024, 2)
+	var end = Date.new(2024, 9)
+	start_countdown(start, end, 3.0)
+
+func start_countdown(start: Date, end: Date, duration: float) -> void:
+	self.on_countdown_started.emit()
 	await Game.player.fade_out()
-	start_date = Date.new(2024, 2)
-	end_date = Date.new(2024, 9)
-	timer = 0.0
-	time = 3.0
+	self.start_date = start
+	self.end_date = end
+	self.timer = 0.0
+	self.time = duration
+	
 
 func end_sequence() -> void:
+	self.on_countdown_completed.emit()
 	await Game.player.fade_in()
 
 func has_completed(event: Event) -> bool:

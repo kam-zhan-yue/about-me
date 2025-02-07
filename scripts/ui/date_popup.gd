@@ -8,4 +8,4 @@ func init() -> void:
 	
 func _on_date_changed(new_date: Date) -> void:
 	date_label.text = Global.wrap_center(new_date.to_string())
-  
+ 

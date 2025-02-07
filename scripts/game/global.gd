@@ -1,5 +1,9 @@
 extends Node
 
+var WHITE = Color(1.0, 1.0, 1.0, 1.0)
+var CLEAR = Color(1.0, 1.0, 1.0, 0.0)
+var FADE_TIME = 0.5
+
 var zoom := 5.0
 
 func seconds(time: float) -> void:
@@ -8,6 +12,9 @@ func seconds(time: float) -> void:
 func frame() -> void:
 	var delta := get_process_delta_time()
 	await get_tree().create_timer(delta).timeout
+
+func wait_fade() -> void:
+	await get_tree().create_timer(FADE_TIME).timeout
 
 func set_active(node: Node) -> void:
 	active(node, true)
@@ -59,3 +66,16 @@ func from_months(total_months: int) -> Date:
 
 func wrap_center(text: String) -> String:
 	return str("[center]", text, "[/center]")
+
+func wrap_outline(text: String, size: float) -> String:
+	return str("[outline_size=", size, "]", text, "[/outline_size]")
+
+func fade_in(node: Node) -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(node, "modulate", WHITE, FADE_TIME)
+	await wait_fade()
+	
+func fade_out(node: Node) -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(node, "modulate", CLEAR, FADE_TIME)
+	await wait_fade()
