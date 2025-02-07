@@ -13,6 +13,7 @@ func init() -> void:
 func _on_countdown_started() -> void:
 	await Global.fade_out(game_popup)
 	await Global.fade_in(date_popup)
+	print("Showing Date")
 
 func _on_countdown_completed() -> void:
 	await Global.fade_out(date_popup)

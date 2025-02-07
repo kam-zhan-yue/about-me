@@ -35,7 +35,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	# Check if can move left
-	if velocity.x < 0 and not Game.in_bounds(position.x - PLAYER_WIDTH / 2):
+	if velocity.x < 0 and not Game.in_left_bounds(position.x - PLAYER_WIDTH / 2):
+		velocity.x = 0
+	# Check if can move right
+	if velocity.x > 0 and not Game.in_right_bounds(position.x + PLAYER_WIDTH / 2):
 		velocity.x = 0
 	animate_player()
 	move_and_slide()

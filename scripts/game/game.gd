@@ -19,12 +19,23 @@ func update_date(new_date: Date) -> void:
 		date = new_date
 		on_date_changed.emit(date)
 
-func in_bounds(pos_x: float) -> bool:
-	var camera_screen_pos = camera.get_screen_center_position().x 
-	var camera_width = (camera.get_viewport_rect().size.x / (2 * camera.zoom.x))
+func in_left_bounds(pos_x: float) -> bool:
+	var camera_screen_pos := get_screen_pos()
+	var camera_width := get_width()
 	var left_bound = camera_screen_pos - camera_width
+	return left_bound < pos_x
+
+func in_right_bounds(pos_x: float) -> bool:
+	var camera_screen_pos = get_screen_pos()
+	var camera_width = get_width()
 	var right_bound = camera_screen_pos + camera_width
-	return left_bound < pos_x and pos_x < right_bound
+	return pos_x < right_bound
+
+func get_screen_pos() -> float:
+	return camera.get_screen_center_position().x
+
+func get_width() -> float:
+	return (camera.get_viewport_rect().size.x / (2 * camera.zoom.x))
 
 func end_game() -> void:
 	player.fade_out()

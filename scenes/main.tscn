@@ -126,7 +126,7 @@ position = Vector2(2936, 0)
 gizmo_extents = 20.0
 
 [node name="2025-1" type="Marker2D" parent="Timeline/Zone 5"]
-position = Vector2(3618, 1)
+position = Vector2(3619, 2)
 gizmo_extents = 20.0
 
 [node name="Game Jam 2" parent="Timeline" instance=ExtResource("12_abch8")]
@@ -159,4 +159,5 @@ script = ExtResource("1_twskn")
 
 [node name="Firewall" parent="." instance=ExtResource("17_3y006")]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("18_wqx3d")

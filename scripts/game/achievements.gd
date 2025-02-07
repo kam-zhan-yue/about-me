@@ -123,7 +123,9 @@ func _process(delta: float) -> void:
 	if not active: return
 	if timer < time:
 		var p := timer / time
-		Game.update_date(start_date.lerp_date(end_date, p))
+		var next_date := start_date.lerp_date(end_date, p)
+		print("Next Date is ", next_date)
+		Game.update_date(next_date)
 		
 		if str(Game.date) in achievement_dict:
 			activate(achievement_dict[str(Game.date)])
@@ -163,7 +165,7 @@ func school_sequence() -> void:
 	start_countdown(start, end, 6.0)
 
 func kurechii_sequence() -> void:
-	var start = Date.new(2021, 2)
+	var start = Date.new(2021, 1)
 	var end = Date.new(2022, 1)
 	start_countdown(start, end, 3.0)
 	
@@ -196,6 +198,7 @@ func start_countdown(start: Date, end: Date, duration: float) -> void:
 	self.end_date = end
 	self.timer = 0.0
 	self.time = duration
+	print("Starting Countdown")
 	
 
 func end_sequence() -> void:
