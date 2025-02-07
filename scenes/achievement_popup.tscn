@@ -56,6 +56,7 @@ offset_left = -750.0
 offset_right = 750.0
 offset_bottom = 809.0
 grow_horizontal = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Unlocked" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer"]
