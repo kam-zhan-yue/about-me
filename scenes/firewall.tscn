@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://1vyppwa0ga54"]
+
+[ext_resource type="SpriteFrames" uid="uid://bkl20tu76ajbg" path="res://resources/sprites/fire.tres" id="1_lb7yi"]
+
+[node name="Firewall" type="Node2D"]
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire3" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -25)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire4" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -35)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire5" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -45)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire6" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -55)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire7" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -65)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire8" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -75)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire9" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -85)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire10" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -95)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire11" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -105)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire12" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -115)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire13" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -125)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire14" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -135)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire15" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -145)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire16" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -155)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire17" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -165)
+sprite_frames = ExtResource("1_lb7yi")

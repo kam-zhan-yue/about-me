@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=19 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dcyqfr2x6ls88" path="res://scenes/flagpole.tscn" id="13_dodgm"]
 [ext_resource type="PackedScene" uid="uid://dwfvmy3vdpnfi" path="res://scenes/scs.tscn" id="13_jfgtj"]
 [ext_resource type="PackedScene" uid="uid://bwg3vgfdykxuq" path="res://scenes/final.tscn" id="15_ivs7s"]
+[ext_resource type="PackedScene" uid="uid://1vyppwa0ga54" path="res://scenes/firewall.tscn" id="17_3y006"]
+[ext_resource type="Script" path="res://scripts/entities/firewall.gd" id="18_wqx3d"]
 
 [node name="Main" type="Node2D"]
 
@@ -154,3 +156,7 @@ limit_left = 0
 limit_top = -300
 limit_bottom = 48
 script = ExtResource("1_twskn")
+
+[node name="Firewall" parent="." instance=ExtResource("17_3y006")]
+unique_name_in_owner = true
+script = ExtResource("18_wqx3d")
