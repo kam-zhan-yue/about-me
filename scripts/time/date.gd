@@ -17,7 +17,7 @@ func _months_between(right: Date) -> int:
 
 func lerp_date(right: Date, value: float) -> Date:
 	var m = self._months_between(right)
-	var months_to_add = floor(m * value)
+	var months_to_add = ceil(m * value)
 	var total_months = months_to_add + self._get_months()
 	var date = Global.from_months(total_months)
 	return date

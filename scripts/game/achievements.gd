@@ -165,7 +165,7 @@ func school_sequence() -> void:
 	start_countdown(start, end, 6.0)
 
 func kurechii_sequence() -> void:
-	var start = Date.new(2021, 1)
+	var start = Date.new(2021, 2)
 	var end = Date.new(2022, 1)
 	start_countdown(start, end, 3.0)
 	

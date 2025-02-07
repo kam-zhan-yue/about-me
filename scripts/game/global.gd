@@ -61,7 +61,8 @@ func from_months(total_months: int) -> Date:
 	var years := total_months / 12
 	var months := total_months % 12
 	if months == 0:
-		months =  1
+		years -= 1
+		months =  12
 	return Date.new(years, months)
 
 func wrap_center(text: String) -> String:
