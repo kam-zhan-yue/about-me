@@ -12,4 +12,5 @@ description = "初のハッカソンに参加した結果WEBアプリを制作�
 [resource]
 script = ExtResource("2_4onkj")
 title = "Greenpath"
+tag = Array[int]([6, 10, 11, 12])
 pages = Array[ExtResource("1_lgwav")]([SubResource("Resource_j0rxt")])

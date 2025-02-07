@@ -24,4 +24,5 @@ description = "UIプログラミングにもたくさん携わった。Unity UI�
 [resource]
 script = ExtResource("2_ikrby")
 title = "Postknight 2"
+tag = Array[int]([0, 1])
 pages = Array[ExtResource("1_byaxn")]([SubResource("Resource_j0rxt"), SubResource("Resource_7nyt5"), SubResource("Resource_cw1ba")])

@@ -12,4 +12,5 @@ description = "初めてのUnityのゲームです。プレイヤーが攻撃を
 [resource]
 script = ExtResource("2_ld2f4")
 title = "Enter the Arena"
+tag = Array[int]([0, 1])
 pages = Array[ExtResource("1_4eus5")]([SubResource("Resource_j0rxt")])

@@ -39,3 +39,4 @@ Button/styles/focus = SubResource("StyleBoxEmpty_wb2em")
 Button/styles/hover = SubResource("StyleBoxEmpty_e1c78")
 Button/styles/normal = SubResource("StyleBoxEmpty_w8wy8")
 Button/styles/pressed = SubResource("StyleBoxEmpty_0udik")
+Unity/styles/active = null

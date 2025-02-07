@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5nlakyov37gu"]
+
+[ext_resource type="Script" path="res://scripts/ui/label_popup.gd" id="1_3hcg8"]
+[ext_resource type="StyleBox" uid="uid://ddrlog8scawo" path="res://resources/ui/unity.tres" id="2_hvqtl"]
+[ext_resource type="StyleBox" uid="uid://dnspj3n61bxr6" path="res://resources/ui/godot.tres" id="3_q7cja"]
+[ext_resource type="StyleBox" uid="uid://dni470kfdpm04" path="res://resources/ui/gd_script.tres" id="4_uo42w"]
+[ext_resource type="StyleBox" uid="uid://haon6gw6k4ox" path="res://resources/ui/bevy.tres" id="5_sgryh"]
+[ext_resource type="StyleBox" uid="uid://lqps3vo7w58y" path="res://resources/ui/c_sharp.tres" id="6_om4hf"]
+[ext_resource type="StyleBox" uid="uid://lvhwa6kbpxnh" path="res://resources/ui/rust.tres" id="7_3agkq"]
+[ext_resource type="StyleBox" uid="uid://dphty7b7os50s" path="res://resources/ui/react.tres" id="8_qqi5l"]
+[ext_resource type="StyleBox" uid="uid://qsv42tkmrfmm" path="res://resources/ui/django.tres" id="9_5xn42"]
+[ext_resource type="StyleBox" uid="uid://dy37t6y1cwley" path="res://resources/ui/python.tres" id="10_g5or6"]
+[ext_resource type="StyleBox" uid="uid://cxneclfy36560" path="res://resources/ui/typescript.tres" id="11_78djb"]
+[ext_resource type="StyleBox" uid="uid://bfcs6bnicbykx" path="res://resources/ui/javascript.tres" id="12_rrblq"]
+[ext_resource type="StyleBox" uid="uid://bx6bdnvp2irpo" path="res://resources/ui/java.tres" id="13_bjgp8"]
+[ext_resource type="StyleBox" uid="uid://dvv32ukjod5qp" path="res://resources/ui/spring.tres" id="14_pgnf5"]
+
+[node name="LabelPopup" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+alignment = 1
+script = ExtResource("1_3hcg8")
+
+[node name="Unity" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("2_hvqtl")
+disabled = true
+text = "Unity"
+
+[node name="Godot" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("3_q7cja")
+disabled = true
+text = "Godot"
+
+[node name="GDScript" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("4_uo42w")
+disabled = true
+text = "GDScript"
+
+[node name="Bevy" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("5_sgryh")
+disabled = true
+text = "Bevy"
+
+[node name="C#" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("6_om4hf")
+disabled = true
+text = "C#"
+
+[node name="Rust" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("7_3agkq")
+disabled = true
+text = "Rust"
+
+[node name="React" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("8_qqi5l")
+disabled = true
+text = "React"
+
+[node name="Django" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("9_5xn42")
+disabled = true
+text = "Django"
+
+[node name="Python" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("10_g5or6")
+disabled = true
+text = "Python"
+
+[node name="Typescript" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("11_78djb")
+disabled = true
+text = "Typescript"
+
+[node name="Javascript" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("12_rrblq")
+disabled = true
+text = "Javascript"
+
+[node name="Java" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("13_bjgp8")
+disabled = true
+text = "Java"
+
+[node name="Spring" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("14_pgnf5")
+disabled = true
+text = "Spring"
