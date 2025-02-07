@@ -26,14 +26,15 @@ enum Achievement {
 	
 	# University 1
 	GREENPATH,
+	SLEEPWALKER,
 	
 	# Game Jam 1
 	ONE_LAST_DRINK,
 	UPBEET,
 	
 	# Kyoto University Period
+	KABADDI,
 	RUGBY,
-	SLEEPWALKER,
 	
 	# Skeleton Crew Studio
 	DEATH_GAME_HOTEL,
@@ -71,6 +72,7 @@ var achievement_data = {
 	Achievement.RE_COLLECT: preload("res://resources/achievements/17_re_collect.tres"),
 	Achievement.HUNDRED_LITTLE_GUYS: preload("res://resources/achievements/18_hundred_little_guys.tres"),
 	Achievement.SWIRLY_WHIRLY: preload("res://resources/achievements/19_swirly_whirly.tres"),
+	Achievement.KABADDI: preload("res://resources/achievements/kabaddi.tres"),
 	Achievement.RUGBY: preload("res://resources/achievements/rugby.tres")
 }
 
@@ -82,8 +84,8 @@ var achievement_dict = {
 	str(Date.new(2020, 11)): Achievement.GRADUATION,
 	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
 	str(Date.new(2022, 6)): Achievement.GREENPATH,
-	str(Date.new(2023, 5)): Achievement.RUGBY,
-	str(Date.new(2023, 7)): Achievement.SLEEPWALKER,
+	str(Date.new(2023, 6)): Achievement.KABADDI,
+	str(Date.new(2023, 8)): Achievement.RUGBY,
 	str(Date.new(2023, 11)): Achievement.DEATH_GAME_HOTEL,
 	str(Date.new(2024, 3)): Achievement.GAME_MAKERS_CLUB,
 	str(Date.new(2024, 8)): Achievement.UPTICK,
@@ -168,26 +170,28 @@ func kurechii_sequence() -> void:
 func university_sequence_1() -> void:
 	var start = Date.new(2022, 1)
 	var end = Date.new(2023, 1)
-	start_countdown(start, end, 3.0)
+	start_countdown(start, end, 2.0)
 
 func kyodai_sequence() -> void:
 	var start = Date.new(2023, 4)
 	var end = Date.new(2023, 8)
-	start_countdown(start, end, 3.0)
+	start_countdown(start, end, 2.0)
 	
 func scs_sequence() -> void:
 	var start = Date.new(2023, 8)
 	var end = Date.new(2024, 1)
-	start_countdown(start, end, 3.0)
+	start_countdown(start, end, 2.0)
 	
 func university_sequence_2() -> void:
 	var start = Date.new(2024, 2)
 	var end = Date.new(2024, 9)
-	start_countdown(start, end, 3.0)
+	start_countdown(start, end, 2.0)
 
 func start_countdown(start: Date, end: Date, duration: float) -> void:
 	self.on_countdown_started.emit()
 	await Game.player.fade_out()
+	# Wait one more due to UI
+	await Global.wait_fade()
 	self.start_date = start
 	self.end_date = end
 	self.timer = 0.0

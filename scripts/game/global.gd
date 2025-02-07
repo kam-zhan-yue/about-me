@@ -2,7 +2,7 @@ extends Node
 
 var WHITE = Color(1.0, 1.0, 1.0, 1.0)
 var CLEAR = Color(1.0, 1.0, 1.0, 0.0)
-var FADE_TIME = 0.5
+var FADE_TIME = 0.3
 
 var zoom := 5.0
 
@@ -71,11 +71,14 @@ func wrap_outline(text: String, size: float) -> String:
 	return str("[outline_size=", size, "]", text, "[/outline_size]")
 
 func fade_in(node: Node) -> void:
-	var tween = get_tree().create_tween()
-	tween.tween_property(node, "modulate", WHITE, FADE_TIME)
-	await wait_fade()
+	await fade(node, FADE_TIME, true)
 	
 func fade_out(node: Node) -> void:
+	await fade(node, FADE_TIME, false)
+
+func fade(node: Node, fade_time: float, visible: bool) -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property(node, "modulate", CLEAR, FADE_TIME)
+	var target = WHITE if visible else CLEAR
+	tween.tween_property(node, "modulate", target, fade_time)
 	await wait_fade()
+	
