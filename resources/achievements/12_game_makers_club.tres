@@ -25,4 +25,5 @@ description = "一つの部分として３つの開発チームがある。合�
 [resource]
 script = ExtResource("2_oauxq")
 title = "Game Makers' Club"
+tags = Array[int]([0, 1, 2, 3])
 pages = Array[ExtResource("1_ds88x")]([SubResource("Resource_j0rxt"), SubResource("Resource_qlvsc"), SubResource("Resource_vqjre")])

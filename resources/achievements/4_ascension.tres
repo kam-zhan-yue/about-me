@@ -12,5 +12,5 @@ description = "高校卒業制作のローグライクゲームです。自動�
 [resource]
 script = ExtResource("2_6vqxk")
 title = "Ascension"
-tag = Array[int]([0, 1])
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_022li")]([SubResource("Resource_j0rxt")])

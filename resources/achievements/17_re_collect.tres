@@ -25,4 +25,5 @@ description = "博物館であるコードを見つけて、惑星へ行くこ�
 [resource]
 script = ExtResource("2_0jrtw")
 title = "RE:Collect"
+tags = Array[int]([6, 7, 15, 16])
 pages = Array[ExtResource("1_bm3oc")]([SubResource("Resource_j0rxt"), SubResource("Resource_0ckee"), SubResource("Resource_43ufa")])

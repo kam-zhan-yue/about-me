@@ -13,4 +13,5 @@ description = "ブラックホールにとらわれた怪獣となって、脱�
 [resource]
 script = ExtResource("2_4fbyq")
 title = "The Shackled"
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_orjs3")]([SubResource("Resource_j0rxt")])

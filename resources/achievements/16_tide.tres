@@ -26,4 +26,5 @@ description = "デバッグしやすくするために、決められたリズ�
 [resource]
 script = ExtResource("2_oih2g")
 title = "TIDE"
+tags = Array[int]([2, 3])
 pages = Array[ExtResource("1_btv0d")]([SubResource("Resource_j0rxt"), SubResource("Resource_jt768"), SubResource("Resource_8ug42")])

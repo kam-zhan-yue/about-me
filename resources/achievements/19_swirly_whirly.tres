@@ -12,4 +12,5 @@ description = "RustとBevyエンジンを使用して、3日間で開発した�
 [resource]
 script = ExtResource("2_q5u6d")
 title = "Swirly Whirly"
+tags = Array[int]([4, 5])
 pages = Array[ExtResource("1_b8qty")]([SubResource("Resource_j0rxt")])

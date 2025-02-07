@@ -18,4 +18,5 @@ description = "ビートマップを効率的にテストするために、カ�
 [resource]
 script = ExtResource("2_k64cy")
 title = "Upbeet"
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_ddbm2")]([SubResource("Resource_j0rxt"), SubResource("Resource_u5xl4")])

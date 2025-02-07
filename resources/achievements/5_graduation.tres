@@ -12,4 +12,5 @@ description = "オーストラリアの全国試験で全国一の成績を獲�
 [resource]
 script = ExtResource("2_psl23")
 title = "Graduation"
+tags = Array[int]([])
 pages = Array[ExtResource("1_22pgx")]([SubResource("Resource_j0rxt")])

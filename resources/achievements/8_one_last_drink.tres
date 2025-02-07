@@ -12,4 +12,5 @@ description = "大学のハッカソンで優勝したUnityのゲームです。
 [resource]
 script = ExtResource("2_3vcyb")
 title = "One Last Drink"
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_yiwyi")]([SubResource("Resource_j0rxt")])

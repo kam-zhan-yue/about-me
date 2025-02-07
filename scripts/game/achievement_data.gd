@@ -15,8 +15,13 @@ enum Tag {
 	Python,
 	Spring,
 	Java,
+	NodeJS,
+	MongoDB,
+	Firebase,
+	Ink,
+	Processing,
 }
 
 @export var title := ""
-@export var tag: Array[Tag] = []
+@export var tags: Array[Tag] = []
 @export var pages: Array[PageData] = []

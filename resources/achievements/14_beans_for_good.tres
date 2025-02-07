@@ -19,4 +19,5 @@ description = "フロントエンドはReactをPhaser.jsのエンジン、バッ
 [resource]
 script = ExtResource("2_s5it4")
 title = "Beans for Good"
+tags = Array[int]([6, 8, 13, 14])
 pages = Array[ExtResource("1_8w68u")]([SubResource("Resource_j0rxt"), SubResource("Resource_xar7c")])

@@ -12,4 +12,5 @@ description = "大学と同時に、Uptickで3ヶ月間インターンをした�
 [resource]
 script = ExtResource("2_klpab")
 title = "Uptick"
+tags = Array[int]([6, 7, 9, 10])
 pages = Array[ExtResource("1_f4yd0")]([SubResource("Resource_j0rxt")])

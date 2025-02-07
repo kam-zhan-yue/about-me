@@ -19,4 +19,5 @@ description = "カスタムツールを作って、自分のダイアログシ�
 [resource]
 script = ExtResource("2_eabf4")
 title = "Sleepwalker"
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_r546d")]([SubResource("Resource_j0rxt"), SubResource("Resource_p4ehp")])

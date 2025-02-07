@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5nlakyov37gu"]
+[gd_scene load_steps=20 format=3 uid="uid://b5nlakyov37gu"]
 
 [ext_resource type="Script" path="res://scripts/ui/label_popup.gd" id="1_3hcg8"]
 [ext_resource type="StyleBox" uid="uid://ddrlog8scawo" path="res://resources/ui/unity.tres" id="2_hvqtl"]
@@ -13,7 +13,12 @@
 [ext_resource type="StyleBox" uid="uid://cxneclfy36560" path="res://resources/ui/typescript.tres" id="11_78djb"]
 [ext_resource type="StyleBox" uid="uid://bfcs6bnicbykx" path="res://resources/ui/javascript.tres" id="12_rrblq"]
 [ext_resource type="StyleBox" uid="uid://bx6bdnvp2irpo" path="res://resources/ui/java.tres" id="13_bjgp8"]
+[ext_resource type="StyleBox" uid="uid://ylqghnfo6vgw" path="res://resources/ui/processing.tres" id="14_hem8c"]
 [ext_resource type="StyleBox" uid="uid://dvv32ukjod5qp" path="res://resources/ui/spring.tres" id="14_pgnf5"]
+[ext_resource type="StyleBox" uid="uid://d32a1f5kbkw0a" path="res://resources/ui/node_js.tres" id="15_81u6c"]
+[ext_resource type="StyleBox" uid="uid://dvbpq8n6mbkh8" path="res://resources/ui/mongo_db.tres" id="16_l7bjq"]
+[ext_resource type="StyleBox" uid="uid://dkxhxfkv6hdmy" path="res://resources/ui/firebase.tres" id="17_j4afr"]
+[ext_resource type="StyleBox" uid="uid://bhgq7xfjtswlx" path="res://resources/ui/ink.tres" id="18_i6r7f"]
 
 [node name="LabelPopup" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
@@ -29,6 +34,15 @@ theme_override_styles/disabled = ExtResource("2_hvqtl")
 disabled = true
 text = "Unity"
 
+[node name="CSharp" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("6_om4hf")
+disabled = true
+text = "C#"
+
 [node name="Godot" type="Button" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
@@ -38,7 +52,7 @@ theme_override_styles/disabled = ExtResource("3_q7cja")
 disabled = true
 text = "Godot"
 
-[node name="GDScript" type="Button" parent="."]
+[node name="GodotScript" type="Button" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -55,15 +69,6 @@ theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/disabled = ExtResource("5_sgryh")
 disabled = true
 text = "Bevy"
-
-[node name="C#" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_styles/disabled = ExtResource("6_om4hf")
-disabled = true
-text = "C#"
 
 [node name="Rust" type="Button" parent="."]
 unique_name_in_owner = true
@@ -83,24 +88,6 @@ theme_override_styles/disabled = ExtResource("8_qqi5l")
 disabled = true
 text = "React"
 
-[node name="Django" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_styles/disabled = ExtResource("9_5xn42")
-disabled = true
-text = "Django"
-
-[node name="Python" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_styles/disabled = ExtResource("10_g5or6")
-disabled = true
-text = "Python"
-
 [node name="Typescript" type="Button" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
@@ -119,14 +106,23 @@ theme_override_styles/disabled = ExtResource("12_rrblq")
 disabled = true
 text = "Javascript"
 
-[node name="Java" type="Button" parent="."]
+[node name="Django" type="Button" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_styles/disabled = ExtResource("13_bjgp8")
+theme_override_styles/disabled = ExtResource("9_5xn42")
 disabled = true
-text = "Java"
+text = "Django"
+
+[node name="Python" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("10_g5or6")
+disabled = true
+text = "Python"
 
 [node name="Spring" type="Button" parent="."]
 unique_name_in_owner = true
@@ -136,3 +132,57 @@ theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/disabled = ExtResource("14_pgnf5")
 disabled = true
 text = "Spring"
+
+[node name="Processing" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("14_hem8c")
+disabled = true
+text = "Processing"
+
+[node name="Java" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("13_bjgp8")
+disabled = true
+text = "Java"
+
+[node name="MongoDB" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("16_l7bjq")
+disabled = true
+text = "MongoDB"
+
+[node name="NodeJS" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("15_81u6c")
+disabled = true
+text = "NodeJS"
+
+[node name="Firebase" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("17_j4afr")
+disabled = true
+text = "Firebase"
+
+[node name="Ink" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = ExtResource("18_i6r7f")
+disabled = true
+text = "Ink"

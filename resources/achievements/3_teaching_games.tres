@@ -18,5 +18,5 @@ description = "各自にゲームを作る課題を出して、最後の授業�
 [resource]
 script = ExtResource("2_q5gd7")
 title = "Teaching Games"
-tag = Array[int]([0, 1])
+tags = Array[int]([17, 12])
 pages = Array[ExtResource("1_kc5co")]([SubResource("Resource_j0rxt"), SubResource("Resource_m8g42")])

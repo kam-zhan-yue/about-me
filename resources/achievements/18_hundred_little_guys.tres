@@ -12,4 +12,5 @@ description = "2日間で自分で作ったGodotのゲームです。プレイ�
 [resource]
 script = ExtResource("2_q3jnj")
 title = "Like, A Hundred Little Guys"
+tags = Array[int]([2, 3])
 pages = Array[ExtResource("1_5n67g")]([SubResource("Resource_j0rxt")])

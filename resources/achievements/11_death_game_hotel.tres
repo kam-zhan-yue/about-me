@@ -26,4 +26,5 @@ description = "VRで遊べるアイテムを開発した。アイテムのネッ
 [resource]
 script = ExtResource("2_57boh")
 title = "Death Game Hotel"
+tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_roc0f")]([SubResource("Resource_j0rxt"), SubResource("Resource_822eb"), SubResource("Resource_wf6tj")])

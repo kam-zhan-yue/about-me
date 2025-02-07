@@ -10,6 +10,7 @@ var data: AchievementData
 @onready var next_button := %Next as Button
 @onready var previous_button := %Previous as Button
 @onready var ok_button := %OkButton as Button
+@onready var label_holder := %LabelHolder as LabelPopup
 
 var showing := false
 var page_index := 0
@@ -43,6 +44,8 @@ func _hide() -> void:
 
 func _on_achievement(achievement: AchievementData) -> void:
 	init(achievement)
+	label_holder.show_achievement(achievement)
+	
 	Global.set_active(self)
 
 func init(achievement_data: AchievementData) -> void:
