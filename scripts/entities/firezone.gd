@@ -16,6 +16,8 @@ const TOTAL = 4
 var hits := 0
 var can_deactivate := false
 
+signal on_complete
+
 const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
 
@@ -55,9 +57,6 @@ func deactivate() -> void:
 		Game.camera.set_mode(Camera.Mode.FollowPlayer)
 		await firewall.deactivate()
 
-
-signal on_complete
-
 func _the_shackled() -> void:
 	Achievements.activate(Achievements.Achievement.THE_SHACKLED)
 	check_complete()
@@ -80,7 +79,16 @@ func check_complete() -> void:
 	if hits >= TOTAL:
 		self.can_deactivate = true
 
+func reduce_flames() -> void:
+	await firewall.reduce_flames()
+
 func _on_done_showing() -> void:
 	if self.can_deactivate:
 		self.deactivate()
 		self.on_complete.emit()
+	else:
+		Game.player.active = false
+		self.activated = false
+		await reduce_flames()
+		Game.player.active = true
+		self.activated = true
