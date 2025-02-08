@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=4 uid="uid://dfukq65uae5dw"]
+
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_yl1ev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
+size = Vector2(20, 32)
+
+[node name="Entry" type="Node2D"]
+
+[node name="Building" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAAAAP7/AAAJAAcAAAAAAP//AAAJAAgAAAABAP7/AAAKAAEAAAABAP//AAAKAAEAAAD///7/AAAKAAEAAAD/////AAAKAAEAAAD+//7/AAAKAAEAAAD+////AAAKAAEAAAACAP7/AAAKAAEAAAACAP//AAAKAAEAAAD+//3/AAAJAAYAAAACAP3/AAAJAAYAAAD///3/AAAIAAcAAAAAAP3/AAAIAAcAAAABAP3/AAAIAAcAAAD///z/AAAIAAgAAAABAPz/AAAKAAgAAAAAAPz/AAAKAAcAAAD///v/AAAJAAYAAAAAAPv/AAAJAAYAAAABAPv/AAAJAAYAAAA=")
+tile_set = ExtResource("2_yl1ev")
+
+[node name="Entry" type="Marker2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="Interaction" type="Area2D" parent="Entry"]
+position = Vector2(8, -10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry/Interaction"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rakqr")
+debug_color = Color(0.815982, 0.00194121, 0.974692, 0.42)
+
+[connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

@@ -15,6 +15,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		fall()
 
 func fall() -> void:
+	Achievements.complete_event(Achievements.Event.FLAGPOLE)
 	var time = ( -flag.position.y) / Flagpole.FLAG_FALL_SPEED
 	if time < 0:
 		time = 0

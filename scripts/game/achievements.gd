@@ -11,6 +11,8 @@ enum Event {
 	UNIMELB_2,
 	GAME_JAM_2,
 	FLAGPOLE,
+	WORLD_1_1_END,
+	WORLD_8_4_START,
 }
 
 enum Achievement {

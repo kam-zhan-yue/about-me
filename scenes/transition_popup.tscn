@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://0jwwq8lxg2xm"]
+
+[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="1_ipo42"]
+[ext_resource type="Script" path="res://scripts/ui/transition_popup.gd" id="1_mxhge"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c6ga"]
+shader = ExtResource("1_ipo42")
+shader_parameter/radius = 1.2
+shader_parameter/pos = Vector2(0.5, 0.74)
+
+[node name="TransitionPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mxhge")
+
+[node name="Shader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_7c6ga")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

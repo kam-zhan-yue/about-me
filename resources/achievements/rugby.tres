@@ -12,4 +12,5 @@ description = "初心者としてラグビー部に入った。1年間練習し�
 [resource]
 script = ExtResource("2_xupht")
 title = "京都大学ラグビー部"
+tags = Array[int]([])
 pages = Array[ExtResource("1_qr6sf")]([SubResource("Resource_j0rxt")])

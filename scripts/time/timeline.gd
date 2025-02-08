@@ -1,11 +1,11 @@
 class_name Timeline
 extends Node2D
 
-@onready var zone_1 := $"Zone 1" as Timezone
-@onready var zone_2 := $"Zone 2" as Timezone
-@onready var zone_3 := $"Zone 3" as Timezone
-@onready var zone_4 := $"Zone 4" as Timezone
-@onready var zone_5 := $"Zone 5" as Timezone
+@onready var zone_1 := %"Zone 1" as Timezone
+@onready var zone_2 := %"Zone 2" as Timezone
+@onready var zone_3 := %"Zone 3" as Timezone
+@onready var zone_4 := %"Zone 4" as Timezone
+@onready var zone_5 := %"Zone 5" as Timezone
 
 @onready var school := %School as Building
 @onready var kurechii := %Kurechii as Building
@@ -16,6 +16,7 @@ extends Node2D
 @onready var unimelb_2 := %"Unimelb 2" as Building
 @onready var game_jam_2 := %"Game Jam 2" as GameJam2
 @onready var final := %Final as Building
+@onready var entry := %Entry as Node2D
 @onready var flagpole_jump := %FlagpoleJump as Marker2D
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
@@ -47,6 +48,8 @@ func _ready() -> void:
 		Achievements.Event.UNIMELB_2: unimelb_2,
 		Achievements.Event.GAME_JAM_2: game_jam_2,
 		Achievements.Event.FLAGPOLE: flagpole_jump,
+		Achievements.Event.WORLD_1_1_END: final,
+		Achievements.Event.WORLD_8_4_START: entry,
 	}
 
 	if SETTINGS.start_event != Achievements.Event.NONE:
@@ -70,7 +73,7 @@ func get_bound() -> float:
 				continue
 			if timeline_dict.get(event):
 				return timeline_dict[event].global_position.x
-	return final.global_position.x
+	return 10000
 
 func _school() -> void:
 	Achievements.activate_event(Achievements.Event.SCHOOL)
@@ -97,8 +100,16 @@ func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
 
 func _final() -> void:
-	Game.end_game()
+	Achievements.complete_event(Achievements.Event.WORLD_1_1_END)
+	await Game.player.fade_out()
+	await Game.transition_in()
+	Game.player.global_position.x = entry.global_position.x
+	await Global.wait(0.3)
+	Game.player.fade_in()
+	await Game.transition_out()
 
+func _end_game() -> void:
+	Game.end_game()
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:

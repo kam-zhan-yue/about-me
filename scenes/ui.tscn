@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2lt0mjhqmmf7"]
+[gd_scene load_steps=7 format=3 uid="uid://c2lt0mjhqmmf7"]
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_5nuf2"]
 [ext_resource type="PackedScene" uid="uid://dh2faluuhadxu" path="res://scenes/game_popup.tscn" id="2_lnoa6"]
 [ext_resource type="PackedScene" uid="uid://bve4hr8sl00nf" path="res://scenes/achievement_popup.tscn" id="3_0e8c6"]
 [ext_resource type="PackedScene" uid="uid://diid4aineqjj2" path="res://scenes/end_game_popup.tscn" id="4_4o3oj"]
 [ext_resource type="PackedScene" uid="uid://cekpou78xsj7f" path="res://scenes/date_popup.tscn" id="5_7kqpy"]
+[ext_resource type="PackedScene" uid="uid://0jwwq8lxg2xm" path="res://scenes/transition_popup.tscn" id="6_1b4uv"]
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
@@ -20,4 +21,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="EndGamePopup" parent="." instance=ExtResource("4_4o3oj")]
+unique_name_in_owner = true
+
+[node name="TransitionPopup" parent="." instance=ExtResource("6_1b4uv")]
 unique_name_in_owner = true

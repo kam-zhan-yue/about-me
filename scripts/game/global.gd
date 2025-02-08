@@ -11,10 +11,14 @@ func seconds(time: float) -> void:
 	
 func frame() -> void:
 	var delta := get_process_delta_time()
-	await get_tree().create_timer(delta).timeout
+	await wait(delta)
 
 func wait_fade() -> void:
-	await get_tree().create_timer(FADE_TIME).timeout
+	await wait(FADE_TIME)
+
+func wait(time: float) -> void:
+	await get_tree().create_timer(time).timeout
+	
 
 func set_active(node: Node) -> void:
 	active(node, true)

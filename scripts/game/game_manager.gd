@@ -8,5 +8,4 @@ extends Node2D
 const SETTINGS = preload("res://resources/game_settings.tres")
 
 func _ready() -> void:
-	Game.init(player, camera, Date.new(SETTINGS.start_year, SETTINGS.start_month))
-	ui.init()
+	Game.init(player, camera, Date.new(SETTINGS.start_year, SETTINGS.start_month), ui)
