@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=20 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dwfvmy3vdpnfi" path="res://scenes/scs.tscn" id="13_jfgtj"]
 [ext_resource type="PackedScene" uid="uid://dfukq65uae5dw" path="res://scenes/entry.tscn" id="15_hjmd0"]
 [ext_resource type="PackedScene" uid="uid://bwg3vgfdykxuq" path="res://scenes/final.tscn" id="15_ivs7s"]
+[ext_resource type="Script" path="res://scripts/entities/firezone.gd" id="16_0tmey"]
 [ext_resource type="PackedScene" uid="uid://1vyppwa0ga54" path="res://scenes/firewall.tscn" id="17_3y006"]
 
 [node name="Main" type="Node2D"]
@@ -165,9 +166,21 @@ tile_set = ExtResource("3_tsnp1")
 unique_name_in_owner = true
 position = Vector2(4120, 0)
 
-[node name="Firewall" parent="World 8-4" instance=ExtResource("17_3y006")]
+[node name="Firezone" type="Node2D" parent="World 8-4"]
 unique_name_in_owner = true
-position = Vector2(3936, 1)
+position = Vector2(4120, 0)
+script = ExtResource("16_0tmey")
+
+[node name="Firewall" parent="World 8-4/Firezone" instance=ExtResource("17_3y006")]
+unique_name_in_owner = true
+position = Vector2(-184, 1)
+
+[node name="FireStart" type="Marker2D" parent="World 8-4/Firezone"]
+unique_name_in_owner = true
+
+[node name="FireEnd" type="Marker2D" parent="World 8-4/Firezone"]
+unique_name_in_owner = true
+position = Vector2(480, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_qvmds")]
 unique_name_in_owner = true

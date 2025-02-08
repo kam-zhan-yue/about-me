@@ -5,9 +5,11 @@ var player: Player
 var camera: Camera
 var date: Date
 var ui: UI
+var paused := false
 
 # Signals
 signal on_date_changed(date: Date)
+signal on_world_changed(world: String)
 signal on_end_game
 
 func init(p: Player = null, c: Camera = null, start_date: Date = null, ui_popup: UI = null) -> void:
@@ -49,3 +51,11 @@ func transition_out() -> void:
 func end_game() -> void:
 	player.fade_out()
 	on_end_game.emit()
+
+func set_world(world: String) -> void:
+	on_world_changed.emit(world)
+
+func pause_systems(pause: bool) -> void:
+	self.paused = pause
+	self.player.active = !pause
+	

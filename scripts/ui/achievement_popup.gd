@@ -21,8 +21,7 @@ func _ready() -> void:
 	Global.set_inactive(self)
 
 func show_popup() -> void:
-	Achievements.active = false
-	Game.player.active = false
+	Game.pause_systems(true)
 	self.scale = Vector2.ZERO
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.6).set_trans(Tween.TRANS_EXPO)
@@ -39,8 +38,7 @@ func hide_popup() -> void:
 
 func _hide() -> void:
 	Global.set_inactive(self)
-	Game.player.active = true
-	Achievements.active = true
+	Game.pause_systems(false)
 
 func _on_achievement(achievement: AchievementData) -> void:
 	init(achievement)

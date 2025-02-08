@@ -19,6 +19,7 @@ extends Node2D
 @onready var final := %Final as Building
 @onready var entry := %Entry as Node2D
 @onready var firewall := %Firewall as Firewall
+@onready var firezone := %Firezone as Firezone
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -50,7 +51,6 @@ func _ready() -> void:
 		Achievements.Event.GAME_JAM_2: game_jam_2,
 		Achievements.Event.FLAGPOLE: flagpole_jump,
 		Achievements.Event.WORLD_1_1_END: final,
-		Achievements.Event.WORLD_8_4_START: entry,
 	}
 
 	if SETTINGS.start_event != Achievements.Event.NONE:
@@ -104,11 +104,13 @@ func _final() -> void:
 	Achievements.complete_event(Achievements.Event.WORLD_1_1_END)
 	await Game.player.fade_out()
 	await Game.transition_in()
+	Game.set_world("8-4")
 	Game.player.global_position.x = entry.global_position.x
 	await Global.wait(0.3)
-	Game.player.fade_in()
-	await Game.transition_out()
-	Achievements.complete_event(Achievements.Event.WORLD_8_4_START)
+	Game.transition_out()
+	# Necessary to set interactive back to false
+	await Game.player.fade_in()
+	world_8_4()
 
 func _end_game() -> void:
 	Game.end_game()
@@ -130,10 +132,9 @@ func _on_event_complete(event: Achievements.Event) -> void:
 	elif event == Achievements.Event.UNIMELB_2:
 		unimelb_2.raise_flag()
 		zone_5.activated = true
-	elif event == Achievements.Event.WORLD_8_4_START:
-		world_8_4()
 
 func world_8_4() -> void:
+	Game.set_world("8-4")
 	Game.player.interactive = false
-	await firewall.activate()
+	await firezone.activate()
 	Game.player.interactive = true

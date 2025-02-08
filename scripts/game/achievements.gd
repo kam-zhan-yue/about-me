@@ -12,7 +12,6 @@ enum Event {
 	GAME_JAM_2,
 	FLAGPOLE,
 	WORLD_1_1_END,
-	WORLD_8_4_START,
 }
 
 enum Achievement {
@@ -99,7 +98,6 @@ signal on_event_completed(event: Event)
 signal on_countdown_started
 signal on_countdown_completed
 
-var active := true
 var completed = {}
 var completed_events = {}
 var timer := 0.0
@@ -122,7 +120,7 @@ func activate(achievement: Achievement) -> void:
 	on_achievement.emit(data as AchievementData)
 
 func _process(delta: float) -> void:
-	if not active: return
+	if not Game.paused: return
 	if timer < time:
 		var p := timer / time
 		var next_date := start_date.lerp_date(end_date, p)

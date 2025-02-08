@@ -11,10 +11,18 @@ func _ready() -> void:
 		Global.set_inactive(fire)
 
 func activate() -> void:
-	print("Active")
 	for fire in fires:
 		Global.set_active(fire)
 		await Global.wait(INTERVAL)
 	
 	for fire in fires:
 		fire.play()
+
+func deactivate() -> void:
+	fires.reverse()
+	for fire in fires:
+		fire.stop()
+
+	for fire in fires:
+		Global.set_inactive(fire)
+		await Global.wait(INTERVAL)

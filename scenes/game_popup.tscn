@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh2faluuhadxu"]
+[gd_scene load_steps=6 format=3 uid="uid://dh2faluuhadxu"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_popup.gd" id="1_vcy8p"]
 [ext_resource type="Script" path="res://scripts/ui/date_popup.gd" id="3_7kqck"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="3_ss62g"]
 [ext_resource type="Script" path="res://scripts/ui/time_popup.gd" id="4_ji6nt"]
+[ext_resource type="Script" path="res://scripts/ui/world_popup.gd" id="4_pi3mg"]
 
 [node name="GamePopup" type="Control"]
 custom_minimum_size = Vector2(0, 200)
@@ -87,6 +88,7 @@ fit_content = true
 [node name="World" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
+script = ExtResource("4_pi3mg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/World"]
 layout_mode = 1
@@ -103,7 +105,8 @@ bbcode_enabled = true
 text = "[center]WORLD[/center]"
 fit_content = true
 
-[node name="Label" type="RichTextLabel" parent="HBoxContainer/World/VBoxContainer"]
+[node name="WorldLabel" type="RichTextLabel" parent="HBoxContainer/World/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_ss62g")
 theme_override_font_sizes/normal_font_size = 56
