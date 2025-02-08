@@ -57,3 +57,19 @@ sprite_frames = ExtResource("1_lb7yi")
 [node name="Fire13" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -125)
 sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire14" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -135)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire15" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -145)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire16" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -155)
+sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Fire17" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -165)
+sprite_frames = ExtResource("1_lb7yi")

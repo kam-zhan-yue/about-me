@@ -39,6 +39,7 @@ func hide_popup() -> void:
 func _hide() -> void:
 	Global.set_inactive(self)
 	Game.pause_systems(false)
+	Achievements.done_showing()
 
 func _on_achievement(achievement: AchievementData) -> void:
 	init(achievement)
@@ -53,12 +54,14 @@ func init(achievement_data: AchievementData) -> void:
 	page_index = 0
 	init_page(data.pages[0])
 	
-func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_SPACE) and is_last_page() and showing:
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_ok") and is_last_page() and showing:
 		_on_ok_button_pressed()
-	elif Input.is_key_pressed(KEY_LEFT) and has_previous():
+	elif Input.is_action_just_pressed("ui_ok") and has_next():
+		_on_next_pressed()
+	elif Input.is_action_just_pressed("ui_previous") and has_previous():
 		_on_previous_pressed()
-	elif Input.is_key_pressed(KEY_RIGHT) and has_next():
+	elif Input.is_action_just_pressed("ui_next") and has_next():
 		_on_next_pressed()
 
 func init_page(page_data: PageData) -> void:

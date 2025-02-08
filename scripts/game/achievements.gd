@@ -97,6 +97,7 @@ signal on_event_started(event: Event)
 signal on_event_completed(event: Event)
 signal on_countdown_started
 signal on_countdown_completed
+signal on_done_showing
 
 var completed = {}
 var completed_events = {}
@@ -207,3 +208,6 @@ func end_sequence() -> void:
 
 func has_completed(event: Event) -> bool:
 	return event in completed_events
+
+func done_showing() -> void:
+	self.on_done_showing.emit()

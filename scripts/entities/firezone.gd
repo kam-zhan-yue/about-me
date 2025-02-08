@@ -5,10 +5,26 @@ extends Node2D
 @onready var fire_start := %FireStart as Marker2D
 @onready var fire_end := %FireEnd as Marker2D
 
+@onready var the_shackled := %Shackled as QuestionBlock
+@onready var beans_for_good := %BeansForGood as QuestionBlock
+@onready var hundred_little_guys := %HundredLittleGuys as QuestionBlock
+@onready var swirly_whirly := %SwirlyWhirly as QuestionBlock
+
 var activated := false
 var timer = 0.0
-const TIME_TO_TARGET := 3.0
+const TOTAL = 4
+var hits := 0
+var can_deactivate := false
+
+const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
+
+func _ready() -> void:
+	the_shackled.hit.connect(_the_shackled)
+	beans_for_good.hit.connect(_beans_for_good)
+	hundred_little_guys.hit.connect(_hundred_little_guys)
+	swirly_whirly.hit.connect(_swirly_whirly)
+	Achievements.on_done_showing.connect(_on_done_showing)
 
 func activate() -> void:
 	Game.camera.set_mode(Camera.Mode.ManualControl)
@@ -16,6 +32,10 @@ func activate() -> void:
 	self.timer = 0.0
 	self.original_wall = firewall.global_position
 	self.activated = true
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_pause"):
+		self.activated = !self.activated
 
 func _process(delta: float) -> void:
 	if Game.paused: return
@@ -30,6 +50,37 @@ func _process(delta: float) -> void:
 		self.deactivate()
 
 func deactivate() -> void:
-	self.activated = false
-	Game.camera.set_mode(Camera.Mode.FollowPlayer)
-	await firewall.deactivate()
+	if self.activated:
+		self.activated = false
+		Game.camera.set_mode(Camera.Mode.FollowPlayer)
+		await firewall.deactivate()
+
+
+signal on_complete
+
+func _the_shackled() -> void:
+	Achievements.activate(Achievements.Achievement.THE_SHACKLED)
+	check_complete()
+
+func _beans_for_good() -> void:
+	Achievements.activate(Achievements.Achievement.BEANS_FOR_GOOD)
+	check_complete()
+
+func _hundred_little_guys() -> void:
+	print("MICE")
+	Achievements.activate(Achievements.Achievement.HUNDRED_LITTLE_GUYS)
+	check_complete()
+
+func _swirly_whirly() -> void:
+	Achievements.activate(Achievements.Achievement.SWIRLY_WHIRLY)
+	check_complete()
+
+func check_complete() -> void:
+	hits += 1
+	if hits >= TOTAL:
+		self.can_deactivate = true
+
+func _on_done_showing() -> void:
+	if self.can_deactivate:
+		self.deactivate()
+		self.on_complete.emit()
