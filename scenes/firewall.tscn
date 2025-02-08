@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://1vyppwa0ga54"]
+[gd_scene load_steps=3 format=3 uid="uid://1vyppwa0ga54"]
 
+[ext_resource type="Script" path="res://scripts/entities/firewall.gd" id="1_el2ja"]
 [ext_resource type="SpriteFrames" uid="uid://bkl20tu76ajbg" path="res://resources/sprites/fire.tres" id="1_lb7yi"]
 
 [node name="Firewall" type="Node2D"]
+script = ExtResource("1_el2ja")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
@@ -54,20 +56,4 @@ sprite_frames = ExtResource("1_lb7yi")
 
 [node name="Fire13" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -125)
-sprite_frames = ExtResource("1_lb7yi")
-
-[node name="Fire14" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -135)
-sprite_frames = ExtResource("1_lb7yi")
-
-[node name="Fire15" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -145)
-sprite_frames = ExtResource("1_lb7yi")
-
-[node name="Fire16" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -155)
-sprite_frames = ExtResource("1_lb7yi")
-
-[node name="Fire17" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -165)
 sprite_frames = ExtResource("1_lb7yi")

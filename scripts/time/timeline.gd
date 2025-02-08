@@ -15,9 +15,10 @@ extends Node2D
 @onready var scs := %SCS as Building
 @onready var unimelb_2 := %"Unimelb 2" as Building
 @onready var game_jam_2 := %"Game Jam 2" as GameJam2
+@onready var flagpole_jump := %FlagpoleJump as Marker2D
 @onready var final := %Final as Building
 @onready var entry := %Entry as Node2D
-@onready var flagpole_jump := %FlagpoleJump as Marker2D
+@onready var firewall := %Firewall as Firewall
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -107,6 +108,7 @@ func _final() -> void:
 	await Global.wait(0.3)
 	Game.player.fade_in()
 	await Game.transition_out()
+	Achievements.complete_event(Achievements.Event.WORLD_8_4_START)
 
 func _end_game() -> void:
 	Game.end_game()
@@ -128,3 +130,10 @@ func _on_event_complete(event: Achievements.Event) -> void:
 	elif event == Achievements.Event.UNIMELB_2:
 		unimelb_2.raise_flag()
 		zone_5.activated = true
+	elif event == Achievements.Event.WORLD_8_4_START:
+		world_8_4()
+
+func world_8_4() -> void:
+	Game.player.interactive = false
+	await firewall.activate()
+	Game.player.interactive = true
