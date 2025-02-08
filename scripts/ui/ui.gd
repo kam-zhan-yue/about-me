@@ -32,4 +32,5 @@ func _on_achievement(_achievement: AchievementData) -> void:
 	Global.fade_out(game_popup)
 
 func _on_done_showing() -> void:
-	Global.fade_in(game_popup)
+	if not Achievements.is_achievement_showing():
+		Global.fade_in(game_popup)

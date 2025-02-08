@@ -4,6 +4,7 @@ extends Node2D
 var fires: Array[AnimatedSprite2D] = []
 const INTERVAL = 0.05
 const FLAMES_TO_REDUCE = 3
+var activated := false
 
 func _ready() -> void:
 	for child in get_children():
@@ -12,6 +13,7 @@ func _ready() -> void:
 		Global.set_inactive(fire)
 
 func activate() -> void:
+	self.activated = true
 	for fire in fires:
 		Global.set_active(fire)
 		await Global.wait(INTERVAL)
@@ -20,6 +22,7 @@ func activate() -> void:
 		fire.play()
 
 func deactivate() -> void:
+	self.activated = false
 	self.fires.reverse()
 	for fire in self.fires:
 		fire.stop()

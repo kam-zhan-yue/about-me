@@ -12,12 +12,12 @@ extends Node2D
 
 var activated := false
 var timer = 0.0
-const TOTAL = 4
 var hits := 0
 var can_deactivate := false
 
 signal on_complete
 
+const TOTAL = 4
 const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
 
@@ -34,14 +34,17 @@ func activate() -> void:
 	self.timer = 0.0
 	self.original_wall = firewall.global_position
 	self.activated = true
+	print("Activate")
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_pause"):
+	if self.firewall.activated and Input.is_action_just_pressed("ui_pause"):
+		print("What")
 		self.activated = !self.activated
 
 func _process(delta: float) -> void:
 	if Game.paused: return
 	if not self.activated: return
+	print("Process")
 	var next_pos := fire_start.global_position.lerp(fire_end.global_position, timer / TIME_TO_TARGET)
 	Game.camera.global_position.x = next_pos.x
 	var displacement := next_pos - fire_start.global_position
@@ -84,9 +87,9 @@ func reduce_flames() -> void:
 
 func _on_done_showing() -> void:
 	if self.can_deactivate:
-		self.deactivate()
+		await self.deactivate()
 		self.on_complete.emit()
-	else:
+	elif self.activated:
 		Game.player.active = false
 		self.activated = false
 		await reduce_flames()

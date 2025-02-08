@@ -9,9 +9,9 @@ enum Event {
 	KYODAI,
 	SCS,
 	UNIMELB_2,
-	GAME_JAM_2,
 	FLAGPOLE,
 	WORLD_1_1_END,
+	GAME_JAM_2,
 }
 
 enum Achievement {
@@ -121,7 +121,7 @@ func activate(achievement: Achievement) -> void:
 	on_achievement.emit(data as AchievementData)
 
 func _process(delta: float) -> void:
-	if not Game.paused: return
+	if Game.paused: return
 	if timer < time:
 		var p := timer / time
 		var next_date := start_date.lerp_date(end_date, p)
@@ -135,6 +135,9 @@ func _process(delta: float) -> void:
 			complete_event(current_event)
 			end_sequence()
 
+
+func is_achievement_showing() -> bool:
+	return timer < time
 
 func complete_event(event: Event) -> void:
 	print("Completing Event: ", get_event_id(event))

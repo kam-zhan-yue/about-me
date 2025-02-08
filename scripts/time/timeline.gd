@@ -34,6 +34,7 @@ func _ready() -> void:
 	scs.on_activate.connect(_scs)
 	unimelb_2.on_activate.connect(_unimelb_2)
 	final.on_activate.connect(_final)
+	firezone.on_complete.connect(_firezone)
 	
 	game_jam_1.on_complete.connect(_game_jam_1)
 	game_jam_2.on_complete.connect(_game_jam_2)
@@ -48,9 +49,9 @@ func _ready() -> void:
 		Achievements.Event.KYODAI: kyodai,
 		Achievements.Event.SCS: scs,
 		Achievements.Event.UNIMELB_2: unimelb_2,
-		Achievements.Event.GAME_JAM_2: game_jam_2,
 		Achievements.Event.FLAGPOLE: flagpole_jump,
 		Achievements.Event.WORLD_1_1_END: final,
+		Achievements.Event.GAME_JAM_2: game_jam_2,
 	}
 
 	if SETTINGS.start_event != Achievements.Event.NONE:
@@ -111,6 +112,9 @@ func _final() -> void:
 	# Necessary to set interactive back to false
 	await Game.player.fade_in()
 	world_8_4()
+
+func _firezone() -> void:
+	pass
 
 func _end_game() -> void:
 	Game.end_game()
