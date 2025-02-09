@@ -40,7 +40,13 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+		else:
+			sprite.flip_h = is_player_to_right()
+				
 		move_and_slide()
+
+func is_player_to_right() -> bool:
+	return global_position.x < Game.player.global_position.x
 
 func jump_routine() -> void:
 	await Global.wait(JUMP_INTERVAL)
@@ -60,7 +66,8 @@ func move_routine() -> void:
 
 func attack_routine() -> void:
 	while self.state == State.ACTIVE:
-		shoot_fireball()
+		if not is_player_to_right():
+			shoot_fireball()
 		await Global.wait(FIREBALL_INTERVAL)
 
 func shoot_fireball() -> void:
