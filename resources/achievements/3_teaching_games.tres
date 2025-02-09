@@ -13,7 +13,7 @@ description = "チン族難民のための学校でプログラミング授業�
 script = ExtResource("1_kc5co")
 media = 0
 filename = "3_teaching_games_2.png"
-description = "各自にゲームを作る課題を出して、最後の授業でみんなで遊んだ。"
+description = "各自にゲームを作る課題を出して、最後の授業でみんなで遊んだ。この経験を通じて、ゲームが人々を繋げる力があると学んだ。"
 
 [resource]
 script = ExtResource("2_q5gd7")

@@ -7,7 +7,7 @@
 script = ExtResource("1_5n67g")
 media = 1
 filename = "18_hundred_guys.ogv"
-description = "2日間で自分で作ったGodotのゲームです。プレイヤーはネズミの群れとなって、チーズを食べるゲームです。ネズミはカスタムのボイドアルゴリズムを使っている。"
+description = "新しいゲームエンジンを学ぶために、Godotを使用した。プレイヤーはネズミの群れとなって、チーズを食べるゲームです。ネズミはカスタムのボイドアルゴリズムを使っている。"
 
 [resource]
 script = ExtResource("2_q3jnj")

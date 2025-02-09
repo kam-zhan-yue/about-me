@@ -86,8 +86,8 @@ var achievement_dict = {
 	str(Date.new(2020, 11)): Achievement.GRADUATION,
 	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
 	str(Date.new(2022, 6)): Achievement.GREENPATH,
-	str(Date.new(2023, 6)): Achievement.KABADDI,
-	str(Date.new(2023, 8)): Achievement.RUGBY,
+	str(Date.new(2023, 6)): Achievement.RUGBY,
+	str(Date.new(2023, 8)): Achievement.KABADDI,
 	str(Date.new(2023, 11)): Achievement.DEATH_GAME_HOTEL,
 	str(Date.new(2024, 3)): Achievement.GAME_MAKERS_CLUB,
 	str(Date.new(2024, 8)): Achievement.UPTICK,
@@ -126,7 +126,6 @@ func _process(delta: float) -> void:
 	if timer < time:
 		var p := timer / time
 		var next_date := start_date.lerp_date(end_date, p)
-		print("Next Date is ", next_date)
 		Game.update_date(next_date)
 		
 		if str(Game.date) in achievement_dict:
