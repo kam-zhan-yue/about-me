@@ -5,7 +5,8 @@ extends Camera2D
 
 enum Mode {
 	FollowPlayer,
-	ManualControl
+	ManualControl,
+	LerpToPos,
 }
 
 var player: Player
@@ -27,3 +28,9 @@ func _process(_delta: float) -> void:
 
 func set_mode(other: Mode) -> void:
 	self.mode = other
+
+func lerp_to_pos(target: Vector2, duration: float) -> void:
+	self.set_mode(Mode.LerpToPos)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "global_position", target, duration)
+	

@@ -14,7 +14,7 @@ enum State {
 }
 
 const FIREBALL_INTERVAL = 2.5
-const JUMP_INTERVAL = 1.5
+const JUMP_INTERVAL = 1.75
 const SPEED = 20.0
 const JUMP_VELOCITY = -250.0
 var state := State.NONE
