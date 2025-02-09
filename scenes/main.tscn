@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bwg3vgfdykxuq" path="res://scenes/final.tscn" id="15_ivs7s"]
 [ext_resource type="Script" path="res://scripts/entities/firezone.gd" id="16_0tmey"]
 [ext_resource type="PackedScene" uid="uid://1vyppwa0ga54" path="res://scenes/firewall.tscn" id="17_3y006"]
-[ext_resource type="PackedScene" uid="uid://qy66tws47xuk" path="res://scenes/bowser.tscn" id="20_vpfv0"]
+[ext_resource type="PackedScene" uid="uid://qy66tws47xuk" path="res://scenes/bowser_level.tscn" id="20_vpfv0"]
 [ext_resource type="PackedScene" uid="uid://c13ygio3ss3wr" path="res://scenes/question_block_castle.tscn" id="20_yptsa"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="21_6uhmy"]
 
@@ -282,9 +282,16 @@ tile_map_data = PackedByteArray("AAD3AAAAAAAFAAEAAAD3AAEAAAAFAAEAAAD3AAIAAAAFAAE
 tile_set = ExtResource("3_tsnp1")
 
 [node name="Bowser" parent="Timeline/World 8-4" instance=ExtResource("20_vpfv0")]
-
-[node name="Bowser2" parent="Timeline/World 8-4" instance=ExtResource("20_vpfv0")]
+unique_name_in_owner = true
 position = Vector2(5312, -16)
+
+[node name="BowserStart" type="Marker2D" parent="Timeline/World 8-4/Bowser"]
+unique_name_in_owner = true
+position = Vector2(-88, 8)
+
+[node name="BowserCenter" type="Marker2D" parent="Timeline/World 8-4/Bowser"]
+unique_name_in_owner = true
+position = Vector2(208, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_qvmds")]
 unique_name_in_owner = true

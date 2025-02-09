@@ -20,6 +20,9 @@ extends Node2D
 @onready var entry := %Entry as Node2D
 @onready var firewall := %Firewall as Firewall
 @onready var firezone := %Firezone as Firezone
+@onready var bowser := %Bowser as Node2D
+@onready var bowser_start := %BowserStart as Marker2D
+@onready var bowser_center := %BowserCenter as Marker2D
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -52,6 +55,7 @@ func _ready() -> void:
 		Achievements.Event.FLAGPOLE: flagpole_jump,
 		Achievements.Event.WORLD_1_1_END: final,
 		Achievements.Event.GAME_JAM_2: game_jam_2,
+		Achievements.Event.BOWSER: bowser_center,
 	}
 
 	if SETTINGS.start_event != Achievements.Event.NONE:
@@ -61,6 +65,8 @@ func _ready() -> void:
 				if location:
 					if event == Achievements.Event.FLAGPOLE:
 						Game.player.global_position = location.global_position
+					elif event == Achievements.Event.BOWSER:
+						Game.player.global_position = bowser_start.global_position
 					else:
 						Game.player.global_position.x = location.global_position.x
 				break

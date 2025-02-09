@@ -12,6 +12,7 @@ enum Event {
 	FLAGPOLE,
 	WORLD_1_1_END,
 	GAME_JAM_2,
+	BOWSER,
 }
 
 enum Achievement {
