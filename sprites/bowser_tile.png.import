@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwv0moeiknrmh"
-path="res://.godot/imported/axe.png-7ad8fa60a528d53f2a9596e2cbdc2634.ctex"
+uid="uid://d0iceg4lnl3p5"
+path="res://.godot/imported/bowser_tile.png-be21f6526bbc3031ab1cba4a9a4873cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/axe.png"
-dest_files=["res://.godot/imported/axe.png-7ad8fa60a528d53f2a9596e2cbdc2634.ctex"]
+source_file="res://sprites/bowser_tile.png"
+dest_files=["res://.godot/imported/bowser_tile.png-be21f6526bbc3031ab1cba4a9a4873cd.ctex"]
 
 [params]
 

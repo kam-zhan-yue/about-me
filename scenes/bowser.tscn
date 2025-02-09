@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=4 uid="uid://qy66tws47xuk"]
+
+[ext_resource type="Texture2D" uid="uid://cwv0moeiknrmh" path="res://sprites/axe.png" id="1_f53ky"]
+[ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="1_kvh33"]
+[ext_resource type="PackedScene" uid="uid://c4t03aml2b0kq" path="res://scenes/bowser_tile.tscn" id="2_aw1rr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ok4g"]
+atlas = ExtResource("1_f53ky")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auna2"]
+atlas = ExtResource("1_f53ky")
+region = Rect2(19, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddfcl"]
+atlas = ExtResource("1_f53ky")
+region = Rect2(38, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph4cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ok4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auna2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddfcl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aafgn"]
+size = Vector2(16, 16)
+
+[node name="Bowser" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Tiles" type="Node2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(312, 8)
+
+[node name="BowserTile" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+
+[node name="BowserTile2" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-16, 0)
+
+[node name="BowserTile3" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-32, 0)
+
+[node name="BowserTile4" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-48, 0)
+
+[node name="BowserTile5" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-64, 0)
+
+[node name="BowserTile6" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-80, 0)
+
+[node name="BowserTile7" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-96, 0)
+
+[node name="BowserTile8" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-112, 0)
+
+[node name="BowserTile9" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-128, 0)
+
+[node name="BowserTile10" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-144, 0)
+
+[node name="BowserTile11" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-160, 0)
+
+[node name="BowserTile12" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-176, 0)
+
+[node name="BowserTile13" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-192, 0)
+
+[node name="BowserTile14" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-208, 0)
+
+[node name="BowserTile15" parent="Node2D/Tiles" instance=ExtResource("2_aw1rr")]
+position = Vector2(-224, 0)
+
+[node name="Axe" type="Node2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(328, -24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Axe"]
+sprite_frames = SubResource("SpriteFrames_ph4cw")
+frame_progress = 0.868877
+
+[node name="Area2D" type="Area2D" parent="Node2D/Axe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Axe/Area2D"]
+shape = SubResource("RectangleShape2D_aafgn")
+
+[node name="Foreground2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAPn/AAAFAAEAAAAAAPr/AAAFAAEAAAAAAAEAAAAFAAEAAAAAAAIAAAAFAAEAAAAAAAMAAAAFAAEAAAABAPn/AAAFAAEAAAABAPr/AAAFAAEAAAABAAEAAAAFAAEAAAABAAIAAAAFAAEAAAABAAMAAAAFAAEAAAACAPn/AAAFAAEAAAACAPr/AAAFAAEAAAACAAEAAAAFAAEAAAACAAIAAAAFAAEAAAACAAMAAAAFAAEAAAADAPn/AAAFAAEAAAADAPr/AAAFAAEAAAADAAEAAAAFAAEAAAADAAIAAAAFAAEAAAADAAMAAAAFAAEAAAAEAPn/AAAFAAEAAAAEAPr/AAAFAAEAAAAEAAEAAAAFAAEAAAAEAAIAAAAFAAEAAAAEAAMAAAAFAAEAAAAFAAMAAAAMAAcAAAAFAAQAAAAFAAEAAAAGAAMAAAAMAAcAAAAGAAQAAAAFAAEAAAAHAAMAAAAMAAcAAAAHAAQAAAAFAAEAAAAIAAMAAAAMAAcAAAAIAAQAAAAFAAEAAAAJAAMAAAAMAAcAAAAJAAQAAAAFAAEAAAAKAAMAAAAMAAcAAAAKAAQAAAAFAAEAAAALAAMAAAAMAAcAAAALAAQAAAAFAAEAAAAMAAMAAAAMAAcAAAAMAAQAAAAFAAEAAAANAAMAAAAMAAcAAAANAAQAAAAFAAEAAAAOAAMAAAAMAAcAAAAOAAQAAAAFAAEAAAAPAAMAAAAMAAcAAAAPAAQAAAAFAAEAAAAQAAMAAAAMAAcAAAAQAAQAAAAFAAEAAAARAAMAAAAMAAcAAAARAAQAAAAFAAEAAAASAAMAAAAMAAcAAAASAAQAAAAFAAEAAAATAAMAAAAMAAcAAAATAAQAAAAFAAEAAAAUAPn/AAAFAAEAAAAUAPr/AAAFAAEAAAAUAP//AAAFAAEAAAAUAAAAAAAFAAEAAAAUAAEAAAAFAAEAAAAUAAIAAAAFAAEAAAAUAAMAAAAFAAEAAAAVAPn/AAAFAAEAAAAVAPr/AAAFAAEAAAAVAAAAAAAFAAEAAAAVAAEAAAAFAAEAAAAVAAIAAAAFAAEAAAAVAAMAAAAFAAEAAAAWAPn/AAAFAAEAAAAWAPr/AAAFAAEAAAAWAAAAAAAFAAEAAAAWAAEAAAAFAAEAAAAWAAIAAAAFAAEAAAAWAAMAAAAFAAEAAAAXAPn/AAAFAAEAAAAXAPr/AAAFAAEAAAAXAAAAAAAFAAEAAAAXAAEAAAAFAAEAAAAXAAIAAAAFAAEAAAAXAAMAAAAFAAEAAAAYAPn/AAAFAAEAAAAYAPr/AAAFAAEAAAAYAAAAAAAFAAEAAAAYAAEAAAAFAAEAAAAYAAIAAAAFAAEAAAAYAAMAAAAFAAEAAAAAAPj/AAAFAAEAAAAAAAAAAAAFAAEAAAABAPj/AAAFAAEAAAABAAAAAAAFAAEAAAACAPj/AAAFAAEAAAACAAAAAAAFAAEAAAADAPj/AAAFAAEAAAADAAAAAAAFAAEAAAAEAPj/AAAFAAEAAAAEAAAAAAAFAAEAAAAFAPj/AAAFAAEAAAAFAAIAAAAKAAIAAAAGAPj/AAAFAAEAAAAGAAIAAAAKAAIAAAAHAPj/AAAFAAEAAAAHAAIAAAAKAAIAAAAIAPj/AAAFAAEAAAAIAAIAAAAKAAIAAAAJAPj/AAAFAAEAAAAJAAIAAAAKAAIAAAAKAPj/AAAFAAEAAAAKAAIAAAAKAAIAAAALAPj/AAAFAAEAAAALAAIAAAAKAAIAAAAMAPj/AAAFAAEAAAAMAAIAAAAKAAIAAAANAPj/AAAFAAEAAAANAAIAAAAKAAIAAAAOAPj/AAAFAAEAAAAOAAIAAAAKAAIAAAAPAPj/AAAFAAEAAAAPAAIAAAAKAAIAAAAQAPj/AAAFAAEAAAAQAAIAAAAKAAIAAAARAPj/AAAFAAEAAAARAAIAAAAKAAIAAAASAPj/AAAFAAEAAAASAAIAAAAKAAIAAAATAPj/AAAFAAEAAAATAP//AAAIAAAAAAATAAIAAAAKAAIAAAAUAPj/AAAFAAEAAAAVAPj/AAAFAAEAAAAVAP//AAAFAAEAAAAWAPj/AAAFAAEAAAAWAP//AAAFAAEAAAAXAPj/AAAFAAEAAAAXAP//AAAFAAEAAAAYAPj/AAAFAAEAAAAYAP//AAAFAAEAAAA=")
+tile_set = ExtResource("1_kvh33")
