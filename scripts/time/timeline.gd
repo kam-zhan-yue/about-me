@@ -23,7 +23,7 @@ extends Node2D
 @onready var bowser_level := %BowserLevel as BowserLevel
 @onready var bowser_start := %BowserStart as Marker2D
 @onready var bowser_center := %BowserCenter as Marker2D
-@onready var final_camera := %FinalCamera as Marker2D
+@onready var game_end := %GameEnd as GameEnd
 
 const SETTINGS = preload("res://resources/game_settings.tres") as GameSettings
 
@@ -43,6 +43,7 @@ func _ready() -> void:
 	game_jam_1.on_complete.connect(_game_jam_1)
 	game_jam_2.on_complete.connect(_game_jam_2)
 	bowser_level.on_complete.connect(_bowser_level)
+	game_end.on_complete.connect(_end_game)
 	
 	Achievements.on_event_completed.connect(_on_event_complete)
 	
@@ -129,7 +130,7 @@ func _end_game() -> void:
 
 func _bowser_level() -> void:
 	Achievements.complete_event(Achievements.Event.BOWSER)
-	Game.camera.lerp_to_pos(final_camera.global_position, 3.0)
+	Game.camera.lerp_to_pos(game_end.global_position, 3.0)
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:

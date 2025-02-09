@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=26 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://qy66tws47xuk" path="res://scenes/bowser_level.tscn" id="20_vpfv0"]
 [ext_resource type="PackedScene" uid="uid://c13ygio3ss3wr" path="res://scenes/question_block_castle.tscn" id="20_yptsa"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="21_6uhmy"]
+[ext_resource type="Texture2D" uid="uid://cbauhwbduvadd" path="res://sprites/peach.png" id="21_r1tyd"]
+[ext_resource type="Script" path="res://scripts/entities/game_end.gd" id="21_xsd2x"]
+[ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="23_2euas"]
 
 [node name="Main" type="Node2D"]
 
@@ -293,9 +296,108 @@ position = Vector2(-88, 8)
 unique_name_in_owner = true
 position = Vector2(208, 0)
 
-[node name="FinalCamera" type="Marker2D" parent="Timeline/World 8-4"]
+[node name="GameEnd" type="Node2D" parent="Timeline/World 8-4"]
 unique_name_in_owner = true
 position = Vector2(5936, 0)
+script = ExtResource("21_xsd2x")
+
+[node name="Threshold" type="Marker2D" parent="Timeline/World 8-4/GameEnd"]
+unique_name_in_owner = true
+position = Vector2(-60, 0)
+
+[node name="Peach" type="Sprite2D" parent="Timeline/World 8-4/GameEnd"]
+position = Vector2(59, -12)
+texture = ExtResource("21_r1tyd")
+
+[node name="Labels" type="Node2D" parent="Timeline/World 8-4/GameEnd"]
+unique_name_in_owner = true
+
+[node name="LabelOne" type="RichTextLabel" parent="Timeline/World 8-4/GameEnd/Labels"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("23_2euas")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]THANKS FOR PLAYING![/center]"
+fit_content = true
+scroll_active = false
+
+[node name="LabelTwo" type="RichTextLabel" parent="Timeline/World 8-4/GameEnd/Labels"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -90.0
+offset_right = 100.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("23_2euas")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]Your quest is now over[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="LabelThree" type="RichTextLabel" parent="Timeline/World 8-4/GameEnd/Labels"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("23_2euas")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]We  present you  with  a  new quest[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="LabelFour" type="RichTextLabel" parent="Timeline/World 8-4/GameEnd/Labels"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -70.0
+offset_right = 100.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("23_2euas")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]push  button  b[/center]"
+fit_content = true
+scroll_active = false
 
 [node name="Player" parent="." instance=ExtResource("2_qvmds")]
 unique_name_in_owner = true
