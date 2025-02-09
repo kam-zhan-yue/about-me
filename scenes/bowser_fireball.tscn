@@ -41,3 +41,5 @@ debug_color = Color(1, 0, 0.183333, 0.513726)
 sprite_frames = SubResource("SpriteFrames_w5n55")
 frame_progress = 0.783127
 flip_h = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

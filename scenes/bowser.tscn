@@ -65,3 +65,7 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s68ax")
+
+[node name="FireballSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-21, -3)

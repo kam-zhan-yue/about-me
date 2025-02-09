@@ -41,7 +41,7 @@ func end_level() -> void:
 	for block in bridge:
 		block.queue_free()
 		await Global.wait(INTERVAL)
-	bowser.start()
+	bowser.fall()
 	Game.player.active = true
 	on_complete.emit()
 	
