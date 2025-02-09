@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://tmcwxmrqklcn"]
+
+[ext_resource type="Script" path="res://scripts/entities/bowser.gd" id="1_enbu5"]
+[ext_resource type="Texture2D" uid="uid://dib50bwgjbsxo" path="res://sprites/bowser.png" id="2_yimas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fato"]
+atlas = ExtResource("2_yimas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yacud"]
+atlas = ExtResource("2_yimas")
+region = Rect2(40, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e78bt"]
+atlas = ExtResource("2_yimas")
+region = Rect2(80, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i27mi"]
+atlas = ExtResource("2_yimas")
+region = Rect2(120, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibmbf"]
+atlas = ExtResource("2_yimas")
+region = Rect2(40, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wg78u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fato")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yacud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e78bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i27mi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibmbf")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s68ax"]
+size = Vector2(32, 32)
+
+[node name="Bowser" type="CharacterBody2D"]
+position = Vector2(272, -16)
+script = ExtResource("1_enbu5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_wg78u")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s68ax")

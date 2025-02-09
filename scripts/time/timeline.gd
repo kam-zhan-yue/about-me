@@ -20,7 +20,7 @@ extends Node2D
 @onready var entry := %Entry as Node2D
 @onready var firewall := %Firewall as Firewall
 @onready var firezone := %Firezone as Firezone
-@onready var bowser := %Bowser as Node2D
+@onready var bowser_level := %BowserLevel as BowserLevel
 @onready var bowser_start := %BowserStart as Marker2D
 @onready var bowser_center := %BowserCenter as Marker2D
 
@@ -37,10 +37,11 @@ func _ready() -> void:
 	scs.on_activate.connect(_scs)
 	unimelb_2.on_activate.connect(_unimelb_2)
 	final.on_activate.connect(_final)
+
 	firezone.on_complete.connect(_firezone)
-	
 	game_jam_1.on_complete.connect(_game_jam_1)
 	game_jam_2.on_complete.connect(_game_jam_2)
+	bowser_level.on_complete.connect(_bowser_level)
 	
 	Achievements.on_event_completed.connect(_on_event_complete)
 	
@@ -124,6 +125,9 @@ func _firezone() -> void:
 
 func _end_game() -> void:
 	Game.end_game()
+
+func _bowser_level() -> void:
+	pass
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:

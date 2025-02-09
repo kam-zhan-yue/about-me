@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://da86ovdguxveg"]
+
+[ext_resource type="Texture2D" uid="uid://bcbs5p17ypquh" path="res://sprites/fireball.png" id="1_wwsl4"]
+[ext_resource type="Script" path="res://scripts/entities/bowser_fireball.gd" id="1_xghem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdm48"]
+size = Vector2(24.125, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhho5"]
+atlas = ExtResource("1_wwsl4")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjso7"]
+atlas = ExtResource("1_wwsl4")
+region = Rect2(30, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5n55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhho5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjso7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="BowserFireball" type="Node2D"]
+script = ExtResource("1_xghem")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pdm48")
+debug_color = Color(1, 0, 0.183333, 0.513726)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w5n55")
+frame_progress = 0.783127
+flip_h = true
