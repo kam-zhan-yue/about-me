@@ -20,7 +20,7 @@ description = "部長として8人のチームと毎週ゲームジャム、ワ�
 script = ExtResource("1_ds88x")
 media = 0
 filename = "12_game_makers_club_divisions.jpeg"
-description = "一つの部分として３つの開発チームがある。合わせて40人いる。３つのチームの管理を担当している。常にチャレンジがあるけど、みんなと"
+description = "一つの部分として３つの開発チームがある。合わせて40人いる。３つのチームの管理を担当している。常にみんなとチャレンジに挑戦するのは楽しい"
 
 [resource]
 script = ExtResource("2_oauxq")
