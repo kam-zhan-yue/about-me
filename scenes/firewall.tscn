@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1vyppwa0ga54"]
+[gd_scene load_steps=4 format=3 uid="uid://1vyppwa0ga54"]
 
 [ext_resource type="Script" path="res://scripts/entities/firewall.gd" id="1_el2ja"]
 [ext_resource type="SpriteFrames" uid="uid://bkl20tu76ajbg" path="res://resources/sprites/fire.tres" id="1_lb7yi"]
+[ext_resource type="AudioStream" uid="uid://t2kf6tmtydkh" path="res://audio/sfx_break.ogg" id="3_61v17"]
 
 [node name="Firewall" type="Node2D"]
 script = ExtResource("1_el2ja")
@@ -73,3 +74,7 @@ sprite_frames = ExtResource("1_lb7yi")
 [node name="Fire17" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -165)
 sprite_frames = ExtResource("1_lb7yi")
+
+[node name="Break" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_61v17")

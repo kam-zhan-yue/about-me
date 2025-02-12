@@ -6,6 +6,7 @@ extends Node2D
 @onready var enter_label := %EnterLabel as RichTextLabel
 @onready var flag := %Flag as Node2D
 @onready var flagpole := %Flagpole as AudioStreamPlayer2D
+@onready var pipe := %Pipe as AudioStreamPlayer2D
 
 @onready var interaction := $Entry/Interaction as Area2D
 var interactive := false
@@ -18,6 +19,8 @@ func _ready() -> void:
 
 func _input(_event: InputEvent) -> void:
 	if not played and interactive and Input.is_key_pressed(KEY_SPACE):
+		if pipe:
+			pipe.play()
 		played = true
 		Global.set_inactive(enter_label)
 		on_activate.emit()
@@ -34,3 +37,5 @@ func _on_interaction_area_exited(_area: Area2D) -> void:
 func raise_flag() -> void:
 	if flag:
 		flag.raise()
+	if flagpole:
+		flagpole.play()

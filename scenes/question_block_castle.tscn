@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c13ygio3ss3wr"]
+[gd_scene load_steps=15 format=3 uid="uid://c13ygio3ss3wr"]
 
 [ext_resource type="Script" path="res://scripts/entities/question_block.gd" id="1_im351"]
 [ext_resource type="Texture2D" uid="uid://c632l4np2ap2" path="res://sprites/question_block_castle.png" id="2_r7dr8"]
 [ext_resource type="Texture2D" uid="uid://cn881c4fnyj87" path="res://sprites/empty_block_castle.png" id="3_7jxbj"]
+[ext_resource type="AudioStream" uid="uid://dcpt30jefnt2n" path="res://audio/sfx_bump.ogg" id="4_xh6r8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1el15"]
 atlas = ExtResource("2_r7dr8")
@@ -92,5 +93,10 @@ debug_color = Color(0.974987, 0, 0.422744, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource("RectangleShape2D_fdeej")
+
+[node name="Bump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_xh6r8")
+bus = &"SFX"
 
 [connection signal="area_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

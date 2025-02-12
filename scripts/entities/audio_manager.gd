@@ -8,12 +8,16 @@ extends Node2D
 
 var current: AudioStreamPlayer2D
 
+const WORLD_CLEAR = 6.26
+
 func _ready() -> void:
 	Game.on_date_changed.connect(_play_ground)
 
 func _play_ground(_date: Date) -> void:
+	if Game.world == '1-1':
+		print("Game world is ", Game.world)
+		play(ground)
 	Game.on_date_changed.disconnect(_play_ground)
-	play(ground)
 
 func play_world_1_1_clear() -> void:
 	play(world_clear)
@@ -23,7 +27,7 @@ func play_world_8_4_start() -> void:
 
 func play_princess() -> void:
 	play(world_clear)
-	await Global.wait(5.0)
+	await Global.wait(WORLD_CLEAR)
 	play(princess)
 
 func play(audio: AudioStreamPlayer2D) -> void:

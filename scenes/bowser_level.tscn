@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://qy66tws47xuk"]
+[gd_scene load_steps=13 format=4 uid="uid://qy66tws47xuk"]
 
 [ext_resource type="Texture2D" uid="uid://cwv0moeiknrmh" path="res://sprites/axe.png" id="1_f53ky"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="1_kvh33"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4t03aml2b0kq" path="res://scenes/bowser_tile.tscn" id="2_aw1rr"]
 [ext_resource type="Texture2D" uid="uid://c61n0axhmdtfe" path="res://sprites/chain.png" id="5_ij7ps"]
 [ext_resource type="PackedScene" uid="uid://tmcwxmrqklcn" path="res://scenes/bowser.tscn" id="6_3xgm5"]
+[ext_resource type="AudioStream" uid="uid://t2kf6tmtydkh" path="res://audio/sfx_break.ogg" id="7_ueyp1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ok4g"]
 atlas = ExtResource("1_f53ky")
@@ -121,5 +122,10 @@ unique_name_in_owner = true
 [node name="Recovery" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(328, -48)
+
+[node name="Break" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_ueyp1")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Axe/Area2D" to="." method="_on_area_2d_body_entered"]

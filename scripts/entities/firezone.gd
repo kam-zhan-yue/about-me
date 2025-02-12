@@ -44,7 +44,6 @@ func _input(_event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if Game.paused: return
 	if not self.activated: return
-	print("Process")
 	var next_pos := fire_start.global_position.lerp(fire_end.global_position, timer / TIME_TO_TARGET)
 	Game.camera.global_position.x = next_pos.x
 	var displacement := next_pos - fire_start.global_position
@@ -69,7 +68,6 @@ func _beans_for_good() -> void:
 	check_complete()
 
 func _hundred_little_guys() -> void:
-	print("MICE")
 	Achievements.activate(Achievements.Achievement.HUNDRED_LITTLE_GUYS)
 	check_complete()
 
@@ -92,6 +90,6 @@ func _on_done_showing() -> void:
 	elif self.activated:
 		Game.player.active = false
 		self.activated = false
-		await reduce_flames()
+		#await reduce_flames()
 		Game.player.active = true
 		self.activated = true

@@ -111,13 +111,13 @@ func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
 
 func _final() -> void:
-	Game.audio.stop()
 	Achievements.complete_event(Achievements.Event.WORLD_1_1_END)
 	await Game.player.fade_out()
 	await Game.transition_in()
 	Game.set_world("8-4")
 	Game.player.global_position.x = entry.global_position.x
 	await Global.wait(0.3)
+	Game.audio.stop()
 	Game.transition_out()
 	# Necessary to set interactive back to false
 	Game.audio.play_world_8_4_start()
@@ -133,6 +133,7 @@ func _end_game() -> void:
 func _bowser_level() -> void:
 	Achievements.complete_event(Achievements.Event.BOWSER)
 	Game.camera.lerp_to_pos(game_end.global_position, 3.0)
+	Game.audio.play_princess()
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:

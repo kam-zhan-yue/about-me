@@ -207,6 +207,7 @@ text = ">"
 [node name="Coin" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_6ee4q")
+max_distance = 1e+07
 bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/Panel/ButtonHolder/OkButton" to="." method="_on_ok_button_pressed"]

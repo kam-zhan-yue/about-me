@@ -13,6 +13,7 @@ func _ready() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not active: return
 	if area.get_parent() is Player:
+		bump.play()
 		active = false
 		sprite.play("empty")
 		play_animation()

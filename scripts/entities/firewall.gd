@@ -5,10 +5,12 @@ var fires: Array[AnimatedSprite2D] = []
 const INTERVAL = 0.05
 const FLAMES_TO_REDUCE = 3
 var activated := false
+@onready var sfx_break := %Break as AudioStreamPlayer2D
 
 func _ready() -> void:
 	for child in get_children():
-		fires.push_back(child as AnimatedSprite2D)
+		if child is AnimatedSprite2D:
+			fires.push_back(child as AnimatedSprite2D)
 	for fire in fires:
 		Global.set_inactive(fire)
 
@@ -16,6 +18,7 @@ func activate() -> void:
 	self.activated = true
 	for fire in fires:
 		Global.set_active(fire)
+		sfx_break.play()
 		await Global.wait(INTERVAL)
 	
 	for fire in fires:
@@ -29,6 +32,7 @@ func deactivate() -> void:
 
 	for fire in self.fires:
 		Global.set_inactive(fire)
+		sfx_break.play()
 		await Global.wait(INTERVAL)
 
 

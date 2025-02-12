@@ -6,6 +6,7 @@ extends Node2D
 @onready var axe := %Axe as Node2D
 @onready var bowser := %Bowser as Bowser
 @onready var recovery := %Recovery as Marker2D
+@onready var sfx_break := %Break as AudioStreamPlayer2D
 
 var started := false
 var bridge: Array[Node] = []
@@ -39,9 +40,11 @@ func end_level() -> void:
 	bowser.stop()
 	Game.player.active = false
 	for block in bridge:
+		sfx_break.play()
 		block.queue_free()
 		await Global.wait(INTERVAL)
 	bowser.fall()
+	await Global.wait(1.0)
 	Game.player.active = true
 	on_complete.emit()
 	

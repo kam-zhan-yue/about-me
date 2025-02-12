@@ -7,6 +7,7 @@ var date: Date
 var ui: UI
 var audio: AudioManager
 var paused := false
+var world = '1-1'
 
 # Signals
 signal on_date_changed(date: Date)
@@ -51,11 +52,12 @@ func transition_out() -> void:
 	await ui.transition_out()
 
 func end_game() -> void:
-	player.fade_out()
+	#player.fade_out()
 	on_end_game.emit()
 
-func set_world(world: String) -> void:
-	on_world_changed.emit(world)
+func set_world(new_world: String) -> void:
+	self.world = new_world
+	on_world_changed.emit(self.world)
 
 func pause_systems(pause: bool) -> void:
 	self.paused = pause

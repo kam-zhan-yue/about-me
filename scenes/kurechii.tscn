@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://mw3x1lbufg6o"]
+[gd_scene load_steps=8 format=4 uid="uid://mw3x1lbufg6o"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_fd5ye"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_ijrp8"]
 [ext_resource type="PackedScene" uid="uid://crok82tbrgj37" path="res://scenes/flag.tscn" id="4_312yf"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_lneo3"]
+[ext_resource type="PackedScene" uid="uid://cluswkphllq4c" path="res://scenes/sfx_flagpole.tscn" id="6_hsibn"]
+[ext_resource type="AudioStream" uid="uid://cd8bluoqjxt5r" path="res://audio/sfx_pipe.ogg" id="6_ogv46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
@@ -70,6 +72,14 @@ theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[center]Kurechii[/center]"
 fit_content = true
+
+[node name="Flagpole" parent="." instance=ExtResource("6_hsibn")]
+unique_name_in_owner = true
+
+[node name="Pipe" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_ogv46")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

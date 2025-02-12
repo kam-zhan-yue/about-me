@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://d0usswb0j3key"]
+[gd_scene load_steps=8 format=4 uid="uid://d0usswb0j3key"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_65s4x"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_1ilhc"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_if26k"]
 [ext_resource type="PackedScene" uid="uid://crok82tbrgj37" path="res://scenes/flag.tscn" id="4_u5ood"]
+[ext_resource type="PackedScene" uid="uid://cluswkphllq4c" path="res://scenes/sfx_flagpole.tscn" id="5_gdlob"]
+[ext_resource type="AudioStream" uid="uid://cd8bluoqjxt5r" path="res://audio/sfx_pipe.ogg" id="6_gkgq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
@@ -70,6 +72,14 @@ theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[center]Kyoto  University[/center]"
 fit_content = true
+
+[node name="Flagpole" parent="." instance=ExtResource("5_gdlob")]
+unique_name_in_owner = true
+
+[node name="Pipe" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_gkgq2")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

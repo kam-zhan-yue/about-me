@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var sprite := %AnimatedSprite2D as AnimatedSprite2D
 @onready var fireball_spawn := %FireballSpawn as Marker2D
-@onready var fireball := %Fireball as AudioStreamPlayer2D
+@onready var sfx_fireball := %Fireball as AudioStreamPlayer2D
 @onready var sfx_fall := %Fall as AudioStreamPlayer2D
 
 const FIREBALL = preload("res://scenes/bowser_fireball.tscn")
@@ -77,6 +77,7 @@ func shoot_fireball() -> void:
 	var fireball = FIREBALL.instantiate()
 	get_parent().add_child(fireball)
 	fireball.global_position = fireball_spawn.global_position
+	sfx_fireball.play()
 
 func clear_fireballs() -> void:
 	for child in get_parent().get_children():

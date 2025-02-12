@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cluswkphllq4c"]
+
+[ext_resource type="AudioStream" uid="uid://dmsexg0vgob6l" path="res://audio/sfx_flagpole.ogg" id="1_myp1q"]
+
+[node name="Flagpole" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_myp1q")
+bus = &"SFX"

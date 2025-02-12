@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dl3auj8fgnutr"]
+[gd_scene load_steps=7 format=4 uid="uid://dl3auj8fgnutr"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_jgjre"]
-[ext_resource type="AudioStream" uid="uid://dcpt30jefnt2n" path="res://audio/sfx_bump.ogg" id="4_atwro"]
+[ext_resource type="PackedScene" uid="uid://cluswkphllq4c" path="res://scenes/sfx_flagpole.tscn" id="4_83lqc"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_jq860"]
+[ext_resource type="AudioStream" uid="uid://cd8bluoqjxt5r" path="res://audio/sfx_pipe.ogg" id="5_hf46u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
 size = Vector2(20, 32)
@@ -68,9 +69,13 @@ bbcode_enabled = true
 text = "[center]BUILDING  NAME[/center]"
 fit_content = true
 
-[node name="Flagpole" type="AudioStreamPlayer2D" parent="."]
+[node name="Flagpole" parent="." instance=ExtResource("4_83lqc")]
 unique_name_in_owner = true
-stream = ExtResource("4_atwro")
+
+[node name="Pipe" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_hf46u")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

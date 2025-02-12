@@ -31,7 +31,7 @@ region = Rect2(256, 0, 64, 64)
 atlas = ExtResource("2_6us17")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rsoe2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsfi6"]
 atlas = ExtResource("3_vx5ti")
 region = Rect2(576, 0, 64, 64)
 
@@ -102,7 +102,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rsoe2")
+"texture": SubResource("AtlasTexture_gsfi6")
 }],
 "loop": true,
 "name": &"jump_fall",
@@ -161,7 +161,7 @@ script = ExtResource("1_fsbbb")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r33do")
-animation = &"idle"
+animation = &"jump_fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_nlggi")
