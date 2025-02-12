@@ -210,7 +210,7 @@ position = Vector2(792, 0)
 
 [node name="Shackled" parent="Timeline/World 8-4/BowserLevel/Firezone" instance=ExtResource("20_yptsa")]
 unique_name_in_owner = true
-position = Vector2(224, -56)
+position = Vector2(504, -88)
 
 [node name="Label" type="RichTextLabel" parent="Timeline/World 8-4/BowserLevel/Firezone/Shackled"]
 custom_minimum_size = Vector2(200, 0)
@@ -258,7 +258,7 @@ scroll_active = false
 
 [node name="HundredLittleGuys" parent="Timeline/World 8-4/BowserLevel/Firezone" instance=ExtResource("20_yptsa")]
 unique_name_in_owner = true
-position = Vector2(504, -88)
+position = Vector2(224, -56)
 
 [node name="Label" type="RichTextLabel" parent="Timeline/World 8-4/BowserLevel/Firezone/HundredLittleGuys"]
 custom_minimum_size = Vector2(200, 0)

@@ -12,15 +12,19 @@ script = ExtResource("1_b80ol")
 [node name="Ground" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_wm5jv")
+bus = &"BGM"
 
 [node name="Castle" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_mn8u2")
+bus = &"BGM"
 
 [node name="Princess" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_xt282")
+bus = &"BGM"
 
 [node name="WorldClear" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_4mgiq")
+bus = &"BGM"

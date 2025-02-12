@@ -78,3 +78,4 @@ sprite_frames = ExtResource("1_lb7yi")
 [node name="Break" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_61v17")
+bus = &"SFX"
