@@ -111,6 +111,7 @@ func _game_jam_2() -> void:
 	Achievements.complete_event(Achievements.Event.GAME_JAM_2)
 
 func _final() -> void:
+	Game.audio.stop()
 	Achievements.complete_event(Achievements.Event.WORLD_1_1_END)
 	await Game.player.fade_out()
 	await Game.transition_in()
@@ -119,6 +120,7 @@ func _final() -> void:
 	await Global.wait(0.3)
 	Game.transition_out()
 	# Necessary to set interactive back to false
+	Game.audio.play_world_8_4_start()
 	await Game.player.fade_in()
 	world_8_4()
 

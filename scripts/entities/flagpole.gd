@@ -22,3 +22,7 @@ func fall() -> void:
 	var next_pos = Vector2(flag.position.x,  target.position.y)
 	var tween = get_tree().create_tween()
 	tween.tween_property(flag, "position", Vector2.ZERO, time)
+	tween.tween_callback(_play_bgm)
+
+func _play_bgm() -> void:
+	Game.audio.play_world_1_1_clear()

@@ -5,6 +5,7 @@ var player: Player
 var camera: Camera
 var date: Date
 var ui: UI
+var audio: AudioManager
 var paused := false
 
 # Signals
@@ -12,11 +13,12 @@ signal on_date_changed(date: Date)
 signal on_world_changed(world: String)
 signal on_end_game
 
-func init(p: Player = null, c: Camera = null, start_date: Date = null, ui_popup: UI = null) -> void:
+func init(p: Player = null, c: Camera = null, start_date: Date = null, ui_popup: UI = null, audio_manager: AudioManager = null) -> void:
 	self.player = p
 	self.camera = c
 	self.date = start_date
 	self.ui = ui_popup
+	self.audio = audio_manager
 	ui.init()
 
 func update_date(new_date: Date) -> void:

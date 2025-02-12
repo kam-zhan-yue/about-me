@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://b18uu7jcpkjvt"]
+[gd_scene load_steps=27 format=3 uid="uid://b18uu7jcpkjvt"]
 
 [ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_fsbbb"]
 [ext_resource type="Texture2D" uid="uid://coh0aij8y35gb" path="res://sprites/alex_idle.png" id="2_6us17"]
 [ext_resource type="Texture2D" uid="uid://cme7hgnk3y0x3" path="res://sprites/alex_walk.png" id="3_hwc6r"]
 [ext_resource type="Texture2D" uid="uid://b7m6hh67ac14m" path="res://sprites/alex_jump.png" id="3_vx5ti"]
+[ext_resource type="AudioStream" uid="uid://b3hjkaa2ep4p1" path="res://audio/sfx_jump_super.ogg" id="5_ke4sq"]
+[ext_resource type="AudioStream" uid="uid://dmsexg0vgob6l" path="res://audio/sfx_flagpole.ogg" id="6_7fq2v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5amp8"]
 atlas = ExtResource("2_6us17")
@@ -172,3 +174,13 @@ collision_mask = 2
 position = Vector2(-0.5, -6.5)
 shape = SubResource("RectangleShape2D_e0l25")
 debug_color = Color(0.914784, 0.290095, 0, 0.42)
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_ke4sq")
+bus = &"SFX"
+
+[node name="Flagpole" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_7fq2v")
+bus = &"SFX"

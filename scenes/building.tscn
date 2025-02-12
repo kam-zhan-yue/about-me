@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dl3auj8fgnutr"]
+[gd_scene load_steps=6 format=4 uid="uid://dl3auj8fgnutr"]
 
 [ext_resource type="Script" path="res://scripts/entities/building.gd" id="1_b8lq7"]
 [ext_resource type="TileSet" uid="uid://bsckx8dnl1ryn" path="res://resources/art/tile_map.tres" id="2_jgjre"]
+[ext_resource type="AudioStream" uid="uid://dcpt30jefnt2n" path="res://audio/sfx_bump.ogg" id="4_atwro"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="4_jq860"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rakqr"]
@@ -66,6 +67,10 @@ theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[center]BUILDING  NAME[/center]"
 fit_content = true
+
+[node name="Flagpole" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_atwro")
 
 [connection signal="area_entered" from="Entry/Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Entry/Interaction" to="." method="_on_interaction_area_exited"]

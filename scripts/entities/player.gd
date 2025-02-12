@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
  
 @onready var sprite := $Sprite as AnimatedSprite2D
+@onready var jump := %Jump as AudioStreamPlayer2D
+@onready var sfx_flagpole := %Flagpole as AudioStreamPlayer2D
 
 const SPEED = 175.0
 const JUMP_VELOCITY = -350.0
@@ -25,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump.play()
 		sprite.play("jump_start")
 
 	# Get the input direction and handle the movement/deceleration.
@@ -66,6 +69,7 @@ func fade_out():
 	await Global.fade_out(self.sprite)
 
 func flagpole(target: Vector2):
+	sfx_flagpole.play()
 	sprite.play("jump_fall")
 	interactive = false
 	var time = (target.y - position.y) / Flagpole.FLAG_FALL_SPEED

@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var sprite := %AnimatedSprite2D as AnimatedSprite2D
 @onready var fireball_spawn := %FireballSpawn as Marker2D
+@onready var fireball := %Fireball as AudioStreamPlayer2D
+@onready var sfx_fall := %Fall as AudioStreamPlayer2D
 
 const FIREBALL = preload("res://scenes/bowser_fireball.tscn")
 
@@ -33,6 +35,7 @@ func stop() -> void:
 	self.clear_fireballs()
 
 func fall() -> void:
+	sfx_fall.play()
 	self.state = State.FALL
 
 func _physics_process(delta: float) -> void:
@@ -42,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 		else:
 			sprite.flip_h = is_player_to_right()
-				
+
 		move_and_slide()
 
 func is_player_to_right() -> bool:

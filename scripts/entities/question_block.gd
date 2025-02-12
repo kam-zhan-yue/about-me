@@ -2,6 +2,7 @@ class_name QuestionBlock
 extends Node2D
 
 @onready var sprite := $AnimatedSprite2D as AnimatedSprite2D
+@onready var bump := %Bump as AudioStreamPlayer2D
 
 var active := true
 signal hit

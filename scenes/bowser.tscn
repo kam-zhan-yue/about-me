@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://tmcwxmrqklcn"]
+[gd_scene load_steps=12 format=3 uid="uid://tmcwxmrqklcn"]
 
 [ext_resource type="Script" path="res://scripts/entities/bowser.gd" id="1_enbu5"]
 [ext_resource type="Texture2D" uid="uid://dib50bwgjbsxo" path="res://sprites/bowser.png" id="2_yimas"]
+[ext_resource type="AudioStream" uid="uid://bkjp33j55sg3w" path="res://audio/sfx_bowser_fire.ogg" id="3_0tlx6"]
+[ext_resource type="AudioStream" uid="uid://dmbcosasp4b8s" path="res://audio/sfx_bowser_fall.ogg" id="4_1pt8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fato"]
 atlas = ExtResource("2_yimas")
@@ -69,3 +71,13 @@ shape = SubResource("RectangleShape2D_s68ax")
 [node name="FireballSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-21, -3)
+
+[node name="Fireball" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_0tlx6")
+bus = &"SFX"
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_1pt8m")
+bus = &"SFX"

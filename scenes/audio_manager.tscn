@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://46fqj3ordhna"]
+
+[ext_resource type="Script" path="res://scripts/entities/audio_manager.gd" id="1_b80ol"]
+[ext_resource type="AudioStream" uid="uid://xtvv6ekty45o" path="res://audio/bgm_ground.ogg" id="2_wm5jv"]
+[ext_resource type="AudioStream" uid="uid://culmv3p4fmvn7" path="res://audio/bgm_castle.ogg" id="3_mn8u2"]
+[ext_resource type="AudioStream" uid="uid://fklqq3oypggv" path="res://audio/bgm_princess.ogg" id="4_xt282"]
+[ext_resource type="AudioStream" uid="uid://cfdn0jx0b6ef3" path="res://audio/bgm_world_clear.ogg" id="5_4mgiq"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_b80ol")
+
+[node name="Ground" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_wm5jv")
+
+[node name="Castle" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_mn8u2")
+
+[node name="Princess" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_xt282")
+
+[node name="WorldClear" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_4mgiq")

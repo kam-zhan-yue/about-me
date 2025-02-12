@@ -11,7 +11,9 @@ var data: AchievementData
 @onready var previous_button := %Previous as Button
 @onready var ok_button := %OkButton as Button
 @onready var label_holder := %LabelHolder as LabelPopup
+@onready var coin := %Coin as AudioStreamPlayer2D
 
+const TWEEN_TIME = 0.3
 var showing := false
 var page_index := 0
 
@@ -24,8 +26,9 @@ func show_popup() -> void:
 	Game.pause_systems(true)
 	self.scale = Vector2.ZERO
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "scale", Vector2(1, 1), 0.6).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "scale", Vector2.ONE, TWEEN_TIME).set_trans(Tween.TRANS_EXPO)
 	tween.tween_callback(_set_showing_true)
+	coin.play()
 
 func _set_showing_true() -> void:
 	self.showing = true
@@ -33,7 +36,7 @@ func _set_showing_true() -> void:
 func hide_popup() -> void:
 	showing = false
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "scale", Vector2.ZERO, 0.6).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "scale", Vector2.ZERO, TWEEN_TIME).set_trans(Tween.TRANS_EXPO)
 	tween.tween_callback(_hide)
 
 func _hide() -> void:

@@ -5,6 +5,7 @@ extends Node2D
 @onready var title_label := %TitleLabel as  RichTextLabel
 @onready var enter_label := %EnterLabel as RichTextLabel
 @onready var flag := %Flag as Node2D
+@onready var flagpole := %Flagpole as AudioStreamPlayer2D
 
 @onready var interaction := $Entry/Interaction as Area2D
 var interactive := false
