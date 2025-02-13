@@ -134,6 +134,7 @@ func _bowser_level() -> void:
 	Achievements.complete_event(Achievements.Event.BOWSER)
 	Game.camera.lerp_to_pos(game_end.global_position, 3.0)
 	Game.audio.play_princess()
+	Game.stop_timer()
 
 func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:

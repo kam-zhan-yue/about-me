@@ -13,6 +13,7 @@ var world = '1-1'
 signal on_date_changed(date: Date)
 signal on_world_changed(world: String)
 signal on_end_game
+signal on_stop_timer
 
 func init(p: Player = null, c: Camera = null, start_date: Date = null, ui_popup: UI = null, audio_manager: AudioManager = null) -> void:
 	self.player = p
@@ -52,7 +53,7 @@ func transition_out() -> void:
 	await ui.transition_out()
 
 func end_game() -> void:
-	#player.fade_out()
+	player.active = false
 	on_end_game.emit()
 
 func set_world(new_world: String) -> void:
@@ -62,4 +63,6 @@ func set_world(new_world: String) -> void:
 func pause_systems(pause: bool) -> void:
 	self.paused = pause
 	self.player.active = !pause
-	
+
+func stop_timer() -> void:
+	self.on_stop_timer.emit()

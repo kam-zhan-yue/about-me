@@ -40,4 +40,3 @@ text = "[center]THANKS  FOR  PLAYING[/center]"
 fit_content = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
