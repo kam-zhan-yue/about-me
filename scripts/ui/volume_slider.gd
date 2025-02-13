@@ -12,7 +12,6 @@ func _ready() -> void:
 	set_value_no_signal(percentage)
 
 func _on_value_changed(value: float) -> void:
-	print("What", value)
 	AudioServer.set_bus_volume_db(
 		bus_index,
 		linear_to_db(value)
