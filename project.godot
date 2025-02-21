@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 config/macos_native_icon="res://icon.png"
 
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
+
 [autoload]
 
 Game="*res://scripts/game/game.gd"
