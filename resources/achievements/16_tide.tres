@@ -7,21 +7,22 @@
 script = ExtResource("1_btv0d")
 media = 1
 filename = "16_tide.ogv"
-description = "GMTK Game Jam 2024 のために、3人のチームで4日間で制作した。唯一のプログラマーを担当した。7000のエントリの中でTop 4%に入った。
+description = "音楽タイピングゲームです。GMTK Game Jamの7000エントリの中でTop 4%に入った。
 "
 
 [sub_resource type="Resource" id="Resource_jt768"]
 script = ExtResource("1_btv0d")
 media = 1
 filename = "16_tide_boids.ogv"
-description = "プレイヤーが深海から、空と宇宙に上昇しながら、動物と宇宙人とぶつかる前に文字を入力する。自然に動くために、ボイドのアルゴリズムを使用した。
+description = "プレイヤーが深海から、空と宇宙に上昇しながら、動物と宇宙人とぶつかる前に文字を入力する。
+自然に動くために、ボイドのアルゴリズムを使用した。
 "
 
 [sub_resource type="Resource" id="Resource_8ug42"]
 script = ExtResource("1_btv0d")
 media = 1
 filename = "16_tide_timeline.ogv"
-description = "デバッグしやすくするために、決められたリズムで進むタイムラインを開発した。ゲームのあらゆる時点から開始することができた。"
+description = "テストするために、決められたリズムで進むタイムラインを開発した。ゲームのあらゆる時点から開始することができた。"
 
 [resource]
 script = ExtResource("2_oih2g")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://b6jt66gxuj5vq"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://b6jt66gxuj5vq"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_bm3oc"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_0jrtw"]
@@ -7,23 +7,20 @@
 script = ExtResource("1_bm3oc")
 media = 1
 filename = "17_re_collect.ogv"
-description = "メルボルン大学のサイエンス博物館のためにWEBゲームを開発した。6人のチームで唯一のプログラマーを担当した。3ヶ月間で完成させた。"
+description = "メルボルン大学のサイエンス博物館のためのゲームです。
+展示に基づいたストーリーを体験できます。
+６人のチームで３ヶ月間で完成させた。"
 
 [sub_resource type="Resource" id="Resource_0ckee"]
 script = ExtResource("1_bm3oc")
 media = 0
 filename = "17_re_collect.png"
-description = "Inkyのナラティブエンジンを使用して、他のメンバーはストーリーの流れを記入して、JSONファイルにエクスポートした。ゲームでReactとTypescriptを使用して、活かした。
-"
-
-[sub_resource type="Resource" id="Resource_43ufa"]
-script = ExtResource("1_bm3oc")
-media = 1
-filename = "17_re_collect_keycode.ogv"
-description = "博物館であるコードを見つけて、惑星へ行くことができる。"
+description = "Inkyのナラティブエンジンを通じて、チームはストーリーを書いた。
+JSONにエクスポートしました。
+システムはゲームの状況が現れます。"
 
 [resource]
 script = ExtResource("2_0jrtw")
 title = "RE:Collect"
 tags = Array[int]([6, 7, 15, 16])
-pages = Array[ExtResource("1_bm3oc")]([SubResource("Resource_j0rxt"), SubResource("Resource_0ckee"), SubResource("Resource_43ufa")])
+pages = Array[ExtResource("1_bm3oc")]([SubResource("Resource_j0rxt"), SubResource("Resource_0ckee")])
