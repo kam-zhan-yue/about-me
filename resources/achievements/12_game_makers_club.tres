@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://co0ujpq7n4a1c"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=7 format=3 uid="uid://co0ujpq7n4a1c"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_ds88x"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_oauxq"]
@@ -20,10 +20,16 @@ description = "部長として8人のチームと毎週ゲームジャム、ワ�
 script = ExtResource("1_ds88x")
 media = 0
 filename = "12_game_makers_club_divisions.jpeg"
-description = "一つの部分として３つの開発チームがある。合わせて40人いる。３つのチームの管理を担当している。常にみんなとチャレンジに挑戦するのは楽しい"
+description = "一つの部分として３つの開発チームがある。合わせて40人いる。1年間でゲーム完成させるために、活動している。"
+
+[sub_resource type="Resource" id="Resource_koo7l"]
+script = ExtResource("1_ds88x")
+media = 0
+filename = "12_game_makers_club_divisions.jpg"
+description = "後半年で、ゲームがリリースされます。"
 
 [resource]
 script = ExtResource("2_oauxq")
 title = "Game Makers' Club"
 tags = Array[int]([0, 1, 2, 3])
-pages = Array[ExtResource("1_ds88x")]([SubResource("Resource_j0rxt"), SubResource("Resource_qlvsc"), SubResource("Resource_vqjre")])
+pages = Array[ExtResource("1_ds88x")]([SubResource("Resource_j0rxt"), SubResource("Resource_qlvsc"), SubResource("Resource_vqjre"), SubResource("Resource_koo7l")])

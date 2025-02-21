@@ -7,7 +7,9 @@
 script = ExtResource("1_rfate")
 media = 1
 filename = "4_ascension.ogv"
-description = "Unityを独学して、様々なゲームを制作した。高校卒業制作としてゲームを作った。自動生成されたダンジョンを探索して、ミノタウロスのボスと戦う。"
+description = "高校卒業制作のゲームです。
+自動生成されたダンジョンを探索して、
+ミノタウロスのボスと戦う。"
 
 [resource]
 script = ExtResource("2_p0mg4")

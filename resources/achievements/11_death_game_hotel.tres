@@ -14,6 +14,7 @@ script = ExtResource("1_roc0f")
 media = 1
 filename = "11_death_game_hotel.ogv"
 description = "VRヘッドセットをしなくても、オンラインサーバーに接続しなくてもUIをテストする開発環境を作った。カスタムのデータを入力して、直接テストすることができた。
+
 "
 
 [sub_resource type="Resource" id="Resource_wf6tj"]
