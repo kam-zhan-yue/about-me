@@ -5,9 +5,9 @@ extends Node2D
 @onready var fire_start := %FireStart as Marker2D
 @onready var fire_end := %FireEnd as Marker2D
 
-@onready var the_shackled := %Shackled as QuestionBlock
-@onready var beans_for_good := %BeansForGood as QuestionBlock
 @onready var hundred_little_guys := %HundredLittleGuys as QuestionBlock
+@onready var upbeet := %Upbeet as QuestionBlock
+@onready var sleepwalker := %Sleepwalker as QuestionBlock
 @onready var swirly_whirly := %SwirlyWhirly as QuestionBlock
 
 var activated := false
@@ -22,9 +22,9 @@ const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
 
 func _ready() -> void:
-	the_shackled.hit.connect(_the_shackled)
-	beans_for_good.hit.connect(_beans_for_good)
 	hundred_little_guys.hit.connect(_hundred_little_guys)
+	upbeet.hit.connect(_upbeet)
+	sleepwalker.hit.connect(_sleepwalker)
 	swirly_whirly.hit.connect(_swirly_whirly)
 	Achievements.on_done_showing.connect(_on_done_showing)
 
@@ -59,12 +59,12 @@ func deactivate() -> void:
 		Game.camera.set_mode(Camera.Mode.FollowPlayer)
 		await firewall.deactivate()
 
-func _the_shackled() -> void:
-	Achievements.activate(Achievements.Achievement.THE_SHACKLED)
+func _upbeet() -> void:
+	Achievements.activate(Achievements.Achievement.UPBEET)
 	check_complete()
 
-func _beans_for_good() -> void:
-	Achievements.activate(Achievements.Achievement.BEANS_FOR_GOOD)
+func _sleepwalker() -> void:
+	Achievements.activate(Achievements.Achievement.SLEEPWALKER)
 	check_complete()
 
 func _hundred_little_guys() -> void:

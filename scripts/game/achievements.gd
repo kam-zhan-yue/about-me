@@ -4,11 +4,8 @@ enum Event {
 	NONE,
 	SCHOOL,
 	KURECHII,
-	UNIMELB_1,
-	GAME_JAM_1,
 	KYODAI,
-	SCS,
-	UNIMELB_2,
+	UNIMELB,
 	FLAGPOLE,
 	WORLD_1_1_END,
 	GAME_JAM_2,
@@ -17,55 +14,60 @@ enum Event {
 
 enum Achievement {
 	# School Period
-	FIRST_GAME,
-	ENTER_THE_ARENA,
+	FIRST_GAMES,
 	TEACHING_GAMES,
-	ASCENSION,
 	GRADUATION,
-	
+
 	# Kurechii
 	POSTKNIGHT_2,
-	
-	# University 1
-	GREENPATH,
-	SLEEPWALKER,
-	
-	# Game Jam 1
-	ONE_LAST_DRINK,
-	UPBEET,
-	
-	# Kyoto University Period
-	KABADDI,
-	RUGBY,
+		
+	# Kyoto University
+	KYODAI,
 	
 	# Skeleton Crew Studio
 	DEATH_GAME_HOTEL,
+
+	# Game Jam Compilations
+	GAME_JAMS,
 	
-	# Back to University
 	GAME_MAKERS_CLUB,
 	UPTICK,
-	
-	# Game Jam 2 - Lightning Round?
-	THE_SHACKLED,
-	BEANS_FOR_GOOD,
 	TIDE,
 	RE_COLLECT,
+
+	# Not Used
+	FIRST_GAME,
+	ENTER_THE_ARENA,
+	ASCENSION,
+	UPBEET,
+	KABADDI,
+	RUGBY,
+
+	GREENPATH,
+	SLEEPWALKER,
+	ONE_LAST_DRINK,
+	THE_SHACKLED,
+	BEANS_FOR_GOOD,
 	HUNDRED_LITTLE_GUYS,
 	SWIRLY_WHIRLY
 }
 
 var achievement_data = {
+	Achievement.FIRST_GAMES: preload("res://resources/achievements/first_games.tres"),
+	Achievement.TEACHING_GAMES: preload("res://resources/achievements/3_teaching_games.tres"),
+	Achievement.GREENPATH: preload("res://resources/achievements/7_greenpath.tres"),
+	Achievement.POSTKNIGHT_2: preload("res://resources/achievements/6_postknight_2.tres"),
+	Achievement.KYODAI: preload("res://resources/achievements/kyodai.tres"),
+	Achievement.DEATH_GAME_HOTEL: preload("res://resources/achievements/11_death_game_hotel.tres"),
+	Achievement.GAME_JAMS: preload("res://resources/achievements/game_jams.tres"),
+	
 	Achievement.FIRST_GAME: preload("res://resources/achievements/1_first_game.tres"),
 	Achievement.ENTER_THE_ARENA: preload("res://resources/achievements/2_enter_the_arena.tres"),
-	Achievement.TEACHING_GAMES: preload("res://resources/achievements/3_teaching_games.tres"),
 	Achievement.ASCENSION: preload("res://resources/achievements/4_ascension.tres"),
 	Achievement.GRADUATION: preload("res://resources/achievements/5_graduation.tres"),
-	Achievement.POSTKNIGHT_2: preload("res://resources/achievements/6_postknight_2.tres"),
-	Achievement.GREENPATH: preload("res://resources/achievements/7_greenpath.tres"),
 	Achievement.ONE_LAST_DRINK: preload("res://resources/achievements/8_one_last_drink.tres"),
 	Achievement.SLEEPWALKER: preload("res://resources/achievements/9_sleepwalker.tres"),
 	Achievement.UPBEET: preload("res://resources/achievements/10_upbeet.tres"),
-	Achievement.DEATH_GAME_HOTEL: preload("res://resources/achievements/11_death_game_hotel.tres"),
 	Achievement.GAME_MAKERS_CLUB: preload("res://resources/achievements/12_game_makers_club.tres"),
 	Achievement.UPTICK: preload("res://resources/achievements/13_uptick.tres"),
 	Achievement.BEANS_FOR_GOOD: preload("res://resources/achievements/14_beans_for_good.tres"),
@@ -79,15 +81,11 @@ var achievement_data = {
 }
 
 var achievement_dict = {
-	str(Date.new(2017, 4)): Achievement.FIRST_GAME,
-	str(Date.new(2018, 4)): Achievement.ENTER_THE_ARENA,
-	str(Date.new(2019, 6)): Achievement.TEACHING_GAMES,
-	str(Date.new(2019, 9)): Achievement.ASCENSION,
+	str(Date.new(2019, 2)): Achievement.FIRST_GAMES,
+	str(Date.new(2019, 10)): Achievement.TEACHING_GAMES,
 	str(Date.new(2020, 11)): Achievement.GRADUATION,
 	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
-	str(Date.new(2022, 6)): Achievement.GREENPATH,
-	str(Date.new(2023, 6)): Achievement.RUGBY,
-	str(Date.new(2023, 8)): Achievement.KABADDI,
+	str(Date.new(2023, 6)): Achievement.KYODAI,
 	str(Date.new(2023, 11)): Achievement.DEATH_GAME_HOTEL,
 	str(Date.new(2024, 3)): Achievement.GAME_MAKERS_CLUB,
 	str(Date.new(2024, 8)): Achievement.UPTICK,
@@ -154,44 +152,30 @@ func activate_event(event: Event) -> void:
 		school_sequence()
 	elif event == Event.KURECHII:
 		kurechii_sequence()
-	elif event == Event.SCS:
-		scs_sequence()
 	elif event == Event.KYODAI:
 		kyodai_sequence()
-	elif event == Event.UNIMELB_1:
-		university_sequence_1()
-	elif event == Event.UNIMELB_2:
-		university_sequence_2()
+	elif event == Event.UNIMELB:
+		university_sequence()
 
 func school_sequence() -> void:
 	var start = Date.new(2008, 1)
 	var end = Date.new(2020, 12)
-	start_countdown(start, end, 6.0)
+	start_countdown(start, end, 2.5)
 
 func kurechii_sequence() -> void:
 	var start = Date.new(2021, 2)
 	var end = Date.new(2022, 1)
-	start_countdown(start, end, 3.0)
-	
-func university_sequence_1() -> void:
-	var start = Date.new(2022, 1)
-	var end = Date.new(2023, 1)
-	start_countdown(start, end, 2.0)
+	start_countdown(start, end, 1.5)
 
 func kyodai_sequence() -> void:
 	var start = Date.new(2023, 4)
-	var end = Date.new(2023, 8)
-	start_countdown(start, end, 2.0)
-	
-func scs_sequence() -> void:
-	var start = Date.new(2023, 8)
 	var end = Date.new(2024, 1)
-	start_countdown(start, end, 2.0)
-	
-func university_sequence_2() -> void:
+	start_countdown(start, end, 1.5)
+
+func university_sequence() -> void:
 	var start = Date.new(2024, 2)
 	var end = Date.new(2024, 9)
-	start_countdown(start, end, 2.0)
+	start_countdown(start, end, 1.5)
 
 func start_countdown(start: Date, end: Date, duration: float) -> void:
 	self.on_countdown_started.emit()
