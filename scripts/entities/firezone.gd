@@ -5,10 +5,9 @@ extends Node2D
 @onready var fire_start := %FireStart as Marker2D
 @onready var fire_end := %FireEnd as Marker2D
 
-@onready var hundred_little_guys := %HundredLittleGuys as QuestionBlock
 @onready var upbeet := %Upbeet as QuestionBlock
 @onready var sleepwalker := %Sleepwalker as QuestionBlock
-@onready var swirly_whirly := %SwirlyWhirly as QuestionBlock
+@onready var game_jams := %GameJams as QuestionBlock
 
 var activated := false
 var timer = 0.0
@@ -17,15 +16,14 @@ var can_deactivate := false
 
 signal on_complete
 
-const TOTAL = 4
+const TOTAL = 3
 const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
 
 func _ready() -> void:
-	hundred_little_guys.hit.connect(_hundred_little_guys)
 	upbeet.hit.connect(_upbeet)
 	sleepwalker.hit.connect(_sleepwalker)
-	swirly_whirly.hit.connect(_swirly_whirly)
+	game_jams.hit.connect(_game_jams)
 	Achievements.on_done_showing.connect(_on_done_showing)
 
 func activate() -> void:
@@ -67,12 +65,8 @@ func _sleepwalker() -> void:
 	Achievements.activate(Achievements.Achievement.SLEEPWALKER)
 	check_complete()
 
-func _hundred_little_guys() -> void:
-	Achievements.activate(Achievements.Achievement.HUNDRED_LITTLE_GUYS)
-	check_complete()
-
-func _swirly_whirly() -> void:
-	Achievements.activate(Achievements.Achievement.SWIRLY_WHIRLY)
+func _game_jams() -> void:
+	Achievements.activate(Achievements.Achievement.GAME_JAMS)
 	check_complete()
 
 func check_complete() -> void:

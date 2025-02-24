@@ -29,7 +29,7 @@ def convert_all_mp4_to_ogv(input_folder, output_folder):
 
 if __name__ == "__main__":
     input_folder = "/Users/kamzhanyue/Documents/personal/about-me/utilities/mp4/"
-    output_folder = "ogv"
+    output_folder = "media"
 
     convert_all_mp4_to_ogv(input_folder, output_folder)
     print("🎉 All files converted successfully!")

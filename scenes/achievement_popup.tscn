@@ -80,13 +80,13 @@ text = "[center]Uptick Software[/center]"
 fit_content = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 550)
+custom_minimum_size = Vector2(0, 570)
 layout_mode = 2
 ratio = 1.7778
 
 [node name="Video" type="VideoStreamPlayer" parent="MarginContainer/Panel/VBoxContainer/AspectRatioContainer"]
 unique_name_in_owner = true
-texture_filter = 1
+texture_filter = 3
 layout_mode = 2
 stream = ExtResource("3_emsjm")
 autoplay = true

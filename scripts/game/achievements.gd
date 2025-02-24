@@ -20,7 +20,7 @@ enum Achievement {
 
 	# Kurechii
 	POSTKNIGHT_2,
-		
+
 	# Kyoto University
 	KYODAI,
 	

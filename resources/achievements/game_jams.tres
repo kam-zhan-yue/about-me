@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_nsqr8")
-media = 0
-filename = "1_cow.png"
-description = "JavaとProcessingというグラフィックスライブラリを使用して簡単なゲームを作った。"
+media = 1
+filename = "compilation.ogv"
+description = "複数のゲームジャム、ハッカソンに参加した。Unity、Godot、Rustを通じて、色々なゲームやソフトを作った。"
 
 [resource]
 script = ExtResource("2_5nibb")
-title = "FIRST  GAME"
-tags = Array[int]([17, 12])
+title = "GAME  JAMS"
+tags = Array[int]([0, 1, 2, 3, 4, 5])
 pages = Array[ExtResource("1_nsqr8")]([SubResource("Resource_j0rxt")])
