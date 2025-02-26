@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://cx6niqsripe54"]
+[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://cx6niqsripe54"]
 
 [ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_roc0f"]
 [ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_57boh"]
@@ -17,15 +17,8 @@ description = "VRヘッドセットをしなくても、オンラインサーバ
 
 "
 
-[sub_resource type="Resource" id="Resource_wf6tj"]
-script = ExtResource("1_roc0f")
-media = 1
-filename = "11_death_game_hotel_item.ogv"
-description = "VRで遊べるアイテムを開発した。アイテムのネットワーキングコードを作った。
-"
-
 [resource]
 script = ExtResource("2_57boh")
 title = "Death Game Hotel"
 tags = Array[int]([0, 1])
-pages = Array[ExtResource("1_roc0f")]([SubResource("Resource_j0rxt"), SubResource("Resource_822eb"), SubResource("Resource_wf6tj")])
+pages = Array[ExtResource("1_roc0f")]([SubResource("Resource_j0rxt"), SubResource("Resource_822eb")])
