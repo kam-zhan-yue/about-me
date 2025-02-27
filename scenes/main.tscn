@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b11r142syunvm"]
+[gd_scene load_steps=26 format=4 uid="uid://b11r142syunvm"]
 
 [ext_resource type="Script" path="res://scripts/game/game_manager.gd" id="1_dfvcw"]
 [ext_resource type="Script" path="res://scripts/entities/camera.gd" id="1_twskn"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cbauhwbduvadd" path="res://sprites/peach.png" id="21_r1tyd"]
 [ext_resource type="Script" path="res://scripts/entities/game_end.gd" id="21_xsd2x"]
 [ext_resource type="Theme" uid="uid://c27btpfd3wyyt" path="res://resources/art/large.tres" id="23_2euas"]
+[ext_resource type="PackedScene" uid="uid://0fas0t8lbnqt" path="res://scenes/goomba.tscn" id="25_2h38g"]
 
 [node name="Main" type="Node2D"]
 
@@ -359,6 +360,9 @@ bbcode_enabled = true
 text = "[center]push  button  b[/center]"
 fit_content = true
 scroll_active = false
+
+[node name="Goomba" parent="." instance=ExtResource("25_2h38g")]
+position = Vector2(208, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_qvmds")]
 unique_name_in_owner = true

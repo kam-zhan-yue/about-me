@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 const SPEED = 175.0
 const JUMP_VELOCITY = -350.0
+const BOUNCE_VELOCITY = -200.0
 const PLAYER_WIDTH = 18.0
 
 var interactive = true
@@ -26,9 +27,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		jump.play()
-		sprite.play("jump_start")
+		_jump(JUMP_VELOCITY)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -45,6 +44,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 	animate_player()
 	move_and_slide()
+
+func _jump(jump_force: float) -> void:
+	velocity.y = JUMP_VELOCITY
+	jump.play()
+	sprite.play("jump_start")
+	
+func bounce() -> void:
+	velocity.y = BOUNCE_VELOCITY
+	sprite.play("jump_start")
+	
 
 func animate_player() -> void:
 	if facing_right and velocity.x < 0:
