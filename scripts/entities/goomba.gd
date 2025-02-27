@@ -5,14 +5,19 @@ extends CharacterBody2D
 @onready var rigidbody := %RigidBody2D as RigidBody2D
 @onready var left_ray := %LeftRay as RayCast2D
 @onready var right_ray := %RightRay as RayCast2D
+@onready var points_spawner := %PointsSpawner as Node2D
+
+const POINTS = preload("res://scenes/points.tscn")
 
 var speed := 0.0
 var rotation_speed := 0.0
 const SPEED = 10.0
-const DESPAWN_TIME = 0.5
+const FADE_TIME = 0.5
+const DESPAWN_TIME = 5.0
 const LAUNCH_SPEED_X = 200.0
 const LAUNCH_SPEED_Y = 400.0
 const ROTATION_SPEED = 50.0
+const GAME_POINTS = 100
 var state := State.ACTIVE
 
 enum State {
@@ -57,6 +62,7 @@ func _on_stomp_area_body_entered(body: Node2D) -> void:
 
 func stomped() -> void:
 	animated_sprite_2d.play('dead')
+	spawn_points()
 	die()
 
 func launch(direction: Vector2) -> void:
@@ -68,7 +74,9 @@ func launch(direction: Vector2) -> void:
 	self.state = State.LAUNCHING
 	self.collision_layer = 2
 	self.collision_mask = 2
-	await Global.wait(10.0)
+	spawn_points()
+	Global.fade(self, FADE_TIME * 2.0, false)
+	await Global.wait(DESPAWN_TIME)
 	die()
 
 func die() -> void:
@@ -76,10 +84,12 @@ func die() -> void:
 	self.collision_layer = 2
 	self.collision_mask = 2
 	self.speed = 0.0
-	Global.fade(self, DESPAWN_TIME, false)
+	Global.fade(self, FADE_TIME, false)
 	await Global.wait(DESPAWN_TIME)
 	queue_free()
 
-
-func _on_body_entered(body: Node) -> void:
-	print("Body Entered")
+func spawn_points() -> void:
+	var points = POINTS.instantiate()
+	points.global_position = points_spawner.global_position
+	Game.add_points(GAME_POINTS)
+	Game.holder.add_child(points)

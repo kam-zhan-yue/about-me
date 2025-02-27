@@ -72,4 +72,7 @@ unique_name_in_owner = true
 position = Vector2(-1, 0)
 target_position = Vector2(-8, 0)
 
+[node name="PointsSpawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="StompArea" to="." method="_on_stomp_area_body_entered"]
