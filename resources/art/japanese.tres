@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://t2l4t4631i2q"]
+
+[ext_resource type="FontFile" uid="uid://c77etr4s0pe73" path="res://sprites/NotoSansJP-VariableFont_wght.ttf" id="1_rcihe"]
+
+[resource]
+default_font = ExtResource("1_rcihe")

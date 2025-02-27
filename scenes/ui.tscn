@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2lt0mjhqmmf7"]
+[gd_scene load_steps=9 format=3 uid="uid://c2lt0mjhqmmf7"]
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_5nuf2"]
 [ext_resource type="PackedScene" uid="uid://dh2faluuhadxu" path="res://scenes/game_popup.tscn" id="2_lnoa6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cekpou78xsj7f" path="res://scenes/date_popup.tscn" id="5_7kqpy"]
 [ext_resource type="PackedScene" uid="uid://0jwwq8lxg2xm" path="res://scenes/transition_popup.tscn" id="6_1b4uv"]
 [ext_resource type="PackedScene" uid="uid://bii37liewdtn4" path="res://scenes/volume_popup.tscn" id="7_ykgn6"]
+[ext_resource type="PackedScene" uid="uid://b83itnj04ohh" path="res://scenes/title_popup.tscn" id="8_8qxhb"]
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
@@ -28,4 +29,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="VolumePopup" parent="." instance=ExtResource("7_ykgn6")]
+unique_name_in_owner = true
+
+[node name="DisclaimerPopup" parent="." instance=ExtResource("8_8qxhb")]
 unique_name_in_owner = true
