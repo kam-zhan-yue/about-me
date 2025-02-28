@@ -1,7 +1,11 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bsckx8dnl1ryn"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bsckx8dnl1ryn"]
 
 [ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_iyj68"]
 [ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_kiaul"]
+[ext_resource type="PackedScene" uid="uid://7ucgeb5da6am" path="res://scenes/coin_block.tscn" id="2_yrofl"]
+[ext_resource type="PackedScene" uid="uid://c13ygio3ss3wr" path="res://scenes/question_block_castle.tscn" id="4_or1fo"]
+[ext_resource type="PackedScene" uid="uid://de566ibr15isn" path="res://scenes/coin_block_castle.tscn" id="5_xaltg"]
+[ext_resource type="PackedScene" uid="uid://ctm6twqhypkam" path="res://scenes/brick_block.tscn" id="6_egskc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaiss"]
 texture = ExtResource("1_iyj68")
@@ -163,7 +167,11 @@ separation = Vector2i(1, 1)
 12:10/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ny4bl"]
-scenes/1/scene = ExtResource("2_kiaul")
+scenes/2/scene = ExtResource("2_yrofl")
+scenes/3/scene = ExtResource("2_kiaul")
+scenes/4/scene = ExtResource("4_or1fo")
+scenes/5/scene = ExtResource("5_xaltg")
+scenes/6/scene = ExtResource("6_egskc")
 
 [resource]
 physics_layer_0/collision_layer = 1
