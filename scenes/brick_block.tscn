@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctm6twqhypkam"]
+
+[ext_resource type="Script" path="res://scripts/entities/brick_block.gd" id="1_sq18j"]
+[ext_resource type="Texture2D" uid="uid://cweph4xkkj5mq" path="res://sprites/brick.png" id="2_kg1w4"]
+[ext_resource type="AudioStream" uid="uid://dcpt30jefnt2n" path="res://audio/sfx_bump.ogg" id="4_j7ngp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6p1o"]
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdeej"]
+size = Vector2(16, 16)
+
+[node name="BrickBlock" type="Node2D"]
+script = ExtResource("1_sq18j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_kg1w4")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_u6p1o")
+debug_color = Color(0.974987, 0, 0.422744, 0.42)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_fdeej")
+
+[node name="Bump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_j7ngp")
+bus = &"SFX"
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
