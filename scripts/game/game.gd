@@ -10,6 +10,7 @@ var holder: Node2D
 var paused := false
 var world = '1-1'
 var points := 0
+var coins := 0
 
 # Signals
 signal on_date_changed(date: Date)
@@ -17,6 +18,7 @@ signal on_world_changed(world: String)
 signal on_end_game
 signal on_stop_timer
 signal on_points_changed(points: int)
+signal on_coins_changed(coins: int)
 
 func init(p: Player = null, c: Camera = null, start_date: Date = null, ui_popup: UI = null, audio_manager: AudioManager = null, point_holder: Node2D = null) -> void:
 	self.player = p
@@ -74,3 +76,7 @@ func stop_timer() -> void:
 func add_points(value: int) -> void:
 	self.points += value
 	self.on_points_changed.emit(points)
+
+func add_coins(value: int) -> void:
+	self.coins += value
+	self.on_coins_changed.emit(coins)
