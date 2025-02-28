@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://0fas0t8lbnqt"]
+[gd_scene load_steps=10 format=3 uid="uid://0fas0t8lbnqt"]
 
 [ext_resource type="Texture2D" uid="uid://ctwjjvnojdxgn" path="res://sprites/goomba.png" id="1_1m4fe"]
 [ext_resource type="Script" path="res://scripts/entities/goomba.gd" id="1_ney8x"]
+[ext_resource type="AudioStream" uid="uid://kpovyxx0geu4" path="res://audio/sfx_kick.ogg" id="3_vue40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4bwx"]
 size = Vector2(16, 11)
@@ -74,5 +75,10 @@ target_position = Vector2(-8, 0)
 
 [node name="PointsSpawner" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[node name="Kick" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_vue40")
+bus = &"SFX"
 
 [connection signal="body_entered" from="StompArea" to="." method="_on_stomp_area_body_entered"]

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var left_ray := %LeftRay as RayCast2D
 @onready var right_ray := %RightRay as RayCast2D
 @onready var points_spawner := %PointsSpawner as Node2D
+@onready var kick := %Kick as AudioStreamPlayer2D
 
 const POINTS = preload("res://scenes/points.tscn")
 
@@ -62,11 +63,13 @@ func _on_stomp_area_body_entered(body: Node2D) -> void:
 
 func stomped() -> void:
 	animated_sprite_2d.play('dead')
+	kick.play()
 	spawn_points()
 	die()
 
 func launch(direction: Vector2) -> void:
 	if state == State.DEAD: return
+	kick.play()
 	var launch_force = direction * LAUNCH_SPEED_X
 	rotation_speed = direction.x * ROTATION_SPEED
 	launch_force.y = -LAUNCH_SPEED_Y
