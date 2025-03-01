@@ -72,9 +72,13 @@ func animate_player() -> void:
 func fade_in():
 	await Global.fade_in(self.sprite)
 	interactive = true
+	self.collision_layer = 1
+	self.collision_mask = 1
 
 func fade_out():
 	interactive = false
+	self.collision_layer = 2
+	self.collision_mask = 2
 	await Global.fade_out(self.sprite)
 
 func flagpole(target: Vector2):
