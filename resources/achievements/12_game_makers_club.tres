@@ -7,7 +7,7 @@
 script = ExtResource("1_ds88x")
 media = 0
 filename = "12_game_makers_club_booth.jpg"
-description = "友達とメルボルン大学で初めてゲーム開発部を作った。最初は20人いた。現在350人以上が所属している。"
+description = "友達とメルボルン大学で初めてのゲーム開発部を作った。最初は20人いた。現在400人以上が所属している。"
 
 [sub_resource type="Resource" id="Resource_qlvsc"]
 script = ExtResource("1_ds88x")
