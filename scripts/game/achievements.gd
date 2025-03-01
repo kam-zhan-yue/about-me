@@ -186,7 +186,6 @@ func start_countdown(start: Date, end: Date, duration: float) -> void:
 	self.end_date = end
 	self.timer = 0.0
 	self.time = duration
-	print("Starting Countdown")
 	
 
 func end_sequence() -> void:

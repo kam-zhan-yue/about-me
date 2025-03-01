@@ -32,11 +32,9 @@ func activate() -> void:
 	self.timer = 0.0
 	self.original_wall = firewall.global_position
 	self.activated = true
-	print("Activate")
 
 func _input(_event: InputEvent) -> void:
 	if self.firewall.activated and Input.is_action_just_pressed("ui_pause"):
-		print("What")
 		self.activated = !self.activated
 
 func _process(delta: float) -> void:

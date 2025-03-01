@@ -10,7 +10,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if self.activated: return
 	if body is Player:
 		self.activated = true
-		print("Collided with player")
 		Game.player.flagpole(target.global_position)
 		fall()
 

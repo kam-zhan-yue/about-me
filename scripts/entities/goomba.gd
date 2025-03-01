@@ -57,7 +57,6 @@ func _physics_process(delta: float) -> void:
 func _on_stomp_area_body_entered(body: Node2D) -> void:
 	if state == State.DEAD: return
 	if body is Player:
-		print("Bounce")
 		body.bounce()
 		stomped()
 

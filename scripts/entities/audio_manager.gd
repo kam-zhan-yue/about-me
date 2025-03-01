@@ -12,7 +12,6 @@ const WORLD_CLEAR = 6.26
 
 func _ready() -> void:
 	if Game.world == '1-1':
-		print("Game world is ", Game.world)
 		play(ground)
 
 func play_world_1_1_clear() -> void:
@@ -27,7 +26,6 @@ func play_princess() -> void:
 	play(princess)
 
 func play(audio: AudioStreamPlayer2D) -> void:
-	print("Playing ", audio.name)
 	stop()
 	current = audio
 	current.play()
