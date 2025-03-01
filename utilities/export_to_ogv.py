@@ -28,7 +28,7 @@ def convert_all_mp4_to_ogv(input_folder, output_folder):
                 print(f"❌ Error converting {filename}: {e}")
 
 if __name__ == "__main__":
-    input_folder = "/Users/kamzhanyue/Documents/personal/about-me/utilities/mp4/"
+    input_folder = "/Users/kamzhanyue/Documents/Personal Repos/about-me/utilities/mp4/"
     output_folder = "media"
 
     convert_all_mp4_to_ogv(input_folder, output_folder)
