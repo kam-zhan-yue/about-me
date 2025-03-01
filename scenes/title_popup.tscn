@@ -1,28 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://b83itnj04ohh"]
+[gd_scene load_steps=3 format=3 uid="uid://b0ephybsbgiae"]
 
-[ext_resource type="Script" path="res://scripts/ui/title_popup.gd" id="1_0d3ol"]
 [ext_resource type="Theme" uid="uid://t2l4t4631i2q" path="res://resources/art/japanese.tres" id="2_6bl1r"]
+[ext_resource type="Texture2D" uid="uid://c6msk8ss6s3h8" path="res://sprites/title.png" id="2_unb6v"]
 
 [node name="TitlePopup" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_0d3ol")
+anchors_preset = 0
+offset_left = 40.0
+offset_top = -136.0
+offset_right = 40.0
+offset_bottom = -136.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="TitleImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 399.0
+offset_bottom = 220.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_unb6v")
+
+[node name="DisclaimerLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 1400.0
+offset_bottom = 176.0
+scale = Vector2(0.1, 0.1)
 theme = ExtResource("2_6bl1r")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-text = "[outline_size=10][center]本作は面接のプレゼンテーション用であり、公開・配信の予定はありません。[/center][/outline_size]"
-fit_content = true
+text = "[right]本作は公開・配信の予定はありません。[/right]"
+scroll_active = false
