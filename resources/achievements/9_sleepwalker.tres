@@ -7,7 +7,8 @@
 script = ExtResource("1_r546d")
 media = 1
 filename = "9_sleepwalker.ogv"
-description = "ゲームジャムのために眠っているときしか殺せない暗殺者のゲームです。３人のチームで唯一のプログラマーを担当して、１週間で開発した。
+description = "ゲームジャムのために眠っているときしか殺せない暗殺者のゲーム。
+３人のチームで唯一のプログラマーを担当して、１週間で開発した。
 "
 
 [sub_resource type="Resource" id="Resource_p4ehp"]
