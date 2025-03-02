@@ -13,6 +13,6 @@ description = "高校卒業制作のゲームです。
 
 [resource]
 script = ExtResource("2_p0mg4")
-title = "FIRST  GAMES"
+title = "FIRST  GAME"
 tags = Array[int]([0, 1])
 pages = Array[ExtResource("1_rfate")]([SubResource("Resource_j0rxt")])

@@ -9,7 +9,7 @@ media = 1
 filename = "17_re_collect.ogv"
 description = "メルボルン大学のサイエンス博物館のためのゲームです。
 展示に基づいたストーリーを体験できます。
-６人のチームで３ヶ月間で完成させた。"
+６人のチームと３ヶ月間で完成させた。"
 
 [sub_resource type="Resource" id="Resource_0ckee"]
 script = ExtResource("1_bm3oc")

@@ -7,20 +7,22 @@
 script = ExtResource("1_ds88x")
 media = 0
 filename = "12_game_makers_club_booth.jpg"
-description = "友達とメルボルン大学で初めてのゲーム開発部を作った。最初は20人いた。現在400人以上が所属している。"
+description = "友達とメルボルン大学で初めてのゲーム開発部を作った。
+最初は20人いた。現在400人以上が所属している。"
 
 [sub_resource type="Resource" id="Resource_qlvsc"]
 script = ExtResource("1_ds88x")
 media = 1
 filename = "game_makers_club.ogv"
-description = "毎週ゲームジャム、ワークショップ、ミートアップを行っている。
-"
+description = "部長としての目的は、誰もがゲーム開発を学べる環境を作ること。
+毎週ゲームジャム、ワークショップ、ミートアップを行っている。"
 
 [sub_resource type="Resource" id="Resource_vqjre"]
 script = ExtResource("1_ds88x")
 media = 1
 filename = "production_division.ogv"
-description = "一つの部分として３つの開発チームがある。合わせて40人いる。チームの管理を担当している。1年間で、ゲームがリリースされます。"
+description = "一つの部分として３つの開発チームがある。合わせて40人いる。
+チームの管理を担当している。1年間で、ゲームがリリースされる。"
 
 [resource]
 script = ExtResource("2_oauxq")
