@@ -48,7 +48,10 @@ enum Achievement {
 	THE_SHACKLED,
 	BEANS_FOR_GOOD,
 	HUNDRED_LITTLE_GUYS,
-	SWIRLY_WHIRLY
+	SWIRLY_WHIRLY,
+
+	GRAPHICS,
+	MULTIPLAYER,
 }
 
 var achievement_data = {
@@ -76,7 +79,10 @@ var achievement_data = {
 	Achievement.HUNDRED_LITTLE_GUYS: preload("res://resources/achievements/18_hundred_little_guys.tres"),
 	Achievement.SWIRLY_WHIRLY: preload("res://resources/achievements/19_swirly_whirly.tres"),
 	Achievement.KABADDI: preload("res://resources/achievements/kabaddi.tres"),
-	Achievement.RUGBY: preload("res://resources/achievements/rugby.tres")
+	Achievement.RUGBY: preload("res://resources/achievements/rugby.tres"),
+
+	Achievement.GRAPHICS: preload("res://resources/achievements/graphics_projects.tres"),
+	Achievement.MULTIPLAYER: preload("res://resources/achievements/multiplayer_projects.tres")
 }
 
 var achievement_dict = {

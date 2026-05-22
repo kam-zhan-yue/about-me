@@ -5,8 +5,8 @@ extends Node2D
 @onready var fire_start := %FireStart as Marker2D
 @onready var fire_end := %FireEnd as Marker2D
 
-@onready var upbeet := %Upbeet as QuestionBlock
-@onready var sleepwalker := %Sleepwalker as QuestionBlock
+@onready var tide := %TIDE as QuestionBlock
+@onready var recollect := %Recollect as QuestionBlock
 @onready var game_jams := %GameJams as QuestionBlock
 
 var activated := false
@@ -21,8 +21,8 @@ const TIME_TO_TARGET := 8.0
 var original_wall := Vector2.ZERO
 
 func _ready() -> void:
-	upbeet.hit.connect(_upbeet)
-	sleepwalker.hit.connect(_sleepwalker)
+	tide.hit.connect(_tide)
+	recollect.hit.connect(_recollect)
 	game_jams.hit.connect(_game_jams)
 	Achievements.on_done_showing.connect(_on_done_showing)
 
@@ -55,12 +55,12 @@ func deactivate() -> void:
 		Game.camera.set_mode(Camera.Mode.FollowPlayer)
 		await firewall.deactivate()
 
-func _upbeet() -> void:
-	Achievements.activate(Achievements.Achievement.UPBEET)
+func _tide() -> void:
+	Achievements.activate(Achievements.Achievement.TIDE)
 	check_complete()
 
-func _sleepwalker() -> void:
-	Achievements.activate(Achievements.Achievement.SLEEPWALKER)
+func _recollect() -> void:
+	Achievements.activate(Achievements.Achievement.RE_COLLECT)
 	check_complete()
 
 func _game_jams() -> void:

@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="GameSettings" load_steps=2 format=3 uid="uid://bkq1firuqlr2b"]
+[gd_resource type="Resource" script_class="GameSettings" format=3 uid="uid://bkq1firuqlr2b"]
 
-[ext_resource type="Script" path="res://scripts/game/game_settings.gd" id="1_x04fq"]
+[ext_resource type="Script" uid="uid://d0pnciupx5rj" path="res://scripts/game/game_settings.gd" id="1_x04fq"]
 
 [resource]
 script = ExtResource("1_x04fq")
-start_year = 2002
-start_month = 8
-start_event = 0
+start_event = 6

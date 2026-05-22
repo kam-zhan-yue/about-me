@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AchievementData" format=3 uid="uid://cf870pc0wo1xb"]
+
+[ext_resource type="Script" uid="uid://dcyjr2ru1x08j" path="res://scripts/game/page_data.gd" id="1_q4rvr"]
+[ext_resource type="Script" uid="uid://drqqvh3wjo7rn" path="res://scripts/game/achievement_data.gd" id="2_2rrhi"]
+
+[sub_resource type="Resource" id="Resource_j0rxt"]
+script = ExtResource("1_q4rvr")
+media = 1
+filename = "pbr_renderer.png"
+description = "OpenGLとGLSLを学んで、PBRのレンダリングエンジンを自作しました"
+
+[sub_resource type="Resource" id="Resource_q4rvr"]
+script = ExtResource("1_q4rvr")
+media = 1
+filename = "anatis.ogv"
+description = "On Rails Shooterのカードゲームと作りました。
+Dithering Shaderを開発しました"
+metadata/_custom_type_script = "uid://dcyjr2ru1x08j"
+
+[sub_resource type="Resource" id="Resource_2rrhi"]
+script = ExtResource("1_q4rvr")
+media = 1
+filename = "eyemageddon.ogv"
+metadata/_custom_type_script = "uid://dcyjr2ru1x08j"
+
+[resource]
+script = ExtResource("2_2rrhi")
+title = "京都大学カバディサークル"
+pages = Array[ExtResource("1_q4rvr")]([SubResource("Resource_j0rxt"), SubResource("Resource_q4rvr"), SubResource("Resource_2rrhi")])

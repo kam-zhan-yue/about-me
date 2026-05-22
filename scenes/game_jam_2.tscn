@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1nyfhuflnhtg"]
+[gd_scene format=3 uid="uid://b1nyfhuflnhtg"]
 
-[ext_resource type="Script" path="res://scripts/entities/game_jam_2.gd" id="1_chytc"]
+[ext_resource type="Script" uid="uid://cdvtoitbsqcd4" path="res://scripts/entities/game_jam_2.gd" id="1_chytc"]
 [ext_resource type="Theme" uid="uid://b4jbuskouuqxc" path="res://resources/art/gothic.tres" id="2_fyi1p"]
 [ext_resource type="PackedScene" uid="uid://c13ygio3ss3wr" path="res://scenes/question_block_castle.tscn" id="3_r77ww"]
 
-[node name="Game Jam 2" type="Node2D"]
+[node name="Game Jam 2" type="Node2D" unique_id=53109585]
 script = ExtResource("1_chytc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1030898574]
 custom_minimum_size = Vector2(250, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,53 +26,51 @@ text = "[center]どんなゲームを作ろうかな？[/center]"
 fit_content = true
 scroll_active = false
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Level" type="Node2D" parent="." unique_id=1288767856]
 position = Vector2(0, -8)
 
-[node name="RECollect" parent="Level" instance=ExtResource("3_r77ww")]
+[node name="Graphics" parent="Level" unique_id=572603739 instance=ExtResource("3_r77ww")]
 unique_name_in_owner = true
 position = Vector2(-48, -48)
 
-[node name="Label" type="RichTextLabel" parent="Level/RECollect"]
+[node name="Label" type="RichTextLabel" parent="Level/Graphics" unique_id=125099369]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -26.0
-offset_right = 100.0
-offset_bottom = -2.0
+offset_left = -96.0
+offset_top = -24.0
+offset_right = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_fyi1p")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]ストーリー[/center]"
+text = "[center]グラフィックス[/center]"
 fit_content = true
 scroll_active = false
 
-[node name="TIDE" parent="Level" instance=ExtResource("3_r77ww")]
+[node name="Multiplayer" parent="Level" unique_id=978917064 instance=ExtResource("3_r77ww")]
 unique_name_in_owner = true
 position = Vector2(48, -48)
 
-[node name="Label2" type="RichTextLabel" parent="Level/TIDE"]
+[node name="Label2" type="RichTextLabel" parent="Level/Multiplayer" unique_id=541381195]
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -26.0
-offset_right = 99.0
-offset_bottom = -2.0
+offset_left = -104.0
+offset_top = -24.0
+offset_right = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_fyi1p")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "[center]タイピング[/center]"
+text = "[center]マルチプレイヤー[/center]"
 fit_content = true
 scroll_active = false

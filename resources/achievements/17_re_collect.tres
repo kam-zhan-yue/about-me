@@ -7,16 +7,13 @@
 script = ExtResource("1_bm3oc")
 media = 1
 filename = "17_re_collect.ogv"
-description = "メルボルン大学のサイエンス博物館のためのゲームです。
-展示に基づいたストーリーを体験できます。
-６人のチームと３ヶ月間で完成させた。"
+description = "メルボルン大学のサイエンス美術館のためのゲームです。
+展示に基づいたストーリーを体験できます。"
 
 [sub_resource type="Resource" id="Resource_0ckee"]
 script = ExtResource("1_bm3oc")
 filename = "17_re_collect.png"
-description = "Inkyのナラティブエンジンを通じて、チームはストーリーを書いた。
-JSONにエクスポートしました。
-システムはゲームの状況が現れます。"
+description = "Inkyのナラティブエンジンを通じて、チームはストーリーを書いた。"
 
 [resource]
 script = ExtResource("2_0jrtw")

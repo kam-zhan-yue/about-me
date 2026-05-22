@@ -3,14 +3,29 @@
 [ext_resource type="Script" uid="uid://dcyjr2ru1x08j" path="res://scripts/game/page_data.gd" id="1_nsqr8"]
 [ext_resource type="Script" uid="uid://drqqvh3wjo7rn" path="res://scripts/game/achievement_data.gd" id="2_5nibb"]
 
+[sub_resource type="Resource" id="Resource_qh3w8"]
+script = ExtResource("1_nsqr8")
+media = 1
+filename = "10_upbeet.ogv"
+description = "野菜リズムゲームのために、ビートマップエディターを作りました"
+metadata/_custom_type_script = "uid://dcyjr2ru1x08j"
+
+[sub_resource type="Resource" id="Resource_55ntf"]
+script = ExtResource("1_nsqr8")
+media = 1
+filename = "9_sleepwalker.ogv"
+description = "眠っている暗殺者ゲームです。
+カスタムダイアログシステムを作りました。"
+metadata/_custom_type_script = "uid://dcyjr2ru1x08j"
+
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_nsqr8")
 media = 1
 filename = "compilation.ogv"
-description = "複数のゲームジャム、ハッカソンに参加した。Unity、Godot、Rustを通じて、色々なゲームやソフトを作った。"
+description = "Unity、Godot、Rustを通じて、色々なゲームやソフトを作った。"
 
 [resource]
 script = ExtResource("2_5nibb")
 title = "GAME  JAMS"
 tags = Array[int]([0, 1, 2, 3, 4, 5])
-pages = Array[ExtResource("1_nsqr8")]([SubResource("Resource_j0rxt")])
+pages = Array[ExtResource("1_nsqr8")]([SubResource("Resource_qh3w8"), SubResource("Resource_55ntf"), SubResource("Resource_j0rxt")])

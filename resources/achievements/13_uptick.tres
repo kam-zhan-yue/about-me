@@ -6,7 +6,9 @@
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_f4yd0")
 filename = "13_uptick.png"
-description = "大学と同時に、Uptickで3ヶ月間インターンをした。現在Junior Software Engineerとして週3回働いている。"
+description = "大学時代と卒業後にUptickで1年間半働いていました。
+Mid Level Engineerに昇進しました。
+DeNAに入るために、やめました。"
 
 [resource]
 script = ExtResource("2_klpab")
