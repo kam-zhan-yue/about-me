@@ -1,13 +1,12 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=6 format=3 uid="uid://b2ypnpb143ohc"]
+[gd_resource type="Resource" script_class="AchievementData" format=3 uid="uid://b2ypnpb143ohc"]
 
-[ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_byaxn"]
-[ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_ikrby"]
+[ext_resource type="Script" uid="uid://dcyjr2ru1x08j" path="res://scripts/game/page_data.gd" id="1_byaxn"]
+[ext_resource type="Script" uid="uid://drqqvh3wjo7rn" path="res://scripts/game/achievement_data.gd" id="2_ikrby"]
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_byaxn")
-media = 0
 filename = "6_postknight_2.jpg"
-description = "コロナ禍の影響に大学に行けなかったため、Kurechiiで11ヶ月間インターンした。Postknight ２に携わった。"
+description = "ギャップイヤーの間に、Kurechiiで11ヶ月間インターンした。Postknight ２に携わった。"
 
 [sub_resource type="Resource" id="Resource_7nyt5"]
 script = ExtResource("1_byaxn")
@@ -17,7 +16,6 @@ description = "Unityを使用して、ボスやエネミーの行動パターン
 
 [sub_resource type="Resource" id="Resource_cw1ba"]
 script = ExtResource("1_byaxn")
-media = 0
 filename = "6_postknight_2_ui.jpg"
 description = "UIプログラミングにもたくさん携わった。"
 

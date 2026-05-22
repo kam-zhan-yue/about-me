@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var zone_1 := %"Zone 1" as Timezone
 @onready var zone_2 := %"Zone 2" as Timezone
-@onready var zone_3 := %"Zone 3" as Timezone
 @onready var zone_5 := %"Zone 5" as Timezone
 
 @onready var school := %School as Building
@@ -28,7 +27,6 @@ var timeline_dict = {}
 func _ready() -> void:
 	zone_1.activated = true
 	school.on_activate.connect(_school)
-	kurechii.on_activate.connect(_kurechii)
 	kyodai.on_activate.connect(_kyodai)
 	unimelb.on_activate.connect(_unimelb)
 	final.on_activate.connect(_final)
@@ -42,7 +40,6 @@ func _ready() -> void:
 	
 	timeline_dict = {
 		Achievements.Event.SCHOOL: school,
-		Achievements.Event.KURECHII: kurechii,
 		Achievements.Event.KYODAI: kyodai,
 		Achievements.Event.UNIMELB: unimelb,
 		Achievements.Event.FLAGPOLE: flagpole_jump,
@@ -78,9 +75,6 @@ func get_bound() -> float:
 
 func _school() -> void:
 	Achievements.activate_event(Achievements.Event.SCHOOL)
-
-func _kurechii() -> void:
-	Achievements.activate_event(Achievements.Event.KURECHII)
 
 func _kyodai() -> void:
 	Achievements.activate_event(Achievements.Event.KYODAI)
@@ -121,9 +115,6 @@ func _on_event_complete(event: Achievements.Event) -> void:
 	if event == Achievements.Event.SCHOOL:
 		school.raise_flag()
 		zone_2.activated = true
-	elif event == Achievements.Event.KURECHII:
-		kurechii.raise_flag()
-		zone_3.activated = true
 	elif event == Achievements.Event.KYODAI:
 		kyodai.raise_flag()
 	elif event == Achievements.Event.UNIMELB:

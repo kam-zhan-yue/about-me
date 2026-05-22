@@ -3,7 +3,6 @@ extends Node
 enum Event {
 	NONE,
 	SCHOOL,
-	KURECHII,
 	KYODAI,
 	UNIMELB,
 	FLAGPOLE,
@@ -54,17 +53,17 @@ enum Achievement {
 
 var achievement_data = {
 	Achievement.FIRST_GAMES: preload("res://resources/achievements/first_games.tres"),
-	Achievement.TEACHING_GAMES: preload("res://resources/achievements/3_teaching_games.tres"),
 	Achievement.GREENPATH: preload("res://resources/achievements/7_greenpath.tres"),
-	Achievement.POSTKNIGHT_2: preload("res://resources/achievements/6_postknight_2.tres"),
 	Achievement.KYODAI: preload("res://resources/achievements/kyodai.tres"),
 	Achievement.DEATH_GAME_HOTEL: preload("res://resources/achievements/11_death_game_hotel.tres"),
 	Achievement.GAME_JAMS: preload("res://resources/achievements/game_jams.tres"),
 	
 	Achievement.FIRST_GAME: preload("res://resources/achievements/1_first_game.tres"),
 	Achievement.ENTER_THE_ARENA: preload("res://resources/achievements/2_enter_the_arena.tres"),
+	Achievement.TEACHING_GAMES: preload("res://resources/achievements/3_teaching_games.tres"),
 	Achievement.ASCENSION: preload("res://resources/achievements/4_ascension.tres"),
 	Achievement.GRADUATION: preload("res://resources/achievements/5_graduation.tres"),
+	Achievement.POSTKNIGHT_2: preload("res://resources/achievements/6_postknight_2.tres"),
 	Achievement.ONE_LAST_DRINK: preload("res://resources/achievements/8_one_last_drink.tres"),
 	Achievement.SLEEPWALKER: preload("res://resources/achievements/9_sleepwalker.tres"),
 	Achievement.UPBEET: preload("res://resources/achievements/10_upbeet.tres"),
@@ -82,7 +81,7 @@ var achievement_data = {
 
 var achievement_dict = {
 	str(Date.new(2019, 2)): Achievement.FIRST_GAMES,
-	str(Date.new(2019, 10)): Achievement.TEACHING_GAMES,
+	# str(Date.new(2019, 10)): Achievement.TEACHING_GAMES,
 	str(Date.new(2020, 11)): Achievement.GRADUATION,
 	str(Date.new(2021, 11)): Achievement.POSTKNIGHT_2,
 	str(Date.new(2023, 6)): Achievement.KYODAI,
@@ -145,13 +144,12 @@ func complete_event(event: Event) -> void:
 func activate_event(event: Event) -> void:
 	if event in completed_events:
 		return
+
 	print("Activating: ", get_event_id(event))
 	on_event_started.emit(event)
 	current_event = event
 	if event == Event.SCHOOL:
 		school_sequence()
-	elif event == Event.KURECHII:
-		kurechii_sequence()
 	elif event == Event.KYODAI:
 		kyodai_sequence()
 	elif event == Event.UNIMELB:
@@ -159,13 +157,8 @@ func activate_event(event: Event) -> void:
 
 func school_sequence() -> void:
 	var start = Date.new(2008, 1)
-	var end = Date.new(2020, 12)
-	start_countdown(start, end, 2.5)
-
-func kurechii_sequence() -> void:
-	var start = Date.new(2021, 2)
 	var end = Date.new(2022, 1)
-	start_countdown(start, end, 1.5)
+	start_countdown(start, end, 2.5)
 
 func kyodai_sequence() -> void:
 	var start = Date.new(2023, 4)

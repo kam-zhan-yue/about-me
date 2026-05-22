@@ -1,17 +1,15 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=5 format=3 uid="uid://bg5ck3rfkfk6k"]
+[gd_resource type="Resource" script_class="AchievementData" format=3 uid="uid://bg5ck3rfkfk6k"]
 
-[ext_resource type="Script" path="res://scripts/game/page_data.gd" id="1_kc5co"]
-[ext_resource type="Script" path="res://scripts/game/achievement_data.gd" id="2_q5gd7"]
+[ext_resource type="Script" uid="uid://dcyjr2ru1x08j" path="res://scripts/game/page_data.gd" id="1_kc5co"]
+[ext_resource type="Script" uid="uid://drqqvh3wjo7rn" path="res://scripts/game/achievement_data.gd" id="2_q5gd7"]
 
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_kc5co")
-media = 0
 filename = "3_teaching_games_1.png"
 description = "チン族難民のための学校でプログラミング授業を教えた。"
 
 [sub_resource type="Resource" id="Resource_m8g42"]
 script = ExtResource("1_kc5co")
-media = 0
 filename = "3_teaching_games_2.png"
 description = "生徒たちはJavaを使用して、ゲームを作りました。"
 

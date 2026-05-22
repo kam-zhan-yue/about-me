@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bsckx8dnl1ryn"]
+[gd_resource type="TileSet" format=3 uid="uid://bsckx8dnl1ryn"]
 
 [ext_resource type="Texture2D" uid="uid://fc3yi1q5i33y" path="res://sprites/smb_tiles.png" id="1_iyj68"]
 [ext_resource type="PackedScene" uid="uid://bgmaykj6emifw" path="res://scenes/question_block.tscn" id="2_kiaul"]
