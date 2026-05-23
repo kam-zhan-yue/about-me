@@ -6,10 +6,19 @@
 [sub_resource type="Resource" id="Resource_j0rxt"]
 script = ExtResource("1_8fddl")
 media = 1
-filename = "kabaddi.ogv"
-description = "カバディのサークルに入って、国内大会に出た。"
+filename = "retronauts.ogv"
+description = "2日間でチームとWebマルチプレイヤーゲームです。
+タイムスリップして、相手よりタスクを完了する"
+
+[sub_resource type="Resource" id="Resource_8fddl"]
+script = ExtResource("1_8fddl")
+media = 1
+filename = "two-years.ogv"
+description = "彼女との2年記念日のゲームです。
+2人が同時に進めるストリーゲームです。"
+metadata/_custom_type_script = "uid://dcyjr2ru1x08j"
 
 [resource]
 script = ExtResource("2_vmoeh")
-title = "京都大学カバディサークル"
-pages = Array[ExtResource("1_8fddl")]([SubResource("Resource_j0rxt")])
+title = "マルチプレイヤー"
+pages = Array[ExtResource("1_8fddl")]([SubResource("Resource_j0rxt"), SubResource("Resource_8fddl")])
